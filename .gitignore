@@ -1,0 +1,7 @@
+# Local build folder
+_build
+jupyter_execute
+
+# Hidden files
+.DS_Store
+.ipynb_checkpoints
