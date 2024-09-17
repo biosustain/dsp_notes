@@ -1,8 +1,12 @@
-# DTU HPC:[LSF 10 Cluster](https://www.hpc.dtu.dk/?page_id=2501)
+# DTU HPC
 
-## Access with your DTU user and password:
+Read documentation on [LSF 10 Cluster here](https://www.hpc.dtu.dk/?page_id=2501).
 
->**login node:** `sh userid@login1.gbar.dtu.dk`
->-**computing node:** `linuxsh`
+## Access 
+
+Every DTU employee can access the cluster with your DTU `userid` and `password`:
+
+>**login node:** `ssh userid@login1.gbar.dtu.dk`  
+>**computing node:** `linuxsh`
 
 
