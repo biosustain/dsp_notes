@@ -32,6 +32,12 @@ azure/running_nextflow_on_azure
 python/percent_notebooks
 ```
 
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: HPC
 
+hpc_dtu/setup_user_env
+```
 
 
