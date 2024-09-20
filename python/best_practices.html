@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>Coding (best) practices for Data Science &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -41,12 +41,13 @@
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/best_practices';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="next" title="DTU HPC" href="../hpc_dtu/setup_user_env.html" />
+    <link rel="prev" title="Percent Notebooks in VSCode (and other editior)" href="percent_notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,13 +175,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../azure/running_nextflow_on_azure.html">How to run a nextflow pipleline on Azure</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../python/percent_notebooks.html">Percent Notebooks in VSCode (and other editior)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="percent_notebooks.html">Percent Notebooks in VSCode (and other editior)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 
     </div>
@@ -250,7 +251,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/python/best_practices.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>Coding (best) practices for Data Science</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -344,7 +345,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-formatter">Use a formatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-linter">Use a linter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#better-comments-and-todo-trees">Better Comments and ToDo Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-based-notebook-percent-format-with-jupytext-and-papermill">Text based Notebook (percent format) with jupytext and papermill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copilot-in-vscode">Copilot in VSCode</a></li>
 </ul>
             </nav>
         </div>
@@ -356,16 +361,82 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="coding-best-practices-for-data-science">
+<h1>Coding (best) practices for Data Science<a class="headerlink" href="#coding-best-practices-for-data-science" title="Link to this heading">#</a></h1>
 <blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
+<div><p>Author: Henry Webel
+Reviewers: Pasquale Colaianni, Jakob Berg Jespersen</p>
 </div></blockquote>
+<p>Being asked to show some coding best practices for an internal retreat, I assembled
+some low hanging fruits in reach for everyone and some practices I learned to appreciate.</p>
+<section id="use-a-formatter">
+<h2>Use a formatter<a class="headerlink" href="#use-a-formatter" title="Link to this heading">#</a></h2>
+<p>When you write code, I encourage using a formatter. <code class="docutils literal notranslate"><span class="pre">black</span></code> is a common choice
+as it allows you to format code in a user-defined linelength consistently. It even can
+break too long strings into its parts - leaving only long comments and docstrings to you
+for adoption.</p>
+<p><code class="docutils literal notranslate"><span class="pre">black</span></code> or <code class="docutils literal notranslate"><span class="pre">autopep8</span></code> are also available next to <code class="docutils literal notranslate"><span class="pre">isort</span></code> for sorting imports in VSCode as
+extension, so your files are formatted everytime you save these
+(<a class="reference external" href="https://code.visualstudio.com/docs/python/formatting" rel="noopener noreferrer" target="_blank">link</a>).</p>
+<p>You can configure black and isort e.g. in your <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file to process long strings
+and enable the next release features:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[tool.black]</span>
+<span class="n">line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">90</span>
+<span class="n">preview</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="n">enable-unstable-feature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;string_processing&quot;</span><span class="p">,]</span>
+
+<span class="k">[tool.isort]</span>
+<span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;black&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-a-linter">
+<h2>Use a linter<a class="headerlink" href="#use-a-linter" title="Link to this heading">#</a></h2>
+<p>Using a linter like <code class="docutils literal notranslate"><span class="pre">flake8</span></code> or <code class="docutils literal notranslate"><span class="pre">ruff</span></code> can identify too long lines, unpassed arguments
+or mutable objects as default function parameters. Tools like
+<a class="reference external" href="https://code.visualstudio.com/docs/python/linting" rel="noopener noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">Pylint</span></code> in VSCode</a>
+allow you to get in editor highlighting of Code issues and links with hints on how to fix them
+<img alt="screenshot with typehints" src="../_images/lint_pylance_in_vscode.png" /></p>
+<p>Using the linter you can for example find that you did not pass an argument to a function
+as was fixed in this commit <a class="reference external" href="https://github.com/Multiomics-Analytics-Group/acore/pull/2/commits/18b67516b25de30cf6fd4bb640422aa8e0642b08" rel="noopener noreferrer" target="_blank">18b675</a> in <code class="docutils literal notranslate"><span class="pre">run_umap</span></code> (you will need to unfold the first file to see the full picture).</p>
+</section>
+<section id="better-comments-and-todo-trees">
+<h2>Better Comments and ToDo Trees<a class="headerlink" href="#better-comments-and-todo-trees" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments" rel="noopener noreferrer" target="_blank">Better Comments</a>
+allows you to highlight comments in code using different colors
+<code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">?</span> <span class="pre">warning</span></code> or <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">?</span> <span class="pre">question</span></code> or <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">TODO</span></code> . If you add <code class="docutils literal notranslate"><span class="pre">?</span></code> and <code class="docutils literal notranslate"><span class="pre">!</span></code> to the list of expression to list
+in a
+<a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree" rel="noopener noreferrer" target="_blank">ToDo Tree</a>
+you can easily keep a list of todos in your code - allowing you to go
+through them from time to time and prioritze.</p>
+<p><img alt="Highlighted Comments and ToDo Tree example" src="../_images/better_comments_todo_tree.png" /></p>
+</section>
+<section id="text-based-notebook-percent-format-with-jupytext-and-papermill">
+<h2>Text based Notebook (percent format) with jupytext and papermill<a class="headerlink" href="#text-based-notebook-percent-format-with-jupytext-and-papermill" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupytext.readthedocs.io/" rel="noopener noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">jupytext</span></code></a> is a lightweight tool to keep scripts either as notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or simpler text based file formats, such as markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>)  which can be easily rendered on GitHub or python files  (<code class="docutils literal notranslate"><span class="pre">.py</span></code>) which can be executed in VSCode’s interactive shell and are better for version control. Some tools still need ipynb to work, e.g. <code class="docutils literal notranslate"><span class="pre">papermill</span></code>. Therefore it is handy to keep different version of a script in sync. Otherwise one can also only use python files and render these as notebook in e.g.
+<a class="reference external" href="https://jupytext.readthedocs.io/en/latest/text-notebooks.html" rel="noopener noreferrer" target="_blank">jupyter lab</a>. This is useful especially if the code is only kept for version control, but executed versions are kept in a project folder using a workflow environment (as <code class="docutils literal notranslate"><span class="pre">snakemake</span></code> or <code class="docutils literal notranslate"><span class="pre">nextflow</span></code>).</p>
+<p>You can see an example of the percent notebook in the <a class="reference internal" href="percent_notebooks.html"><span class="std std-doc">percent_notebooks</span></a> section.</p>
+<p>I showed how to sync a text based percent notebook and execute it using <code class="docutils literal notranslate"><span class="pre">papermill</span></code>
+(without) specifying arguments on the commmand line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupytext<span class="w"> </span>--to<span class="w"> </span>ipynb<span class="w"> </span>-k<span class="w"> </span>-<span class="w"> </span>-o<span class="w"> </span>-<span class="w"> </span>example_nb.py<span class="w"> </span><span class="p">|</span><span class="w"> </span>papermill<span class="w"> </span>-<span class="w"> </span>path/to/executed_example.ipynb
+</pre></div>
+</div>
+<p>If you want to keep some formats in sync, you can specify that and only push one type to git</p>
+<ul class="simple">
+<li><p>specifying e.g. a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> the types you want to only have locally.
+Each folder can have a <code class="docutils literal notranslate"><span class="pre">.jupytext.toml</span></code> file to specify the formats you want to keep in sync
+in that folder e.g.:</p></li>
+</ul>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># percent format and ipynb format in sync</span>
+<span class="n">formats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;ipynb,py:percent&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="copilot-in-vscode">
+<h2>Copilot in VSCode<a class="headerlink" href="#copilot-in-vscode" title="Link to this heading">#</a></h2>
+<p>Ghosttext, chats and inline chats are great ways to get suggestions on the code you are
+writing. You can apply for a free version as a <a class="reference external" href="https://github.com/education/students" rel="noopener noreferrer" target="_blank">(PhD) student</a>
+or <a class="reference external" href="https://github.com/education/teachers" rel="noopener noreferrer" target="_blank">instructor</a>. Currently alternatives with a free-tier as <a class="reference external" href="https://codeium.com/" rel="noopener noreferrer" target="_blank">codium</a> are also available.</p>
 </section>
 </section>
 
@@ -381,13 +452,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="percent_notebooks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">Percent Notebooks in VSCode (and other editior)</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../hpc_dtu/setup_user_env.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DTU HPC</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -405,7 +485,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-formatter">Use a formatter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-a-linter">Use a linter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#better-comments-and-todo-trees">Better Comments and ToDo Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-based-notebook-percent-format-with-jupytext-and-papermill">Text based Notebook (percent format) with jupytext and papermill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copilot-in-vscode">Copilot in VSCode</a></li>
 </ul>
   </nav></div>
 
