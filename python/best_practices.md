@@ -16,6 +16,19 @@ for adoption.
 extension, so your files are formatted everytime you save these 
 ([link](https://code.visualstudio.com/docs/python/formatting)).
 
+You can configure black and isort e.g. in your `pyproject.toml` file to process long strings
+and enable the next release features:
+
+```toml
+[tool.black]
+line-length = 90
+preview = true
+enable-unstable-feature = ["string_processing",]
+
+[tool.isort]
+profile = "black"
+```
+
 ## Use a linter
 
 Too long lines, unpassed arguments or mutable objects as default function parameters you can
