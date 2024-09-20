@@ -1,6 +1,6 @@
 # Coding (best) practices for Data Science
 
-> Author: Henry Webel
+> Author: Henry Webel  
 > Reviewers: Pasquale Colaianni, Jakob Berg Jespersen
 
 Being asked to show some coding best practices for an internal retreat, I assembled
