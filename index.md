@@ -30,6 +30,7 @@ azure/running_nextflow_on_azure
 :caption: Python
 
 python/percent_notebooks
+python/best_practices
 ```
 
 ```{toctree}
