@@ -8,8 +8,8 @@
 
 project = "Data Science Platform notes"
 # ! update if someone adds information
-copyright = "2024, Henry Webel"
-author = "Henry Webel"
+copyright = "2024, DTU Biosustain, Informatics Platform, DSP"
+author = "Henry Webel, Juliana Assis, Jakob Berg Jespersen, Pasquale Colaianni"
 
 
 # -- General configuration ---------------------------------------------------

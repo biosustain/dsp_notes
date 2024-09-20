@@ -1,4 +1,5 @@
 # DTU HPC
+> Author: Juliana Assis
 
 Read documentation on [LSF 10 Cluster here](https://www.hpc.dtu.dk/?page_id=2501).
 
