@@ -1,7 +1,9 @@
 # Training
 
-We started a series of 2h training in November 2024. We link here the material that we 
-used for the trainings.
+On November 2024, the Data Science platform from DTU Biosustain launched a series of
+hands-on workshops about different subjects related to Data Science for DTU Biosustain 
+and DTU Bioengineering research fellows. In this first edition we covered the subjects 
+below. If interested, stay tuned for future Data Science workshops!
 
 ## Introduction the command line with bash
 
@@ -27,5 +29,7 @@ The material is available as a hmtl document for direct viewing
 
 ## Nextflow for reproducible workflows
 
-The material is available at
+Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
+The repository itself is available at
 [github.com/biosustain/dsp_nextflow_training](https://github.com/biosustain/dsp_nextflow_training).
+    
