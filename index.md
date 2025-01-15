@@ -13,6 +13,7 @@ is part of the Informatics Platform, see our aims and goals
 :hidden:
 
 about
+trainings/index
 ```
 
 ```{toctree}
