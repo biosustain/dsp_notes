@@ -53,3 +53,10 @@ seqera/setup_infrastructure
 seqera/quantms
 ```
 
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: nextflow
+
+nextflow/pipeline_diagrams
+```
