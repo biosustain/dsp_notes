@@ -1,4 +1,9 @@
-## Overview
+# Platform
+
+Seqera platform (cloud) allows you to run and monitor nextflow pipelines easily. Parameters
+can be set using a web interface and pipelines can be launched from there.
+
+See [docs.seqera.io/](https://docs.seqera.io/).
 
 ## Pipeline parameters in Seqera
 
