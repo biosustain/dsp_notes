@@ -42,4 +42,14 @@ python/best_practices
 hpc_dtu/setup_user_env
 ```
 
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Seqera
+
+seqera/index
+seqera/debugging
+seqera/setup_infrastructure
+seqera/quantms
+```
 
