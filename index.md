@@ -37,6 +37,14 @@ python/best_practices
 ```{toctree}
 :maxdepth: 2
 :hidden:
+:caption: VSCode as IDE
+
+vscode/customization
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
 :caption: HPC
 
 hpc_dtu/setup_user_env
