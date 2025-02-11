@@ -35,3 +35,14 @@ From this, you can see that input files do not appear in the blob storage of the
 the working directory. They will be downloaded to local storage, but never uploaded
 at the end because they are not considered outputs. This prevents duplication of 
 input/output data for every task. 
+
+## Not enough space on the VM (local storage exceeded)
+
+As detailed in [PR 5120](https://github.com/nextflow-io/nextflow/pull/5120) there is a problem 
+with leaving enough space on the VM for the local storage. This is especially relevant for
+jobs which get distributed on the same VM/node with high local storage requriments, but low CPU 
+requirements. For example an
+[`Standard_D16ds_v4`](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal)
+has 600GB of fixed memory. Adding four jobs with each 4cpus and 16 GB memory but a lot of
+locally stored data will might fill-up the local storage.
+

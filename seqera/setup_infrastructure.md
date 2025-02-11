@@ -31,3 +31,7 @@ Nodes in a pool are described based on the VM naming convention:
 ![Name breakdown VM](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/media/size-series-breakdown.png)
 
 See also [Azure Batch documentation](https://learn.microsoft.com/en-us/azure/batch/nodes-and-pools).
+
+> Local storage of a VM is one-to-one in line with the number of CPUs. See the `Local Storage` tab
+> for a machine in a series to find out more. See for example the
+> [Ddsv4 sizes series](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal).
