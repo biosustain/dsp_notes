@@ -49,6 +49,7 @@ hpc_dtu/setup_user_env
 
 seqera/index
 seqera/debugging
+seqera/performance
 seqera/setup_infrastructure
 seqera/quantms
 ```
@@ -59,4 +60,5 @@ seqera/quantms
 :caption: nextflow
 
 nextflow/pipeline_diagrams
+nextflow/javadocs_process
 ```
