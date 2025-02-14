@@ -6,8 +6,7 @@ hints. Developers can include docstrings in their scripts, which will
 enable hover-based code suggestions within the editor. Below is an
 example of how to format a simple process using a docstring.
 
-```java
-
+```
 \*
 A simple process that outputs a "Hello, world!" message.
 */
@@ -26,9 +25,9 @@ process SAY_HELLO {
 
     """
 
-    echo \'Hello, world!\' \> hello.txt
+    echo 'Hello, world!' > hello.txt
 
-    cat \<\<-END_VERSIONS \> versions.yml
+    cat <<-END_VERSIONS > versions.yml
 
     "say_hello": 1.0
 
