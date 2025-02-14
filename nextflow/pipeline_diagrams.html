@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>Nextflow diagramss &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,13 +44,13 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/pipeline_diagrams';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Platform" href="../seqera/index.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="next" title="JavaDocs and Code Documentation" href="javadocs_process.html" />
+    <link rel="prev" title="QuantMS on Seqera" href="../seqera/quantms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,8 +170,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
 <ul class="nav bd-sidenav">
@@ -182,9 +182,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagramss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nextflow diagramss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
 </ul>
 
     </div>
@@ -259,7 +259,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/nextflow/pipeline_diagrams.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>Nextflow diagramss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,7 +345,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-info">pipeline info</a></li>
 </ul>
             </nav>
         </div>
@@ -357,19 +357,24 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Author: Juliana Assis</p>
-</div></blockquote>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
-<blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="nextflow-diagramss">
+<h1>Nextflow diagramss<a class="headerlink" href="#nextflow-diagramss" title="Link to this heading">#</a></h1>
+<p>Can we draw possible jobs through a nextflow pipeline?</p>
+<p>You can use <a class="reference external" href="https://inkscape.org/" rel="noopener noreferrer" target="_blank">IncScape</a> with the templates provided by nextflow
+for the <a class="reference external" href="https://nf-co.re/docs/guidelines/graphic_design/workflow_diagrams" rel="noopener noreferrer" target="_blank">components and templates</a>
+which are explained in this bytesizes talk:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0vKhfedYKGo?si=t1lPDa8nYxY-hSro" 
+title="YouTube video player" 
+frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" 
+allowfullscreen>
+</iframe>
+<section id="pipeline-info">
+<h2>pipeline info<a class="headerlink" href="#pipeline-info" title="Link to this heading">#</a></h2>
+<p>There is also a mermaid and html export of the actual execution graph available.</p>
+<p>See <a class="reference external" href="https://www.nextflow.io/docs/latest/reports.html#workflow-diagram" rel="noopener noreferrer" target="_blank">workflow_diagrams</a>
+for more information.</p>
 </section>
 </section>
 
@@ -385,20 +390,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="../seqera/quantms.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">QuantMS on Seqera</p>
       </div>
     </a>
     <a class="right-next"
-       href="../seqera/index.html"
+       href="javadocs_process.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Platform</p>
+        <p class="prev-next-title">JavaDocs and Code Documentation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -419,7 +424,7 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-info">pipeline info</a></li>
 </ul>
   </nav></div>
 

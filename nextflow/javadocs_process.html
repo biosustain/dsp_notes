@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>JavaDocs and Code Documentation &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,13 +44,12 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/javadocs_process';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Platform" href="../seqera/index.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="prev" title="Nextflow diagramss" href="pipeline_diagrams.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,8 +169,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
 <ul class="nav bd-sidenav">
@@ -182,9 +181,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagramss</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pipeline_diagrams.html">Nextflow diagramss</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JavaDocs and Code Documentation</a></li>
 </ul>
 
     </div>
@@ -259,7 +258,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/nextflow/javadocs_process.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -322,9 +321,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -335,19 +332,11 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>JavaDocs and Code Documentation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -357,20 +346,56 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="javadocs-and-code-documentation">
+<h1>JavaDocs and Code Documentation<a class="headerlink" href="#javadocs-and-code-documentation" title="Link to this heading">#</a></h1>
+<p>For users working with Nextflow, the <strong>Nextflow extension for Visual
+Studio Code</strong> provides the best support for documentation and code
+hints. Developers can include docstrings in their scripts, which will
+enable hover-based code suggestions within the editor. Below is an
+example of how to format a simple process using a docstring.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="o">*</span>
+<span class="n">A</span> <span class="n">simple</span> <span class="n">process</span> <span class="n">that</span> <span class="n">outputs</span> <span class="n">a</span> <span class="s2">&quot;Hello, world!&quot;</span> <span class="n">message</span><span class="o">.</span>
+<span class="o">*/</span>
+
+<span class="n">process</span> <span class="n">SAY_HELLO</span> <span class="p">{</span>
+
+    <span class="n">tag</span> <span class="s2">&quot;Saying hello&quot;</span>
+
+    <span class="n">output</span><span class="p">:</span>
+
+        <span class="n">path</span> <span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="n">emit</span><span class="p">:</span> <span class="n">hello_file</span>
+
+        <span class="n">path</span> <span class="s2">&quot;versions.yml&quot;</span><span class="p">,</span> <span class="n">emit</span><span class="p">:</span> <span class="n">versions</span>
+
+    <span class="n">script</span><span class="p">:</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    echo &#39;Hello, world!&#39; &gt; hello.txt</span>
+
+<span class="sd">    cat &lt;&lt;-END_VERSIONS &gt; versions.yml</span>
+
+<span class="sd">    &quot;say_hello&quot;: 1.0</span>
+
+<span class="sd">    END_VERSIONS</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="p">}</span>
+
+<span class="n">workflow</span> <span class="p">{</span>
+
+    <span class="n">SAY_HELLO</span><span class="p">()</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>This approach helps ensure that developers can quickly reference process
+definitions and outputs while working within Nextflow.</p>
 <blockquote>
-<div><p>Author: Juliana Assis</p>
+<div><p>Make sure you have Java 17 or above installed to make the VSCode extension work:
+<a class="reference external" href="https://www.oracle.com/java/technologies/downloads" rel="noopener noreferrer" target="_blank">link</a></p>
 </div></blockquote>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
-<blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
-</div></blockquote>
-</section>
 </section>
 
 
@@ -385,22 +410,13 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="pipeline_diagrams.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">Nextflow diagramss</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../seqera/index.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Platform</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -408,22 +424,6 @@
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

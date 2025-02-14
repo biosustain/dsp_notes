@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>Debugging jobs &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,13 +44,13 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seqera/debugging';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Platform" href="../seqera/index.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="next" title="Utilizing Flexible Compute Resources" href="performance.html" />
+    <link rel="prev" title="Platform" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,16 +170,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seqera/index.html">Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/debugging.html">Debugging jobs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/performance.html">Utilizing Flexible Compute Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/setup_infrastructure.html">Setup Azure batch compute environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Platform</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Debugging jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Utilizing Flexible Compute Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_infrastructure.html">Setup Azure batch compute environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
 <ul class="nav bd-sidenav">
@@ -259,7 +259,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/seqera/debugging.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>Debugging jobs</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,7 +345,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-detailed-logs">View detailed logs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-on-local-machine-or-any-vm-or-hpc">Debugging on local machine (or any VM or HPC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-steps-for-general-understanding">Execution steps for general understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-enough-space-on-the-vm-local-storage-exceeded">Not enough space on the VM (local storage exceeded)</a></li>
 </ul>
             </nav>
         </div>
@@ -357,18 +360,73 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="debugging-jobs">
+<h1>Debugging jobs<a class="headerlink" href="#debugging-jobs" title="Link to this heading">#</a></h1>
+<p>If a job fails on seqera an intermediate files are lost as the VM state is not saved back
+to the associated blob storage container. This makes debugging a bit more challenging,
+although all relevant inputs are still normally found in the respective working directory
+for a single job.</p>
+<section id="view-detailed-logs">
+<h2>View detailed logs<a class="headerlink" href="#view-detailed-logs" title="Link to this heading">#</a></h2>
+<p>You can download the logs from the kebab menu on “Execution log” in the tab “Execution log”.
+In the web UI only the <code class="docutils literal notranslate"><span class="pre">Nextflow</span> <span class="pre">console</span> <span class="pre">output</span></code> is shown,
+but the detailed logs can be downloaded to your local laptop for inspection.</p>
+</section>
+<section id="debugging-on-local-machine-or-any-vm-or-hpc">
+<h2>Debugging on local machine (or any VM or HPC)<a class="headerlink" href="#debugging-on-local-machine-or-any-vm-or-hpc" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>download the relevant files</p></li>
+<li><p>install the required software using preferrably the method used on Seqera (docker, conda, etc.)</p></li>
+<li><p>run the command that failed and debug</p></li>
+</ul>
+</section>
+<section id="execution-steps-for-general-understanding">
+<h2>Execution steps for general understanding<a class="headerlink" href="#execution-steps-for-general-understanding" title="Link to this heading">#</a></h2>
+<p>The steps go as follows:</p>
+<ul class="simple">
+<li><p>The previous task(s) will run and create files on a local disk</p></li>
+<li><p>these are uploaded to their respective Azure Blob scratch directories</p></li>
+<li><p>the next task will start</p></li>
+<li><p>it will download files from the scratch directories of the previous tasks</p></li>
+<li><p>it will run the tools specified for the task (process)</p></li>
+<li><p>Once complete, it will upload the files marked as outputs
+in the nextflow process definition to the Azure Blob scratch directory (to be used again
+for another task/process as input)</p></li>
+</ul>
+<p>From this, you can see that input files do not appear in the blob storage of the task in
+the working directory. They will be downloaded to local storage, but never uploaded
+at the end because they are not considered outputs. This prevents duplication of
+input/output data for every task.</p>
+</section>
+<section id="not-enough-space-on-the-vm-local-storage-exceeded">
+<h2>Not enough space on the VM (local storage exceeded)<a class="headerlink" href="#not-enough-space-on-the-vm-local-storage-exceeded" title="Link to this heading">#</a></h2>
+<p>Azure virtual machines come with fixed-size disks, and when a node is
+assigned multiple tasks, there is a risk of overwhelming the file
+system, which can lead to pipeline failures.
+As detailed in <a class="reference external" href="https://github.com/nextflow-io/nextflow/pull/5120" rel="noopener noreferrer" target="_blank">PR 5120</a> there is a problem
+with leaving enough space on the VM for the local storage. This is especially relevant for
+jobs which get distributed on the same VM/node with high local storage requriments, but low CPU
+requirements. For example an
+<a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal" rel="noopener noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">Standard_D16ds_v4</span></code></a>
+has 600GB of fixed memory. Machines with locally attached storage can be identified by the
+presence of a <strong>“d” suffix</strong> in the machine name, such as in
+<code class="docutils literal notranslate"><span class="pre">Standard_e16ds_v4</span></code>. Adding four jobs with each 4cpus and 16 GB memory but a lot of
+locally stored data will might fill-up the local storage.</p>
+<p>To mitigate this risk, two
+potential solutions should be considered:</p>
+<ol class="arabic simple">
+<li><p><strong>Overprovisioning</strong> a node by allocating more CPU resources than
+strictly necessary or by reducing the number of tasks assigned to a
+single node.</p></li>
+<li><p>Using <strong>Fusion</strong>, which may help in optimizing storage performance.</p></li>
+</ol>
+<p>The total available local storage for different
+machine types can be found in the following resource:</p>
+<p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview" rel="noopener noreferrer" target="_blank">Azure Virtual Machine Storage
+Overview</a></p>
 <blockquote>
-<div><p>Author: Juliana Assis</p>
-</div></blockquote>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
-<blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
+<div><p>⚠️ Make sure that the output directory is set to a storage account and not the local
+disk, i.e. some <code class="docutils literal notranslate"><span class="pre">az://&lt;container-name&gt;</span></code> path</p>
 </div></blockquote>
 </section>
 </section>
@@ -385,20 +443,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">Platform</p>
       </div>
     </a>
     <a class="right-next"
-       href="../seqera/index.html"
+       href="performance.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Platform</p>
+        <p class="prev-next-title">Utilizing Flexible Compute Resources</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -419,7 +477,10 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-detailed-logs">View detailed logs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debugging-on-local-machine-or-any-vm-or-hpc">Debugging on local machine (or any VM or HPC)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-steps-for-general-understanding">Execution steps for general understanding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-enough-space-on-the-vm-local-storage-exceeded">Not enough space on the VM (local storage exceeded)</a></li>
 </ul>
   </nav></div>
 

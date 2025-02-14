@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>Utilizing Flexible Compute Resources &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,13 +44,13 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'seqera/performance';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Platform" href="../seqera/index.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="next" title="Setup Azure batch compute environments" href="setup_infrastructure.html" />
+    <link rel="prev" title="Debugging jobs" href="debugging.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,16 +170,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../seqera/index.html">Platform</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/debugging.html">Debugging jobs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/performance.html">Utilizing Flexible Compute Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/setup_infrastructure.html">Setup Azure batch compute environments</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugging.html">Debugging jobs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Utilizing Flexible Compute Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="setup_infrastructure.html">Setup Azure batch compute environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
 <ul class="nav bd-sidenav">
@@ -259,7 +259,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/seqera/performance.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>Utilizing Flexible Compute Resources</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,7 +345,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-nextflow-on-azure-batch">Optimizing Nextflow on Azure Batch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autopools-feature-in-nextflow">Autopools Feature in Nextflow</a></li>
 </ul>
             </nav>
         </div>
@@ -357,19 +358,34 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Author: Juliana Assis</p>
-</div></blockquote>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
-<blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="utilizing-flexible-compute-resources">
+<h1>Utilizing Flexible Compute Resources<a class="headerlink" href="#utilizing-flexible-compute-resources" title="Link to this heading">#</a></h1>
+<p>The Seqera Platform allows for the allocation of different compute
+resources to specific processing queues using the <code class="docutils literal notranslate"><span class="pre">process.queue</span></code>
+directive within the Nextflow configuration. he following
+resources offer detailed guidance on optimizing workloads on
+Azure Batch.</p>
+<section id="optimizing-nextflow-on-azure-batch">
+<h2>Optimizing Nextflow on Azure Batch<a class="headerlink" href="#optimizing-nextflow-on-azure-batch" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://techcommunity.microsoft.com/blog/healthcareandlifesciencesblog/rna-sequencing-analysis-on-azure-using-nextflow-configuration-files-and-benchmar/3738854" rel="noopener noreferrer" target="_blank">RNA sequencing analysis on Azure using
+Nextflow</a></p></li>
+<li><p><a class="reference external" href="https://techcommunity.microsoft.com/blog/healthcareandlifesciencesblog/rna-sequencing-analysis-on-azure-using-nextflow-low-priority-vs-dedicated-machin/3774742" rel="noopener noreferrer" target="_blank">Low-priority versus dedicated machines in
+Nextflow</a></p></li>
+</ul>
+</section>
+<section id="autopools-feature-in-nextflow">
+<h2>Autopools Feature in Nextflow<a class="headerlink" href="#autopools-feature-in-nextflow" title="Link to this heading">#</a></h2>
+<p>The Nextflow workflow engine includes an autopools feature that can
+dynamically create and destroy worker pools based on process-specific
+requirements. Additional details can be found in the following
+resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cloud.seqera.io/orgs/DTU-Biosustain/workspaces/seqera_test/compute-envs/40jbXmCxtOnjF21HLn4ZiR" rel="noopener noreferrer" target="_blank">Example Compute Environment in Seqera
+Cloud</a></p></li>
+<li><p><a class="reference external" href="https://www.nextflow.io/docs/latest/azure.html#autopools" rel="noopener noreferrer" target="_blank">Nextflow Autopools
+Documentation</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -385,20 +401,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="debugging.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">Debugging jobs</p>
       </div>
     </a>
     <a class="right-next"
-       href="../seqera/index.html"
+       href="setup_infrastructure.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Platform</p>
+        <p class="prev-next-title">Setup Azure batch compute environments</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -419,7 +435,8 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-nextflow-on-azure-batch">Optimizing Nextflow on Azure Batch</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autopools-feature-in-nextflow">Autopools Feature in Nextflow</a></li>
 </ul>
   </nav></div>
 
