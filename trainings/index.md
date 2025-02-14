@@ -32,4 +32,3 @@ The material is available as a hmtl document for direct viewing
 Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
 The repository itself is available at
 [github.com/biosustain/dsp_nextflow_training](https://github.com/biosustain/dsp_nextflow_training).
-    
