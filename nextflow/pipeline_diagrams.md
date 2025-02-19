@@ -1,4 +1,4 @@
-# Nextflow diagramss
+# Nextflow diagrams
 
 Can we draw possible jobs through a nextflow pipeline?
 
