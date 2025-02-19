@@ -28,23 +28,6 @@ azure/running_nextflow_on_azure
 ```{toctree}
 :maxdepth: 2
 :hidden:
-:caption: Python
-
-python/percent_notebooks
-python/best_practices
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: HPC
-
-hpc_dtu/setup_user_env
-```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
 :caption: Seqera
 
 seqera/index
@@ -61,4 +44,29 @@ seqera/quantms
 
 nextflow/pipeline_diagrams
 nextflow/javadocs_process
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Sphinx and MyST-NB
+
+sphinx/0_overview
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Python
+
+python/percent_notebooks
+python/best_practices
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: HPC
+
+hpc_dtu/setup_user_env
 ```

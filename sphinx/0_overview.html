@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>DTU HPC &#8212; Data Science Platform notes  documentation</title>
+    <title>Documentation using Sphinx, MyST-NB &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,12 +44,13 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'hpc_dtu/setup_user_env';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'sphinx/0_overview';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Coding (best) practices for Data Science" href="../python/best_practices.html" />
+    <link rel="next" title="Percent Notebooks in VSCode (and other editior)" href="../python/percent_notebooks.html" />
+    <link rel="prev" title="JavaDocs and Code Documentation" href="../nextflow/javadocs_process.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -177,8 +178,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../sphinx/0_overview.html">Documentation using Sphinx, MyST-NB</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Documentation using Sphinx, MyST-NB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
@@ -186,8 +187,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">DTU HPC</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
 </ul>
 
     </div>
@@ -262,7 +263,7 @@
       
       
       
-      <li><a href="../_sources/hpc_dtu/setup_user_env.md" target="_blank"
+      <li><a href="../_sources/sphinx/0_overview.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -338,7 +339,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>DTU HPC</h1>
+    <h1>Documentation using Sphinx, MyST-NB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -348,7 +349,7 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-explicit-targets-cross-references-on-a-website">Setting explicit targets (cross-references on a website)</a></li>
 </ul>
             </nav>
         </div>
@@ -360,19 +361,24 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dtu-hpc">
-<h1>DTU HPC<a class="headerlink" href="#dtu-hpc" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Author: Juliana Assis</p>
-</div></blockquote>
-<p>Read documentation on <a class="reference external" href="https://www.hpc.dtu.dk/?page_id=2501" rel="noopener noreferrer" target="_blank">LSF 10 Cluster here</a>.</p>
-<section id="access">
-<h2>Access<a class="headerlink" href="#access" title="Link to this heading">#</a></h2>
-<p>Every DTU employee can access the cluster with your DTU <code class="docutils literal notranslate"><span class="pre">userid</span></code> and <code class="docutils literal notranslate"><span class="pre">password</span></code>:</p>
-<blockquote>
-<div><p><strong>login node:</strong> <code class="docutils literal notranslate"><span class="pre">ssh</span> <span class="pre">userid&#64;login1.gbar.dtu.dk</span></code><br />
-<strong>computing node:</strong> <code class="docutils literal notranslate"><span class="pre">linuxsh</span></code></p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="documentation-using-sphinx-myst-nb">
+<h1>Documentation using Sphinx, MyST-NB<a class="headerlink" href="#documentation-using-sphinx-myst-nb" title="Link to this heading">#</a></h1>
+<p>Like this notes website, we can create a documentation website using Sphinx and MyST-NB
+using our template <a class="reference external" href="https://github.com/biosustain/notes_template" rel="noopener noreferrer" target="_blank">here</a>, including
+the instructions on how to set it up.</p>
+<p>Below you can find some additional hints.</p>
+<section id="setting-explicit-targets-cross-references-on-a-website">
+<h2>Setting explicit targets (cross-references on a website)<a class="headerlink" href="#setting-explicit-targets-cross-references-on-a-website" title="Link to this heading">#</a></h2>
+<p>In order to reference other contents in a Sphinx built website using markdown, you can
+set explicit targets. This is explained
+<a class="reference external" href="https://docs.readthedocs.com/platform/stable/guides/cross-referencing-with-sphinx.html#explicit-targets" rel="noopener noreferrer" target="_blank">here</a>.</p>
+<p>In short:</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>(My_target)=
+<span class="gh"># Explicit target heading</span>
+
+Reference [<span class="nt">link-to-target</span>](<span class="na">My_target</span>).
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -388,13 +394,22 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../python/best_practices.html"
+       href="../nextflow/javadocs_process.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+        <p class="prev-next-title">JavaDocs and Code Documentation</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../python/percent_notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Percent Notebooks in VSCode (and other editior)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -413,7 +428,7 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access">Access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-explicit-targets-cross-references-on-a-website">Setting explicit targets (cross-references on a website)</a></li>
 </ul>
   </nav></div>
 
