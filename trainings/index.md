@@ -32,3 +32,12 @@ The material is available as a hmtl document for direct viewing
 Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
 The repository itself is available at
 [github.com/biosustain/dsp_nextflow_training](https://github.com/biosustain/dsp_nextflow_training).
+
+## Docker Introduction
+
+Find the 
+[slides](https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf)
+and 
+[hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html) 
+under course contents at 
+[biosustain.github.io/dsp_docker_training/](https://biosustain.github.io/dsp_docker_training/).
