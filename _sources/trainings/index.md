@@ -41,3 +41,11 @@ and
 [hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html) 
 under course contents at 
 [biosustain.github.io/dsp_docker_training/](https://biosustain.github.io/dsp_docker_training/).
+
+## GitHub Actions Tutorial
+
+First introduction to continuous integration and continuous deployment (CI/CD) 
+using GitHub Actions.
+
+Find the material, including slides and exercises, in the repository
+[biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial).

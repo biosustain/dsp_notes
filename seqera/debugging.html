@@ -421,11 +421,11 @@ input/output data for every task.</p>
 <p>Azure virtual machines come with fixed-size disks, and when a node is
 assigned multiple tasks, there is a risk of overwhelming the file
 system, which can lead to pipeline failures.
-As detailed in <a class="reference external" href="https://github.com/nextflow-io/nextflow/pull/5120" rel="noopener noreferrer" target="_blank">PR 5120</a> there is a problem
+As detailed in <a class="reference external" href="https://github.com/nextflow-io/nextflow/pull/5120" rel="noreferrer" target="_blank">PR 5120</a> there is a problem
 with leaving enough space on the VM for the local storage. This is especially relevant for
 jobs which get distributed on the same VM/node with high local storage requriments, but low CPU
 requirements. For example an
-<a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal" rel="noopener noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">Standard_D16ds_v4</span></code></a>
+<a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">Standard_D16ds_v4</span></code></a>
 has 600GB of fixed memory. Machines with locally attached storage can be identified by the
 presence of a <strong>“d” suffix</strong> in the machine name, such as in
 <code class="docutils literal notranslate"><span class="pre">Standard_e16ds_v4</span></code>. Adding four jobs with each 4cpus and 16 GB memory but a lot of
@@ -440,7 +440,7 @@ single node.</p></li>
 </ol>
 <p>The total available local storage for different
 machine types can be found in the following resource:</p>
-<p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview" rel="noopener noreferrer" target="_blank">Azure Virtual Machine Storage
+<p><a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview" rel="noreferrer" target="_blank">Azure Virtual Machine Storage
 Overview</a></p>
 <blockquote>
 <div><p>⚠️ Make sure that the output directory is set to a storage account and not the local
