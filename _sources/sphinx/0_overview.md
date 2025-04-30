@@ -22,4 +22,11 @@ In short:
 Reference [link-to-target](My_target).
 ```
 
+## Reference to API documentation
 
+The Reference of the Python API can be easily set using the module import path:
+
+```markdown
+See the rendered version
+[of `hello_world` under the Reference]]python_package.mockup.hello_world)
+```
