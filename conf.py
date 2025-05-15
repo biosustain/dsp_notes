@@ -18,7 +18,7 @@ author = "Henry Webel, Juliana Assis, Jakob Berg Jespersen, Pasquale Colaianni"
 extensions = [
     "myst_nb",
     # "sphinx_design", # interactive webcomponents
-    # "sphinx_copybutton",
+    "sphinx_copybutton",
     # "sphinx_examples",
     "sphinx_new_tab_link",
 ]
