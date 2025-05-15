@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Documentation using Sphinx, MyST-NB &#8212; Data Science Platform notes  documentation</title>
+    <title>Recordings &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -44,13 +44,13 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'sphinx/0_overview';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'recordings/index';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Percent Notebooks in VSCode (and other editior)" href="../python/percent_notebooks.html" />
-    <link rel="prev" title="JavaDocs and Code Documentation" href="../nextflow/javadocs_process.html" />
+    <link rel="next" title="Create Azure resources" href="../azure/creating_ressources.html" />
+    <link rel="prev" title="Training" href="../trainings/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,8 +174,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../trainings/index.html">Training</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Recording tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../recordings/index.html">Recordings</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Recordings</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Azure</span></p>
 <ul class="nav bd-sidenav">
@@ -196,8 +196,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Documentation using Sphinx, MyST-NB</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/0_overview.html">Documentation using Sphinx, MyST-NB</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
@@ -276,7 +276,7 @@
       
       
       
-      <li><a href="../_sources/sphinx/0_overview.md" target="_blank"
+      <li><a href="../_sources/recordings/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Documentation using Sphinx, MyST-NB</h1>
+    <h1>Recordings</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,8 +370,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-explicit-targets-cross-references-on-a-website">Setting explicit targets (cross-references on a website)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-to-api-documentation">Reference to API documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-a-tutorial">1. Record a tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-onedrive-and-edit-in-clipchamp">2. Upload to OneDrive and edit in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-open-exported-video-in-clipchamp">3. Re-open exported video in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-changeover">4. Voice Changeover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-video-in-clipchamp">5. Edit the video in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-youtube">6. Upload to Youtube</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -383,32 +390,56 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="documentation-using-sphinx-myst-nb">
-<h1>Documentation using Sphinx, MyST-NB<a class="headerlink" href="#documentation-using-sphinx-myst-nb" title="Link to this heading">#</a></h1>
-<p>Like this notes website, we can create a documentation website using Sphinx and MyST-NB
-using our template <a class="reference external" href="https://github.com/biosustain/notes_template" rel="noreferrer" target="_blank">here</a>, including
-the instructions on how to set it up.</p>
-<p>Below you can find some additional hints.</p>
-<section id="setting-explicit-targets-cross-references-on-a-website">
-<h2>Setting explicit targets (cross-references on a website)<a class="headerlink" href="#setting-explicit-targets-cross-references-on-a-website" title="Link to this heading">#</a></h2>
-<p>In order to reference other contents in a Sphinx built website using markdown, you can
-set explicit targets. This is explained
-<a class="reference external" href="https://docs.readthedocs.com/platform/stable/guides/cross-referencing-with-sphinx.html#explicit-targets" rel="noreferrer" target="_blank">here</a>.</p>
-<p>In short:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>(My_target)=
-<span class="gh"># Explicit target heading</span>
-
-Reference [<span class="nt">link-to-target</span>](<span class="na">My_target</span>).
-</pre></div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="recordings">
+<h1>Recordings<a class="headerlink" href="#recordings" title="Link to this heading">#</a></h1>
+<p>We have a shared Youtube channel with the MoNA group, where we upload tutorials:
+<a class="reference external" href="https://www.youtube.com/&#64;MoNAandDSP" rel="noreferrer" target="_blank">&#64;MoNAandDSP</a></p>
+<section id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Link to this heading">#</a></h2>
+<section id="record-a-tutorial">
+<h3>1. Record a tutorial<a class="headerlink" href="#record-a-tutorial" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>record using <a class="reference external" href="https://support.apple.com/en-eg/guide/mac-help/mh26782/mac" rel="noreferrer" target="_blank">MacOS Screenshot</a> tool,
+or any other way (Teams, Zoom, <a class="reference external" href="https://obsproject.com/" rel="noreferrer" target="_blank">OBS</a> etc.)</p></li>
+</ul>
 </section>
-<section id="reference-to-api-documentation">
-<h2>Reference to API documentation<a class="headerlink" href="#reference-to-api-documentation" title="Link to this heading">#</a></h2>
-<p>The Reference of the Python API can be easily set using the module import path:</p>
-<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>See the rendered version
-[of <span class="sb">`hello_world`</span> under the Reference]]python_package.mockup.hello_world)
-</pre></div>
-</div>
+<section id="upload-to-onedrive-and-edit-in-clipchamp">
+<h3>2. Upload to OneDrive and edit in Clipchamp<a class="headerlink" href="#upload-to-onedrive-and-edit-in-clipchamp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>cut and edit the video in <a class="reference external" href="https://app.clipchamp.com/" rel="noreferrer" target="_blank">Clipchamp</a></p></li>
+<li><p>you can open videos directly from OneDrive in Clipchamp</p></li>
+</ul>
+</section>
+<section id="re-open-exported-video-in-clipchamp">
+<h3>3. Re-open exported video in Clipchamp<a class="headerlink" href="#re-open-exported-video-in-clipchamp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>re-open the edited and exported video in Clipchamp (to ensure the audio and video are
+in piece and have the same length)</p></li>
+<li><p><a class="reference external" href="https://clipchamp.com/en/blog/separate-audio-video/" rel="noreferrer" target="_blank">detach the audio</a> <br />
+and save it as a separate file</p></li>
+</ul>
+</section>
+<section id="voice-changeover">
+<h3>4. Voice Changeover<a class="headerlink" href="#voice-changeover" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>to ensure consistency in the voice we use, upload the audio to <a class="reference external" href="https://elevenlabs.io/" rel="noreferrer" target="_blank">ElevenLabs</a>
+and generate the <strong>voiceover</strong> (defaults with Bill)</p></li>
+</ul>
+</section>
+<section id="edit-the-video-in-clipchamp">
+<h3>5. Edit the video in Clipchamp<a class="headerlink" href="#edit-the-video-in-clipchamp" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>upload the new audio to Clipchamp and replace the original audio</p></li>
+<li><p>export the video</p></li>
+</ul>
+</section>
+<section id="upload-to-youtube">
+<h3>6. Upload to Youtube<a class="headerlink" href="#upload-to-youtube" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>upload the video to the MoNA Youtube channel</p></li>
+<li><p>add the title, description, and <a class="reference external" href="https://support.google.com/youtube/answer/9884579?hl=en" rel="noreferrer" target="_blank">time stamps</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -424,20 +455,20 @@ Reference [<span class="nt">link-to-target</span>](<span class="na">My_target</s
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../nextflow/javadocs_process.html"
+       href="../trainings/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">JavaDocs and Code Documentation</p>
+        <p class="prev-next-title">Training</p>
       </div>
     </a>
     <a class="right-next"
-       href="../python/percent_notebooks.html"
+       href="../azure/creating_ressources.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Percent Notebooks in VSCode (and other editior)</p>
+        <p class="prev-next-title">Create Azure resources</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,8 +488,15 @@ Reference [<span class="nt">link-to-target</span>](<span class="na">My_target</s
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-explicit-targets-cross-references-on-a-website">Setting explicit targets (cross-references on a website)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference-to-api-documentation">Reference to API documentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructions">Instructions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-a-tutorial">1. Record a tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-onedrive-and-edit-in-clipchamp">2. Upload to OneDrive and edit in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-open-exported-video-in-clipchamp">3. Re-open exported video in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#voice-changeover">4. Voice Changeover</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-the-video-in-clipchamp">5. Edit the video in Clipchamp</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-to-youtube">6. Upload to Youtube</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

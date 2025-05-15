@@ -19,6 +19,14 @@ trainings/index
 ```{toctree}
 :maxdepth: 2
 :hidden:
+:caption: Recording tutorials
+
+recordings/index
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
 :caption: Azure
 
 azure/creating_ressources
