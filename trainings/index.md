@@ -1,4 +1,4 @@
-# Training
+# Trainings
 
 On November 2024, the Data Science platform from DTU Biosustain launched a series of
 hands-on workshops about different subjects related to Data Science for DTU Biosustain 
@@ -24,7 +24,7 @@ You can view a recording with some hints related specifically to the exercises o
 Find the material in the repository [biosustain/dsp_workshop_datavizR](https://github.com/biosustain/dsp_workshop_datavizR)
 on GitHub.
 
-The material is available as a hmtl document for direct viewing 
+The material is available as a html document for direct viewing 
 [here](https://html-preview.github.io/?url=https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html).
 
 ## Nextflow for reproducible workflows
@@ -49,3 +49,22 @@ using GitHub Actions.
 
 Find the material, including slides and exercises, in the repository
 [biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial).
+
+## Full-day data type workshops
+
+In May 2025, we started to offer full-day workshops on specific data types:
+
+### Massspectrometry-based proteomics
+
+Find the course website [here](https://biosustain.github.io/dsp_course_proteomics_intro/)
+and the repository at [github.com/biosustain/dsp_proteomics_workshop](https://github.com/biosustain/dsp_course_proteomics_intro).
+
+### Transcriptomics
+
+Find the course website [here](https://biosustain.github.io/dsp_transcriptomics_training/)
+and the repository at [github.com/biosustain/dsp_transcriptomics_training](https://github.com/biosustain/dsp_transcriptomics_training).
+
+### Metagenomics
+
+Find the course website [here](https://biosustain.github.io/dsp_metagenomics_training/)
+and the repository at [github.com/biosustain/dsp_metagenomics_training](https://github.com/biosustain/dsp_metagenomics_training).
