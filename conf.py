@@ -4,6 +4,8 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+
 # -- Project information -----------------------------------------------------
 
 project = "Data Science Platform notes"
@@ -59,9 +61,7 @@ nb_execution_raise_on_error = True
 nb_merge_streams = True
 
 # https://myst-nb.readthedocs.io/en/latest/authoring/custom-formats.html#write-custom-formats
-nb_custom_formats = {
-    ".py": ["jupytext.reads", {"fmt": "py:percent"}]
-}
+nb_custom_formats = {".py": ["jupytext.reads", {"fmt": "py:percent"}]}
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -95,3 +95,24 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
+
+if os.environ.get("READTHEDOCS") == "True":
+    # If we are building on ReadTheDocs, we need to download the output file
+    # from the GitHub repository.
+
+    # Download developing.md from the python_package repository
+    def download_python_package_template_description():
+        from fetch_files import download_and_patch_output
+        
+        download_and_patch_output(
+            repo_url_base="https://github.com/biosustain/python_package/raw/refs/heads/main",
+            file_path_in_repo="developing.md",
+            output_path="python/package_template.md",
+            insert_origin_line=True,
+            insert_origin_line_at=2,
+        )
+
+    def setup(app):
+        # on extensions, see:
+        # https://www.sphinx-doc.org/en/master/usage/extensions/index.html
+        app.connect("builder-inited", download_python_package_template_description)

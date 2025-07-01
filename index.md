@@ -69,6 +69,7 @@ sphinx/0_overview
 
 python/percent_notebooks
 python/best_practices
+python/package_template
 ```
 
 ```{toctree}

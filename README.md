@@ -15,3 +15,12 @@
 
 - find instructions how to create your own technical documentation site using a GitHub template
     at [biosustain/notes_template](https://github.com/biosustain/notes_template)
+
+Here we fetch some markdown files from other sources additionally to the documentation.
+To build locally you need to run:
+
+```bash
+pip install -r requirements.txt
+python fetch_files.py
+python -m sphinx -n -W --keep-going -b html ./ ./_build/
+```
