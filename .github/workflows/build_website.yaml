@@ -18,6 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      
+      - name: Fetch remote files
+        run: |
+          python fetch_files.py
 
       - name: Build the site
         run: |
