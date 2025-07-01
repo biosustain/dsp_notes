@@ -1,3 +1,4 @@
+import re
 from pathlib import Path, PosixPath
 from typing import Optional
 from urllib.parse import urlparse
@@ -35,6 +36,25 @@ def download_file(url, save_path, timeout=20):
     return True
 
 
+def replace_local_links_with_github_links(content: str, repo_url_base: str):
+    """
+    Replace local links in the content with links to the GitHub repository.
+    The regex pattern has two parts
+    1. \[(.*?)\] matches the link text.
+    2. \((?!https?://)([^)]+)\) matches the relative path 
+                                (not starting with http/https).
+                                
+    Replace with main branch URL of the repository.
+    """
+
+    res = re.sub(
+        r"\[(.*?)\]\((?!https?://)([^)]+)\)",
+        f"[\\1]({repo_url_base}/blob/main/\\2)",
+        content,
+    )
+    return res
+
+
 def download_and_patch_output(
     repo_url_base: str,
     file_path_in_repo: str,
@@ -59,13 +79,13 @@ def download_and_patch_output(
         The line number at which to insert the origin line, by default 1
     """
     # new folders would need to be created if necessary
-    
+
     if output_path is None:
         output_path = Path(file_path_in_repo).name
-    
-    url = PosixPath(repo_url_base) / file_path_in_repo
+
+    url = PosixPath(repo_url_base) / "raw/refs/heads/main" / file_path_in_repo
     url = str(url)
-    url = url.replace('https:/github.com', 'https://github.com')
+    url = url.replace("https:/github.com", "https://github.com")
     print(f"Downloading file from: {url}")
 
     assert download_file(url, output_path)  # prints success message
@@ -75,17 +95,23 @@ def download_and_patch_output(
 
     assert len(content) > 0, "Downloaded file is empty"
 
+    # Add hint of the origin of the file
     origin_msg = f"> file downloaded from [source]({url})"
     if insert_origin_line:
         content.insert(insert_origin_line_at, f"{origin_msg}   \n")
 
+    content = "".join(content)  # Convert list to string
+
+    # Replace local links with GitHub links
+    content = replace_local_links_with_github_links(content, repo_url_base)
+
     with open(output_path, "w", encoding="utf-8") as f:
-        f.writelines(content)
+        f.write(content)
 
 
 if __name__ == "__main__":
     download_and_patch_output(
-        repo_url_base="https://github.com/biosustain/python_package/raw/refs/heads/main",
+        repo_url_base="https://github.com/biosustain/python_package",
         file_path_in_repo="developing.md",
         output_path="python/package_template.md",
         insert_origin_line=True,
