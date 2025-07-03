@@ -34,6 +34,7 @@ exclude_patterns = [
     "**/.ipynb_checkpoints/*",
     "jupyter_execute",
     "conf.py",
+    "fetch_files.py",
 ]
 
 
@@ -59,9 +60,7 @@ nb_execution_raise_on_error = True
 nb_merge_streams = True
 
 # https://myst-nb.readthedocs.io/en/latest/authoring/custom-formats.html#write-custom-formats
-nb_custom_formats = {
-    ".py": ["jupytext.reads", {"fmt": "py:percent"}]
-}
+nb_custom_formats = {".py": ["jupytext.reads", {"fmt": "py:percent"}]}
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -95,3 +94,4 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
+
