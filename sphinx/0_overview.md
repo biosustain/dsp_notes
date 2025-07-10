@@ -1,10 +1,15 @@
 # Documentation using Sphinx, MyST-NB
 
-Like this notes website, we can create a documentation website using Sphinx and MyST-NB
+Like this notes website, we can create a documentation website using Sphinx and 
+[MyST-NB](https://myst-nb.readthedocs.io)
 using our template [here](https://github.com/biosustain/notes_template), including
 the instructions on how to set it up.
 
 Below you can find some additional hints.
+
+## Using notebooks in Sphinx
+
+Use as markdown and notebook parser [mystnb](https://myst-nb.readthedocs.io/en/latest/).
 
 
 ## Setting explicit targets (cross-references on a website)
