@@ -61,6 +61,7 @@ nextflow/javadocs_process
 
 sphinx/0_overview
 sphinx/readthedocs
+sphinx/troubleshooting
 ```
 
 ```{toctree}
