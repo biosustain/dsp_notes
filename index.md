@@ -60,6 +60,7 @@ nextflow/javadocs_process
 :caption: Sphinx and MyST-NB
 
 sphinx/0_overview
+sphinx/readthedocs
 ```
 
 ```{toctree}
