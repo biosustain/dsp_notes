@@ -45,6 +45,11 @@ listed below. Generally, all frameworks should offer a Python API.
   - Components can update the session state, but an update in the session state is not reflected in the component.
   - Callbacks on components can be used to update the session state.
   - Sidebar widgets are shared across pages (and are always visible) - avoid using session state.
+- Callbacks: 
+  - `on_click` argument of buttons: run callback before page is rerun
+  - `if` class with direct invocation allows to choose when to run the callback
+- use `st.empty` to define the order of widgets before you actually create these. Use
+  the container initialized by `st.empty()` later to populate it.
 
 
 Material:
