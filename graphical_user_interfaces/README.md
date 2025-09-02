@@ -23,7 +23,9 @@ listed below. Generally, all frameworks should offer a Python API.
 
 - Easy to start sketching a GUI.
 - Each time a user changes an input, the whole app is re-run (a single page).
-  - Use forms to avoid re-runs and gather several inputs at once.
+  - Use forms to avoid re-runs and gather several inputs at once, see 
+   [forms](https://docs.streamlit.io/develop/concepts/architecture/forms).
+  - If you update contents in forms, make sure to do it below the form (or via a callback)
 - Multiple tabs are still one page.
 - Multi-page apps are multiple apps that share an overall state dictionary.
   - Widget values are by default reset when switching pages, see
