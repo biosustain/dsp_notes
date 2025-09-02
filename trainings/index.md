@@ -25,7 +25,8 @@ Find the material in the repository [biosustain/dsp_workshop_datavizR](https://g
 on GitHub.
 
 The material is available as a html document for direct viewing 
-[here](https://html-preview.github.io/?url=https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html).
+[here](https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html)
+or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html).
 
 ## Nextflow for reproducible workflows
 
