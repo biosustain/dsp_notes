@@ -37,7 +37,7 @@ def download_file(url, save_path, timeout=20):
 
 
 def replace_local_links_with_github_links(content: str, repo_url_base: str):
-    """
+    r"""
     Replace local links in the content with links to the GitHub repository.
     The regex pattern has two parts
     1. \[(.*?)\] matches the link text.
