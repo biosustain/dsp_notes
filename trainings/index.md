@@ -5,6 +5,49 @@ hands-on workshops about different subjects related to Data Science for DTU Bios
 and DTU Bioengineering research fellows. In this first edition we covered the subjects 
 below. If interested, stay tuned for future Data Science workshops!
 
+
+::::{grid} 2
+:::{grid-item-card}  Introduction the command line with bash
+Workshop 1
+^^^
+You can find the slides [here](practical_unix_workshop_slides.pdf). Find the associated 
+repository at 
+[github.com/biosustain/dsp_workshop_bash](https://github.com/biosustain/dsp_workshop_bash)
+:::
+
+:::{grid-item-card}  Introduction to GitHub and source control with git
+Workshop 2
+^^^
+Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).
+:::
+
+:::{grid-item-card} Nextflow workflows
+Workshop 3
+^^^
+Learn how to create and manage reproducible workflows using Nextflow.
+:::
+
+:::{grid-item-card} Docker introduction
+Workshop 4
+^^^
+Learn the basics of containerization and how to use Docker for reproducible research.
+:::
+
+::: {grid-item-card} Data Visualization with R
+Workshop 5
+^^^
+Learn how to create informative and visually appealing graphics using R. Same plots
+as in the Python course.
+:::
+
+::: {grid-item-card} Data Visualization with Python
+Workshop 6
+^^^
+Learn how to create informative and visually appealing graphics using Python. Same plots
+as in the R course.
+:::
+::::
+
 ## Introduction the command line with bash
 
 You can find the slides [here](practical_unix_workshop_slides.pdf). Find the associated 
@@ -54,6 +97,8 @@ Find the material, including slides and exercises, in the repository
 ## Full-day data type workshops
 
 In May 2025, we started to offer full-day workshops on specific data types:
+
+
 
 ### Massspectrometry-based proteomics
 
