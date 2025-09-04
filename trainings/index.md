@@ -8,6 +8,11 @@ below. If interested, stay tuned for future Data Science workshops!
 
 ## Half-day technical workshops
 
+<!--
+ see grid, card and grit-item-options:
+ https://sphinx-design.readthedocs.io/en/sbt-theme/
+-->
+
 ::::{grid} 2
 :::{grid-item-card}  Introduction the command line with bash
 Workshop 1
