@@ -14,40 +14,44 @@ below. If interested, stay tuned for future Data Science workshops!
 -->
 
 ::::{grid} 2
+:gutter: 3
+
 :::{grid-item-card}  Introduction the command line with bash
-Workshop 1
+:link: https://github.com/biosustain/dsp_workshop_bash
+:link-alt: github.com/biosustain/dsp_workshop_bash
+
+Command line basics
 ^^^
-You can find the slides [here](practical_unix_workshop_slides.pdf). Find the associated 
-repository at 
-[github.com/biosustain/dsp_workshop_bash](https://github.com/biosustain/dsp_workshop_bash)
+You can find the slides [here](practical_unix_workshop_slides.pdf).
 :::
 
 :::{grid-item-card}  Introduction to GitHub and source control with git
-Workshop 2
+:link: https://github.com/biosustain/git-tutorial
+:link-alt: github.com/biosustain/git-tutorial
+
+Git and GitHub
 ^^^
 Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).
 
-Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md)
-
-You can view a recording of the advanced training with some hints related specifically 
-to the exercises on youtube:
-[![Instructions on youtube](https://img.youtube.com/vi/mX3Il5xvKAs/maxresdefault.jpg
-)](https://www.youtube.com/watch?v=mX3Il5xvKAs)
-
+Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md).
 :::
 
 :::{grid-item-card} Nextflow workflows
-Workshop 3
+:link: https://github.com/biosustain/dsp_nextflow_training
+:link-alt: github.com/biosustain/dsp_nextflow_training
+
+Nextflow
 ^^^
 Learn how to create and manage reproducible workflows using Nextflow.
 
 Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
-The repository itself is available at
-[github.com/biosustain/dsp_nextflow_training](https://github.com/biosustain/dsp_nextflow_training).
 :::
 
 :::{grid-item-card} Docker introduction
-Workshop 4
+:link: https://github.com/biosustain/dsp_docker_training
+:link-alt: github.com/biosustain/dsp_docker_training
+
+Docker
 ^^^
 Learn the basics of containerization and how to use Docker for reproducible research.
 
@@ -55,19 +59,17 @@ Learn the basics of containerization and how to use Docker for reproducible rese
 Find the 
 [slides](https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf)
 and 
-[hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html) 
-under course contents at 
-[biosustain.github.io/dsp_docker_training/](https://biosustain.github.io/dsp_docker_training/).
+[hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html).
 :::
 
 ::: {grid-item-card} Data Visualization with R
-Workshop 5
+:link: https://github.com/biosustain/dsp_workshop_datavizR
+:link-alt: github.com/biosustain/dsp_workshop_datavizR
+
+Plotting in R
 ^^^
 Learn how to create informative and visually appealing graphics using R. Same plots
 as in the Python course.
-
-Find the material in the repository [biosustain/dsp_workshop_datavizR](https://github.com/biosustain/dsp_workshop_datavizR)
-on GitHub.
 
 The material is available as a html document for direct viewing 
 [here](https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html)
@@ -75,21 +77,21 @@ or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop
 :::
 
 ::: {grid-item-card} Data Visualization with Python
-Workshop 6
+Plotting in Python
 ^^^
 Learn how to create informative and visually appealing graphics using Python. Same plots
 as in the R course.
 :::
 
 ::: {grid-item-card} GitHub Actions Tutorial
-Workshop 7
+:link: https://github.com/biosustain/dsp_actions_tutorial
+:link-alt: github.com/biosustain/dsp_actions_tutorial
+
+Automation
 ^^^
 
 First introduction to continuous integration and continuous deployment (CI/CD) 
 using GitHub Actions.
-
-Find the material, including slides and exercises, in the repository
-[biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial).
 :::
 
 ::::
@@ -102,16 +104,23 @@ In May 2025, we started to offer full-day workshops on specific data types:
 :::: {grid} 3
 
 ::: {grid-item-card} Massspectrometry-based proteomics
-Find the course website [here](https://biosustain.github.io/dsp_course_proteomics_intro/)
-and the repository at [github.com/biosustain/dsp_proteomics_workshop](https://github.com/biosustain/dsp_course_proteomics_intro).
+:link: https://biosustain.github.io/dsp_course_proteomics_intro/
+:link-alt: biosustain.github.io/dsp_proteomics_workshop
+
+Find the repo [here](https://github.com/biosustain/dsp_course_proteomics_intro/)
 :::
 
 ::: {grid-item-card} Transcriptomics
-Find the course website [here](https://biosustain.github.io/dsp_transcriptomics_training/)
-and the repository at [github.com/biosustain/dsp_transcriptomics_training](https://github.com/biosustain/dsp_transcriptomics_training).
+:link: https://biosustain.github.io/dsp_transcriptomics_training/
+:link-alt: biosustain.github.io/dsp_transcriptomics_training
+
+Find the repo [here](https://github.com/biosustain/dsp_transcriptomics_training/).
 :::
+
 ::: {grid-item-card} Metagenomics
-Find the course website [here](https://biosustain.github.io/dsp_metagenomics_training/)
-and the repository at [github.com/biosustain/dsp_metagenomics_training](https://github.com/biosustain/dsp_metagenomics_training).
+:link: https://biosustain.github.io/dsp_metagenomics_training/
+:link-alt: biosustain.github.io/dsp_metagenomics_training
+
+Find the repo [here](https://github.com/biosustain/dsp_metagenomics_training/).
 :::
 ::::
