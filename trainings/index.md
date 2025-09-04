@@ -36,7 +36,7 @@ Learn how to use, collaborate and eventually contribute to projects on GitHub (o
 Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md).
 :::
 
-:::{grid-item-card} Nextflow workflows
+:::{grid-item-card} Introduction to Nextflow workflows
 :link: https://github.com/biosustain/dsp_nextflow_training
 :link-alt: github.com/biosustain/dsp_nextflow_training
 
@@ -77,10 +77,12 @@ or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop
 :::
 
 ::: {grid-item-card} Data Visualization with Python
-Plotting in Python
+Plotting in Python (coming soon)
 ^^^
 Learn how to create informative and visually appealing graphics using Python. Same plots
 as in the R course.
+
+Course will be available in November 2025.
 :::
 
 ::: {grid-item-card} GitHub Actions Tutorial
