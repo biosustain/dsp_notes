@@ -21,6 +21,7 @@ extensions = [
     "sphinx_copybutton",
     # "sphinx_examples",
     "sphinx_new_tab_link",
+    "sphinx_design",
 ]
 
 templates_path = ["_templates"]
@@ -45,7 +46,7 @@ html_theme = "pydata_sphinx_theme"
 #  https://myst-nb.readthedocs.io/en/latest/computation/execute.html
 nb_execution_mode = "auto"
 
-myst_enable_extensions = ["dollarmath", "amsmath"]
+myst_enable_extensions = ["dollarmath", "amsmath", "colon_fence"]
 
 # Plolty support through require javascript library
 # https://myst-nb.readthedocs.io/en/latest/render/interactive.html#plotly
@@ -93,5 +94,5 @@ html_theme_options = {
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# html_static_path = ['_static']
-
+html_static_path = ['_static']
+html_css_files = ['custom.css']
