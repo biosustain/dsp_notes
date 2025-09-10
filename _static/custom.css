@@ -34,9 +34,9 @@ https://sphinx-design.readthedocs.io/en/furo-theme/css_variables.html
     --sd-color-dark-text: #fff;
     --sd-color-shadow: rgba(227, 35, 35, 0.4);
     --sd-color-card-border: rgba(0, 0, 0, 0.125);
-    --sd-color-card-border-hover: hsla(231, 99%, 66%, 1); */
-    --sd-color-card-background:#ded9d7;
-    /* --sd-color-card-text: inherit;
+    --sd-color-card-border-hover: hsla(231, 99%, 66%, 1);
+    --sd-color-card-background: transparent;
+    --sd-color-card-text: inherit;
     --sd-color-card-header: transparent;
     --sd-color-card-footer: transparent;
     --sd-color-tabs-label-active: hsla(231, 99%, 66%, 1);

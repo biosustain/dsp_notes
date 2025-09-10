@@ -25,18 +25,18 @@ Command line basics
 You can find the slides [here](practical_unix_workshop_slides.pdf).
 :::
 
-:::{grid-item-card}  Introduction to GitHub and source control with git
+:::{grid-item-card}  Introduction to Github and Git
 :link: https://github.com/biosustain/git-tutorial
 :link-alt: github.com/biosustain/git-tutorial
 
-Git and GitHub
+Github and Git
 ^^^
 Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).
 
 Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md).
 :::
 
-:::{grid-item-card} Introduction to Nextflow workflows
+:::{grid-item-card} Nextflow training
 :link: https://github.com/biosustain/dsp_nextflow_training
 :link-alt: github.com/biosustain/dsp_nextflow_training
 
@@ -47,11 +47,11 @@ Learn how to create and manage reproducible workflows using Nextflow.
 Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
 :::
 
-:::{grid-item-card} Docker introduction
+:::{grid-item-card} Writing your DockerFile to containerize your app/software
 :link: https://github.com/biosustain/dsp_docker_training
 :link-alt: github.com/biosustain/dsp_docker_training
 
-Docker
+Docker basics
 ^^^
 Learn the basics of containerization and how to use Docker for reproducible research.
 
@@ -66,7 +66,7 @@ and
 :link: https://github.com/biosustain/dsp_workshop_datavizR
 :link-alt: github.com/biosustain/dsp_workshop_datavizR
 
-Plotting in R
+Data Visualization with R
 ^^^
 Learn how to create informative and visually appealing graphics using R. Same plots
 as in the Python course.
@@ -77,7 +77,7 @@ or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop
 :::
 
 ::: {grid-item-card} Data Visualization with Python
-Plotting in Python (coming soon)
+Data Visualization with Python (coming soon)
 ^^^
 Learn how to create informative and visually appealing graphics using Python. Same plots
 as in the R course.
