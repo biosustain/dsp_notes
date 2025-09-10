@@ -30,8 +30,10 @@
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5090fefc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -44,6 +46,7 @@
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'trainings/index';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
@@ -371,18 +374,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-the-command-line-with-bash">Introduction the command line with bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demystifying-git">Demystifying git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualizaton-with-r">Data Visualizaton with R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nextflow-for-reproducible-workflows">Nextflow for reproducible workflows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-introduction">Docker Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-tutorial">GitHub Actions Tutorial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops">Full-day data type workshops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massspectrometry-based-proteomics">Massspectrometry-based proteomics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcriptomics">Transcriptomics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metagenomics">Metagenomics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-day-technical-workshops">Half-day technical workshops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops">Full-day data type workshops</a></li>
 </ul>
             </nav>
         </div>
@@ -400,65 +393,148 @@ document.write(`
 hands-on workshops about different subjects related to Data Science for DTU Biosustain
 and DTU Bioengineering research fellows. In this first edition we covered the subjects
 below. If interested, stay tuned for future Data Science workshops!</p>
-<section id="introduction-the-command-line-with-bash">
-<h2>Introduction the command line with bash<a class="headerlink" href="#introduction-the-command-line-with-bash" title="Link to this heading">#</a></h2>
-<p>You can find the slides <a class="reference download internal" download="" href="../_downloads/dbc9f48b43f7be2ec205fa043a7b03c5/practical_unix_workshop_slides.pdf"><span class="xref download myst">here</span></a>. Find the associated
-repository at
-<a class="reference external" href="https://github.com/biosustain/dsp_workshop_bash" rel="noreferrer" target="_blank">github.com/biosustain/dsp_workshop_bash</a></p>
-</section>
-<section id="demystifying-git">
-<h2>Demystifying git<a class="headerlink" href="#demystifying-git" title="Link to this heading">#</a></h2>
-<p>Find the instructions for the training <a class="reference external" href="https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md" rel="noreferrer" target="_blank">here</a></p>
-<p>You can view a recording with some hints related specifically to the exercises on youtube:
-<a class="reference external" href="https://www.youtube.com/watch?v=mX3Il5xvKAs" rel="noreferrer" target="_blank"><img alt="Instructions on youtube" src="https://img.youtube.com/vi/mX3Il5xvKAs/maxresdefault.jpg" /></a></p>
-</section>
-<section id="data-visualizaton-with-r">
-<h2>Data Visualizaton with R<a class="headerlink" href="#data-visualizaton-with-r" title="Link to this heading">#</a></h2>
-<p>Find the material in the repository <a class="reference external" href="https://github.com/biosustain/dsp_workshop_datavizR" rel="noreferrer" target="_blank">biosustain/dsp_workshop_datavizR</a>
-on GitHub.</p>
-<p>The material is available as a html document for direct viewing
-<a class="reference external" href="https://html-preview.github.io/?url=https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html" rel="noreferrer" target="_blank">here</a>.</p>
-</section>
-<section id="nextflow-for-reproducible-workflows">
-<h2>Nextflow for reproducible workflows<a class="headerlink" href="#nextflow-for-reproducible-workflows" title="Link to this heading">#</a></h2>
-<p>Find the material as a website <a class="reference external" href="https://biosustain.github.io/dsp_nextflow_training" rel="noreferrer" target="_blank">here</a>.
-The repository itself is available at
-<a class="reference external" href="https://github.com/biosustain/dsp_nextflow_training" rel="noreferrer" target="_blank">github.com/biosustain/dsp_nextflow_training</a>.</p>
-</section>
-<section id="docker-introduction">
-<h2>Docker Introduction<a class="headerlink" href="#docker-introduction" title="Link to this heading">#</a></h2>
-<p>Find the
+<section id="half-day-technical-workshops">
+<h2>Half-day technical workshops<a class="headerlink" href="#half-day-technical-workshops" title="Link to this heading">#</a></h2>
+<!--
+ see grid, card and grit-item-options:
+ https://sphinx-design.readthedocs.io/en/sbt-theme/
+-->
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Command line basics</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Introduction the command line with bash</div>
+<p class="sd-card-text">You can find the slides <a class="reference download internal" download="" href="../_downloads/dbc9f48b43f7be2ec205fa043a7b03c5/practical_unix_workshop_slides.pdf"><span class="xref download myst">here</span></a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_workshop_bash" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_workshop_bash</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Github and Git</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Introduction to Github and Git</div>
+<p class="sd-card-text">Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).</p>
+<p class="sd-card-text">Find the instructions for the training <a class="reference external" href="https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md" rel="noreferrer" target="_blank">here</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/git-tutorial" rel="noreferrer" target="_blank"><span>github.com/biosustain/git-tutorial</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Nextflow</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Nextflow training</div>
+<p class="sd-card-text">Learn how to create and manage reproducible workflows using Nextflow.</p>
+<p class="sd-card-text">Find the material as a website <a class="reference external" href="https://biosustain.github.io/dsp_nextflow_training" rel="noreferrer" target="_blank">here</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_nextflow_training" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_nextflow_training</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Docker basics</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Writing your DockerFile to containerize your app/software</div>
+<p class="sd-card-text">Learn the basics of containerization and how to use Docker for reproducible research.</p>
+<p class="sd-card-text">Find the
 <a class="reference external" href="https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf" rel="noreferrer" target="_blank">slides</a>
 and
-<a class="reference external" href="https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html" rel="noreferrer" target="_blank">hands-on material (running in GitHub Codespaces)</a>
-under course contents at
-<a class="reference external" href="https://biosustain.github.io/dsp_docker_training/" rel="noreferrer" target="_blank">biosustain.github.io/dsp_docker_training/</a>.</p>
-</section>
-<section id="github-actions-tutorial">
-<h2>GitHub Actions Tutorial<a class="headerlink" href="#github-actions-tutorial" title="Link to this heading">#</a></h2>
-<p>First introduction to continuous integration and continuous deployment (CI/CD)
+<a class="reference external" href="https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html" rel="noreferrer" target="_blank">hands-on material (running in GitHub Codespaces)</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_docker_training" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_docker_training</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Data Visualization with R</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Data Visualization with R</div>
+<p class="sd-card-text">Learn how to create informative and visually appealing graphics using R. Same plots
+as in the Python course.</p>
+<p class="sd-card-text">The material is available as a html document for direct viewing
+<a class="reference external" href="https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html" rel="noreferrer" target="_blank">here</a>
+or <a class="reference external" href="https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html" rel="noreferrer" target="_blank">downloaded from GitHub’s website</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_workshop_datavizR" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_workshop_datavizR</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Data Visualization with Python (coming soon)</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Data Visualization with Python</div>
+<p class="sd-card-text">Learn how to create informative and visually appealing graphics using Python. Same plots
+as in the R course.</p>
+<p class="sd-card-text">Course will be available in November 2025.</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Automation</p>
+</div>
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+GitHub Actions Tutorial</div>
+<p class="sd-card-text">First introduction to continuous integration and continuous deployment (CI/CD)
 using GitHub Actions.</p>
-<p>Find the material, including slides and exercises, in the repository
-<a class="reference external" href="https://github.com/biosustain/dsp_actions_tutorial" rel="noreferrer" target="_blank">biosustain/dsp_actions_tutorial</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_actions_tutorial" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_actions_tutorial</span></a></div>
+</div>
+</div>
+</div>
 </section>
 <section id="full-day-data-type-workshops">
 <h2>Full-day data type workshops<a class="headerlink" href="#full-day-data-type-workshops" title="Link to this heading">#</a></h2>
 <p>In May 2025, we started to offer full-day workshops on specific data types:</p>
-<section id="massspectrometry-based-proteomics">
-<h3>Massspectrometry-based proteomics<a class="headerlink" href="#massspectrometry-based-proteomics" title="Link to this heading">#</a></h3>
-<p>Find the course website <a class="reference external" href="https://biosustain.github.io/dsp_course_proteomics_intro/" rel="noreferrer" target="_blank">here</a>
-and the repository at <a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro" rel="noreferrer" target="_blank">github.com/biosustain/dsp_proteomics_workshop</a>.</p>
-</section>
-<section id="transcriptomics">
-<h3>Transcriptomics<a class="headerlink" href="#transcriptomics" title="Link to this heading">#</a></h3>
-<p>Find the course website <a class="reference external" href="https://biosustain.github.io/dsp_transcriptomics_training/" rel="noreferrer" target="_blank">here</a>
-and the repository at <a class="reference external" href="https://github.com/biosustain/dsp_transcriptomics_training" rel="noreferrer" target="_blank">github.com/biosustain/dsp_transcriptomics_training</a>.</p>
-</section>
-<section id="metagenomics">
-<h3>Metagenomics<a class="headerlink" href="#metagenomics" title="Link to this heading">#</a></h3>
-<p>Find the course website <a class="reference external" href="https://biosustain.github.io/dsp_metagenomics_training/" rel="noreferrer" target="_blank">here</a>
-and the repository at <a class="reference external" href="https://github.com/biosustain/dsp_metagenomics_training" rel="noreferrer" target="_blank">github.com/biosustain/dsp_metagenomics_training</a>.</p>
-</section>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Massspectrometry-based proteomics</div>
+<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro/" rel="noreferrer" target="_blank">here</a></p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_course_proteomics_intro/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_proteomics_workshop</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Transcriptomics</div>
+<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_transcriptomics_training/" rel="noreferrer" target="_blank">here</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_transcriptomics_training/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_transcriptomics_training</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Metagenomics</div>
+<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_metagenomics_training/" rel="noreferrer" target="_blank">here</a>.</p>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_metagenomics_training/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_metagenomics_training</span></a></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -507,18 +583,8 @@ and the repository at <a class="reference external" href="https://github.com/bio
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-the-command-line-with-bash">Introduction the command line with bash</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demystifying-git">Demystifying git</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualizaton-with-r">Data Visualizaton with R</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nextflow-for-reproducible-workflows">Nextflow for reproducible workflows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-introduction">Docker Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions-tutorial">GitHub Actions Tutorial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops">Full-day data type workshops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#massspectrometry-based-proteomics">Massspectrometry-based proteomics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcriptomics">Transcriptomics</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metagenomics">Metagenomics</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-day-technical-workshops">Half-day technical workshops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops">Full-day data type workshops</a></li>
 </ul>
   </nav></div>
 
