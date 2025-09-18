@@ -77,12 +77,14 @@ or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop
 :::
 
 ::: {grid-item-card} Data Visualization with Python
-Data Visualization with Python (coming soon)
+:link: https://github.com/biosustain/dsp_workshop_dataviz_python
+:link-alt: github.com/biosustain/dsp_workshop_dataviz_python
+Data Visualization with Python
 ^^^
 Learn how to create informative and visually appealing graphics using Python. Same plots
 as in the R course.
 
-Course will be available in November 2025.
+Course is in development.
 :::
 
 ::: {grid-item-card} GitHub Actions Tutorial
