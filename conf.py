@@ -36,6 +36,7 @@ exclude_patterns = [
     "jupyter_execute",
     "conf.py",
     "fetch_files.py",
+    ".github",
 ]
 
 

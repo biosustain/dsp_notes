@@ -40,3 +40,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build
           # cname: website.com
+
+      - if: ${{ github.ref != 'refs/heads/main' }}
+        name: Save to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build
+          # hide dev version of website in subfolder
+          # will be cleared if the website is pushed to gh-pages from main (intended)
+          destination_dir: dev
