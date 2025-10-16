@@ -79,3 +79,12 @@ python/package_template
 
 hpc_dtu/setup_user_env
 ```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Ontologies
+
+ontologies/ontologies_notes
+```
+
