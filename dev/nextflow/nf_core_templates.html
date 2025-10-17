@@ -434,7 +434,20 @@ or singularity containers)</p></li>
 </section>
 <section id="define-the-report-path">
 <h2>Define the report path<a class="headerlink" href="#define-the-report-path" title="Link to this heading">#</a></h2>
-<p>https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports</p>
+<blockquote>
+<div><p>Did not yet succeed in getting the report to show up in Seqera Cloud</p>
+</div></blockquote>
+<p>Custom report can be added, e.g. from VueGen, to the
+<a class="reference external" href="https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports" rel="noreferrer" target="_blank">reports tab</a>.
+in Seqera Cloud using the <code class="docutils literal notranslate"><span class="pre">tower.yml</span></code> configuration file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># tower.yml</span>
+<span class="nt">reports</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">multiqc_report.html</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MultiQC</span><span class="nv"> </span><span class="s">HTML</span><span class="nv"> </span><span class="s">report&quot;</span>
+<span class="w">  </span><span class="nt">quarto_report.html</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;VUEGen</span><span class="nv"> </span><span class="s">HTML</span><span class="nv"> </span><span class="s">report&quot;</span>
+</pre></div>
+</div>
 </section>
 <section id="hints">
 <h2>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h2>

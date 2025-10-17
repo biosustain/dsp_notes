@@ -41,8 +41,20 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 
 ## Define the report path
 
-https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports
+> Did not yet succeed in getting the report to show up in Seqera Cloud
 
+Custom report can be added, e.g. from VueGen, to the 
+[reports tab](https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports).
+in Seqera Cloud using the `tower.yml` configuration file.
+
+```yaml
+# tower.yml
+reports:
+  multiqc_report.html:
+    display: "MultiQC HTML report"
+  quarto_report.html:
+    display: "VUEGen HTML report"
+```
 
 ## Hints
 
