@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>notes for ontologies &#8212; Data Science Platform notes  documentation</title>
+    <title>Building a custom nf-core analysis pipeline &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -47,12 +47,13 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ontologies/ontologies_notes';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/nf_core_templates';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="DTU HPC" href="../hpc_dtu/setup_user_env.html" />
+    <link rel="next" title="Documentation using Sphinx, MyST-NB" href="../sphinx/0_overview.html" />
+    <link rel="prev" title="JavaDocs and Code Documentation" href="javadocs_process.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,9 +194,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pipeline_diagrams.html">Nextflow diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
 <ul class="nav bd-sidenav">
@@ -210,10 +212,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ontologies</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">notes for ontologies</a></li>
 </ul>
 
     </div>
@@ -283,7 +281,7 @@
       
       
       
-      <li><a href="../_sources/ontologies/ontologies_notes.md" target="_blank"
+      <li><a href="../_sources/nextflow/nf_core_templates.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -354,7 +352,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -365,11 +365,23 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>notes for ontologies</h1>
+    <h1>Building a custom nf-core analysis pipeline</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptions-to-the-pipeline-created-from-the-template">Make adaptions to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -379,9 +391,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notes-for-ontologies">
-<h1>notes for ontologies<a class="headerlink" href="#notes-for-ontologies" title="Link to this heading">#</a></h1>
-<p>public ontology notes will be added here</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="building-a-custom-nf-core-analysis-pipeline">
+<h1>Building a custom nf-core analysis pipeline<a class="headerlink" href="#building-a-custom-nf-core-analysis-pipeline" title="Link to this heading">#</a></h1>
+<p>These descriptions are based on the custom pipeline
+<a class="reference external" href="https://github.com/biosustain/dsp_demo_nf_acore_vuegen" rel="noreferrer" target="_blank">dsp_demo_nf_acore_vuegen</a>
+which is used to highlight how an analysis notebook
+based on acore can be integrated with a report based on vuegen.</p>
+<p>It is based on the nf-core <code class="docutils literal notranslate"><span class="pre">tools</span></code> and their template for a nextflow repository, see:
+<a class="reference external" href="https://github.com/nf-core/tools/tree/main/nf_core/pipeline-template" rel="noreferrer" target="_blank">nf-core/tools</a>.</p>
+<section id="using-the-template">
+<h2>Using the template<a class="headerlink" href="#using-the-template" title="Link to this heading">#</a></h2>
+<p>The instructions are brief on their <a class="reference external" href="https://nf-co.re/docs/guidelines/pipelines/requirements/use_the_template" rel="noreferrer" target="_blank">website</a>.
+Follow the command line instructions. Per default it is based on genomics data showing
+a fastqc analysis pipeline.</p>
+<ul class="simple">
+<li><p>can be customized to have a prefix, e.g. <code class="docutils literal notranslate"><span class="pre">dsp-</span></code> instead of <code class="docutils literal notranslate"><span class="pre">nf-core-</span></code>. See
+<a class="reference external" href="https://nf-co.re/docs/nf-core-tools/pipelines/create#customization" rel="noreferrer" target="_blank">customization options</a>
+of <code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">pipelines</span> <span class="pre">create</span></code> command. Set <code class="docutils literal notranslate"><span class="pre">--organization</span> <span class="pre">dsp</span></code> to have <code class="docutils literal notranslate"><span class="pre">dsp-</span></code> prefix.</p></li>
+<li><p>pipeline structure explained
+<a class="reference external" href="https://nf-co.re/docs/contributing/pipelines/pipeline_file_structure" rel="noreferrer" target="_blank">here</a></p></li>
+<li><p>an input schema (e.g. a SDRF file) can be defined using the
+<a class="reference external" href="https://nextflow-io.github.io/nf-schema/latest/nextflow_schema/create_schema/" rel="noreferrer" target="_blank">schema-tutorial</a>.
+The default pipeline has as single input a csv sample sheet, and an output directory.</p></li>
+</ul>
+</section>
+<section id="make-adaptions-to-the-pipeline-created-from-the-template">
+<h2>Make adaptions to the pipeline created from the template<a class="headerlink" href="#make-adaptions-to-the-pipeline-created-from-the-template" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>edit the schema and remove the parameters which are not needed:
+<code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">pipelines</span> <span class="pre">schema</span> <span class="pre">build</span></code></p></li>
+<li><p>then try to get it to run</p></li>
+</ul>
+</section>
+<section id="wave">
+<h2>Wave<a class="headerlink" href="#wave" title="Link to this heading">#</a></h2>
+<p>Can be used to auto-generate containers for workflow runs (if conda is not available).</p>
+<ul class="simple">
+<li><p>from conda environment to containerized version</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">wave</span></code> profile from nf-core template config (will deactivate any pre-built docker
+or singularity containers)</p></li>
+</ul>
+</section>
+<section id="define-the-report-path">
+<h2>Define the report path<a class="headerlink" href="#define-the-report-path" title="Link to this heading">#</a></h2>
+<p>https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports</p>
+</section>
+<section id="hints">
+<h2>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>the example was moved from a course repository to it’s separate repository
+<a class="reference external" href="https://github.com/biosustain/dsp_demo_nf_acore_vuegen" rel="noreferrer" target="_blank">dsp_demo_nf_acore_vuegen</a>
+in order to make it executable on Seqera Cloud. The intial history can be found
+<a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro/pull/18" rel="noreferrer" target="_blank">here</a>.</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -396,13 +459,22 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../hpc_dtu/setup_user_env.html"
+       href="javadocs_process.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DTU HPC</p>
+        <p class="prev-next-title">JavaDocs and Code Documentation</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../sphinx/0_overview.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation using Sphinx, MyST-NB</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -410,6 +482,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptions-to-the-pipeline-created-from-the-template">Make adaptions to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

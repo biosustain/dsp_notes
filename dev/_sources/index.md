@@ -52,6 +52,7 @@ seqera/quantms
 
 nextflow/pipeline_diagrams
 nextflow/javadocs_process
+nextflow/nf_core_templates
 ```
 
 ```{toctree}
@@ -79,12 +80,3 @@ python/package_template
 
 hpc_dtu/setup_user_env
 ```
-
-```{toctree}
-:maxdepth: 2
-:hidden:
-:caption: Ontologies
-
-ontologies/ontologies_notes
-```
-
