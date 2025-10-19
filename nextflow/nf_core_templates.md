@@ -58,7 +58,7 @@ reports:
 
 ## Hints
 
-- the example was moved from a course repository to it's separate repository
+- the example was moved from a course repository to its separate repository
   [dsp_demo_nf_acore_vuegen](https://github.com/biosustain/dsp_demo_nf_acore_vuegen)
   in order to make it executable on Seqera Cloud. The intial history can be found 
   [here](https://github.com/biosustain/dsp_course_proteomics_intro/pull/18).
