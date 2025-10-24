@@ -41,7 +41,9 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 
 ## Define the report path
 
-> Did not yet succeed in getting the report to show up in Seqera Cloud
+> The file has to be linked in a process output explicitly, not just the folder, 
+> i.e. `reports` as output path would
+> not display a report in `reports/myreport.html`, but `reports/myreport*` would.
 
 Custom report can be added, e.g. from VueGen, to the 
 [reports tab](https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports).
