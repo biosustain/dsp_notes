@@ -435,7 +435,9 @@ or singularity containers)</p></li>
 <section id="define-the-report-path">
 <h2>Define the report path<a class="headerlink" href="#define-the-report-path" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>Did not yet succeed in getting the report to show up in Seqera Cloud</p>
+<div><p>The file has to be linked in a process output explicitly, not just the folder,
+i.e. <code class="docutils literal notranslate"><span class="pre">reports</span></code> as output path would
+not display a report in <code class="docutils literal notranslate"><span class="pre">reports/myreport.html</span></code>, but <code class="docutils literal notranslate"><span class="pre">reports/myreport*</span></code> would.</p>
 </div></blockquote>
 <p>Custom report can be added, e.g. from VueGen, to the
 <a class="reference external" href="https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports" rel="noreferrer" target="_blank">reports tab</a>.
@@ -452,9 +454,9 @@ in Seqera Cloud using the <code class="docutils literal notranslate"><span class
 <section id="hints">
 <h2>Hints<a class="headerlink" href="#hints" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>the example was moved from a course repository to it’s separate repository
+<li><p>the example was moved from a course repository to its separate repository
 <a class="reference external" href="https://github.com/biosustain/dsp_demo_nf_acore_vuegen" rel="noreferrer" target="_blank">dsp_demo_nf_acore_vuegen</a>
-in order to make it executable on Seqera Cloud. The intial history can be found
+in order to make it executable on Seqera Cloud. The initial history can be found
 <a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro/pull/18" rel="noreferrer" target="_blank">here</a>.</p></li>
 </ul>
 </section>

@@ -41,7 +41,9 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 
 ## Define the report path
 
-> Did not yet succeed in getting the report to show up in Seqera Cloud
+> The file has to be linked in a process output explicitly, not just the folder, 
+> i.e. `reports` as output path would
+> not display a report in `reports/myreport.html`, but `reports/myreport*` would.
 
 Custom report can be added, e.g. from VueGen, to the 
 [reports tab](https://docs.seqera.io/platform-cloud/reports/overview/#configure-reports).
@@ -58,7 +60,7 @@ reports:
 
 ## Hints
 
-- the example was moved from a course repository to it's separate repository
+- the example was moved from a course repository to its separate repository
   [dsp_demo_nf_acore_vuegen](https://github.com/biosustain/dsp_demo_nf_acore_vuegen)
-  in order to make it executable on Seqera Cloud. The intial history can be found 
+  in order to make it executable on Seqera Cloud. The initial history can be found 
   [here](https://github.com/biosustain/dsp_course_proteomics_intro/pull/18).
