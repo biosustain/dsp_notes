@@ -197,6 +197,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
 <ul class="nav bd-sidenav">
@@ -529,6 +530,24 @@ errors to specific non-released versions. The dynamic version is picked up in th
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.urls]</span>
 <span class="s2">&quot;Bug Tracker&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/RasmussenLab/python_package/issues&quot;</span>
 <span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/RasmussenLab/python_package&quot;</span>
+</pre></div>
+</div>
+<p>The template also sets a command line script entry point, which allows to run
+the function <code class="docutils literal notranslate"><span class="pre">main</span></code> in the <code class="docutils literal notranslate"><span class="pre">mockup</span></code> module of the package as a command line script,
+wrapping the <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> function from the <code class="docutils literal notranslate"><span class="pre">mockup</span></code> module.
+The template uses the standard library <a class="reference external" href="https://docs.python.org/3/library/argparse.html" rel="noreferrer" target="_blank">argparse</a>
+module to parse parameters from the command line and creates a basic interface.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Script entry points, i.e. command line commands available after installing the package</span>
+<span class="c1"># e.g. implemented using argparse</span>
+<span class="c1"># Then you can type: `python-package-hello -h` in the terminal</span>
+<span class="k">[project.scripts]</span>
+<span class="n">python-package-hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python_package.cli:main&quot;</span>
+</pre></div>
+</div>
+<p>You can therefore run the command line script using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python-package-hello<span class="w"> </span>-h
+<span class="c1"># print hello world 3 times</span>
+python-package-hello<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span>
 </pre></div>
 </div>
 </section>

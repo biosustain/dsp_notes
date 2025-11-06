@@ -52,6 +52,7 @@ seqera/quantms
 
 nextflow/pipeline_diagrams
 nextflow/javadocs_process
+nextflow/nf_core_templates
 ```
 
 ```{toctree}
