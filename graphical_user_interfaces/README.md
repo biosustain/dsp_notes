@@ -52,7 +52,11 @@ listed below. Generally, all frameworks should offer a Python API.
   - `if` class with direct invocation allows to choose when to run the callback
 - use `st.empty` to define the order of widgets before you actually create these. Use
   the container initialized by `st.empty()` later to populate it.
-
+- if possible set session state explicitly and not through widget keys. If you read app
+  in the 
+  [documentation](https://docs.streamlit.io/develop/concepts/architecture/session-state#session-state-and-widget-state-association),
+  think of a single page in a multi-page app. Cross-page state has
+  to be managed manually.
 
 Material:
 
