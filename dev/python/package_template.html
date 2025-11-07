@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Design descriptions and details for the Python package template &#8212; Data Science Platform notes  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5090fefc" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/package_template';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Graphical User Interfaces" href="../graphical_user_interfaces/README.html" />
+    <link rel="prev" title="Coding (best) practices for Data Science" href="best_practices.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data Science Platform notes  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/biosustain/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trainings/index.html">Trainings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Recording tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../recordings/index.html">Recordings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Azure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../azure/creating_ressources.html">Create Azure resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../azure/running_nextflow_on_azure.html">How to run a nextflow pipleline on Azure</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seqera/index.html">Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/debugging.html">Debugging jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/performance.html">Utilizing Flexible Compute Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/setup_infrastructure.html">Setup Azure batch compute environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/0_overview.html">Documentation using Sphinx, MyST-NB</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="percent_notebooks.html">Percent Notebooks in VSCode (and other editior)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practices.html">Coding (best) practices for Data Science</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Design descriptions and details for the Python package template</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">GUIs (using Python)</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../graphical_user_interfaces/README.html">Graphical User Interfaces</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/biosustain/dsp_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/python/package_template.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Design descriptions and details for the Python package template</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">Project structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packaging-files">Core packaging files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-required-in-pyproject-toml">Changes required in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-directory-layout-of-the-package">Source directory layout of the package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-changes-in-conf-py">Required changes in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme-autodoc-and-intersphinx">Theme, autodoc and intersphinx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-documentation-locally-with-integration-tests">Building the documentation locally (with integration tests)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-docs">Read The Docs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-project-structure">Full project structure</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="design-descriptions-and-details-for-the-python-package-template">
+<h1>Design descriptions and details for the Python package template<a class="headerlink" href="#design-descriptions-and-details-for-the-python-package-template" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>file downloaded from <a class="reference external" href="https://github.com/biosustain/python_package/raw/refs/heads/main/developing.md" rel="noreferrer" target="_blank">source</a><br />
+Author: Henry Webel</p>
+</div></blockquote>
+<p><a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/" rel="noreferrer" target="_blank">packaging.python.org</a>
+has an excellent tutorial on how to package a Python project. I read and used insights from
+that website to help create the template which is available on GitHub at
+<a class="github reference external" href="https://github.com/RasmussenLab/python_package" rel="noreferrer" target="_blank">RasmussenLab/python_package</a>
+and I want to give here an overview specifically to some details regarding this template.
+Some are overlapping with the
+<a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/" rel="noreferrer" target="_blank">packaging.python.org</a>
+tutorial, but as always we decided for a certain set of tools, conventions and complexity
+which needs some explanation.</p>
+<p>Here a brief overview of external resources you can also look at:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/" rel="noreferrer" target="_blank">packaging.python.org</a></p></li>
+<li><p><a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/index.html" rel="noreferrer" target="_blank">setuptools documentation</a></p></li>
+<li><p><a class="reference external" href="https://learn.scientific-python.org/development/" rel="noreferrer" target="_blank">learn.scientific-python.org</a></p></li>
+<li><p><a class="reference external" href="https://py-pkgs.org/" rel="noreferrer" target="_blank">Py-Pkgs</a></p></li>
+</ul>
+<section id="project-structure">
+<h2>Project structure<a class="headerlink" href="#project-structure" title="Link to this heading">#</a></h2>
+<p>First an overview of the main folder structure. See line comments for details on what
+is the purpose of each folder or file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python_package
+├──<span class="w"> </span>docs<span class="w"> </span><span class="c1"># Documentation using Sphinx</span>
+├──<span class="w"> </span>src<span class="w"> </span><span class="c1"># the source code of the package</span>
+├──<span class="w"> </span>tests<span class="w"> </span><span class="c1"># pytest tests</span>
+├──<span class="w"> </span>LICENSE<span class="w"> </span><span class="c1"># License file specifying usage terms</span>
+├──<span class="w"> </span>MANIFEST.in<span class="w"> </span><span class="c1"># non-python files to include into the build package</span>
+├──<span class="w"> </span>pyproject.toml<span class="w"> </span><span class="c1"># python package metadata, dependencies and configurations (incl. build tools)</span>
+├──<span class="w"> </span>pytest.ini<span class="w"> </span><span class="c1"># pytest configuration</span>
+├──<span class="w"> </span>README.md<span class="w"> </span><span class="c1"># README which is rendered on GitHub (or other hosting services)</span>
+└──<span class="w"> </span>setup.cfg<span class="w"> </span><span class="c1"># old python configuration file, empty</span>
+└──<span class="w"> </span>setup.py<span class="w"> </span><span class="c1"># artefact for backward compatibility, do not change</span>
+</pre></div>
+</div>
+</section>
+<section id="core-packaging-files">
+<h2>Core packaging files<a class="headerlink" href="#core-packaging-files" title="Link to this heading">#</a></h2>
+<p>We will first look at <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> and its relation to the
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> directory. The
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> file is the main configuration file for the Python package
+and is used to specify the package metadata, dependencies, build tools and configurations.
+The <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> folder stores the actual source code of the package, where the package itself is
+the subdirectories of the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> directory. The  (e.g. <code class="docutils literal notranslate"><span class="pre">src/python_package</span></code>).</p>
+<details>
+<summary>About <code>setup.py</code> and <code>setup.cfg</code> configuration files</summary>
+<p>The <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a> file is an artefact for backward compatibility and should not
+be changed.  Everything that used to be in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a> or
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.cfg" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code></a> is now largely in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a>.
+The notable exception would be the desired maximum line length in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> for
+the tool <a class="reference external" href="https://flake8.pycqa.org/" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">flake8</span></code></a>, which does not yet supported
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> configuration. As we use <code class="docutils literal notranslate"><span class="pre">ruff</span></code> as linter,
+we left it empty, but in case you want to use <code class="docutils literal notranslate"><span class="pre">flake8</span></code>, you can add:</p>
+<div class="highlight-INI notranslate"><div class="highlight"><pre><span></span><span class="c1">; setup.cfg</span>
+<span class="k">[flake8]</span>
+<span class="na">exclude</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">docs</span>
+<span class="na">max-line-length</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">88</span>
+<span class="na">aggressive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2</span>
+</pre></div>
+</div>
+</details>
+<section id="changes-required-in-pyproject-toml">
+<h3>Changes required in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code><a class="headerlink" href="#changes-required-in-pyproject-toml" title="Link to this heading">#</a></h3>
+<p>You have to change entries under the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> section to match your project name,
+description, author, license, etc. Make sure to pick a license that works for you, e.g.
+using <a class="reference external" href="https://choosealicense.com/" rel="noreferrer" target="_blank">choosealicense.com</a>. Also update the <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file
+accordingly.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dependencies</span></code> key can
+list the dependencies and is currently commented out. The dependencies could also be
+specified in via a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, if you already have such a file.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># ref: https://setuptools.pypa.io/en/stable/userguide/pyproject_config.html</span>
+<span class="k">[project]</span>
+<span class="n">authors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;First Last&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s2">&quot;first.last@gmail.com&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">]</span>
+<span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;A small example package&quot;</span>
+<span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python_package&quot;</span>
+<span class="c1"># This means: Load the version from the package itself.</span>
+<span class="c1"># See the section below: [tools.setuptools.dynamic]</span>
+<span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1"># version is loaded from the package</span>
+<span class="c1">#&quot;dependencies&quot;, # add if using requirements.txt</span>
+<span class="p">]</span>
+<span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.9&quot;</span>
+<span class="c1"># These are keywords</span>
+<span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;Operating System :: OS Independent&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">license</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;MIT&quot;</span><span class="w"> </span><span class="c1"># https://choosealicense.com/</span>
+<span class="c1"># # add dependencies here: (use one of the two)</span>
+<span class="c1"># dependencies = [&quot;numpy&quot;, &quot;pandas&quot;, &quot;scipy&quot;, &quot;matplotlib&quot;, &quot;seaborn&quot;]</span>
+<span class="c1"># use requirements.txt instead of pyproject.toml for dependencies</span>
+<span class="c1"># https://stackoverflow.com/a/73600610/9684872</span>
+<span class="c1"># [tool.setuptools.dynamic]</span>
+<span class="c1"># dependencies = {file = [&quot;requirements.txt&quot;]}</span>
+</pre></div>
+</div>
+<p>The entry</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dynamic</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;version&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>means that the version is loaded dynamically using the extension
+<a class="reference external" href="https://setuptools-scm.readthedocs.io/" rel="noreferrer" target="_blank">setuptools_scm</a>
+we list under the <code class="docutils literal notranslate"><span class="pre">[build-system]</span></code> section in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a>.
+This is done to avoid having to manually update the version and integrate with automatic
+versioning through releases on GitHub. It also
+ensures that each commit has a unique version number, which is useful for attributing
+errors to specific non-released versions. The dynamic version is picked up in the
+<code class="docutils literal notranslate"><span class="pre">__version__</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file of the package, which is located in the
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src/python_package" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src/python_package</span></code></a> directory.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[build-system]</span>
+<span class="n">build-backend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;setuptools.build_meta&quot;</span>
+<span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;setuptools_scm&gt;=8&quot;</span><span class="p">]</span>
+
+<span class="k">[tool.setuptools_scm]</span>
+<span class="c1"># https://setuptools-scm.readthedocs.io/ </span>
+<span class="c1"># used to pick up the version from the git tags or the latest commit.</span>
+</pre></div>
+</div>
+<p>Please also update the project URL to your project:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.urls]</span>
+<span class="s2">&quot;Bug Tracker&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/RasmussenLab/python_package/issues&quot;</span>
+<span class="s2">&quot;Homepage&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://github.com/RasmussenLab/python_package&quot;</span>
+</pre></div>
+</div>
+<p>The template also sets a command line script entry point, which allows to run
+the function <code class="docutils literal notranslate"><span class="pre">main</span></code> in the <code class="docutils literal notranslate"><span class="pre">mockup</span></code> module of the package as a command line script,
+wrapping the <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> function from the <code class="docutils literal notranslate"><span class="pre">mockup</span></code> module.
+The template uses the standard library <a class="reference external" href="https://docs.python.org/3/library/argparse.html" rel="noreferrer" target="_blank">argparse</a>
+module to parse parameters from the command line and creates a basic interface.</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Script entry points, i.e. command line commands available after installing the package</span>
+<span class="c1"># e.g. implemented using argparse</span>
+<span class="c1"># Then you can type: `python-package-hello -h` in the terminal</span>
+<span class="k">[project.scripts]</span>
+<span class="n">python-package-hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;python_package.cli:main&quot;</span>
+</pre></div>
+</div>
+<p>You can therefore run the command line script using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python-package-hello<span class="w"> </span>-h
+<span class="c1"># print hello world 3 times</span>
+python-package-hello<span class="w"> </span>-n<span class="w"> </span><span class="m">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="source-directory-layout-of-the-package">
+<h2>Source directory layout of the package<a class="headerlink" href="#source-directory-layout-of-the-package" title="Link to this heading">#</a></h2>
+<p>The source code of the package is located in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory, to have a project
+independent folder to look for the source code recognized by most tools you would need
+to build a package
+(read on <a class="reference external" href="https://packaging.python.org/en/latest/guides/packaging-namespace-packages/" rel="noreferrer" target="_blank">packagin namespace packages</a>).
+It also allows to have multiple subpackages or modules
+in the same project under the <code class="docutils literal notranslate"><span class="pre">python_package</span></code> package (see example
+<a class="reference external" href="https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#src-layout" rel="noreferrer" target="_blank">here</a>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>├──<span class="w"> </span>src
+│<span class="w">   </span>└──<span class="w"> </span>python_package
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py<span class="w"> </span><span class="c1"># imported when the package is imported (import python_package)</span>
+│<span class="w">       </span>└──<span class="w"> </span>mockup.py<span class="w"> </span><span class="c1"># a submodule of the package (import python_package.mockup)</span>
+</pre></div>
+</div>
+<p>So you will need to rename the <code class="docutils literal notranslate"><span class="pre">python_package</span></code> directory to your package name,
+e.g. <code class="docutils literal notranslate"><span class="pre">my_package</span></code> and specify the package name in the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> file
+under the <code class="docutils literal notranslate"><span class="pre">[project]</span></code> section:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;my_package&quot;</span>
+</pre></div>
+</div>
+<p>Strictly speaking you can give different names in both places, but this will only confuse
+potential users. Think of <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> for an example of a package that uses a different
+name in the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> file and the source code directory name,
+leading to the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package name when imported.</p>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">#</a></h2>
+<p>The documentation is created using <a class="reference external" href="https://www.sphinx-doc.org/en/master/" rel="noreferrer" target="_blank">Sphinx</a>,
+which is common for Python documentation. It relies additionally on several extensions
+enabling the use of <code class="docutils literal notranslate"><span class="pre">markdown</span></code> and <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> notebooks.</p>
+<p>The documentation is located in the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs</span></code></a> directory. Sphinx is configured via
+the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/conf.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a> file, where you can specify the extension you want:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in docs/conf.py</span>
+
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;sphinx.ext.autodoc&quot;</span><span class="p">,</span>  <span class="c1"># Core extension for generating documentation from docstrings</span>
+    <span class="s2">&quot;sphinx.ext.autodoc.typehints&quot;</span><span class="p">,</span>  <span class="c1"># Automatically document type hints in function signatures</span>
+    <span class="s2">&quot;sphinx.ext.viewcode&quot;</span><span class="p">,</span>  <span class="c1"># Include links to the source code in the documentation</span>
+    <span class="s2">&quot;sphinx.ext.napoleon&quot;</span><span class="p">,</span>  <span class="c1"># Support for Google and NumPy style docstrings</span>
+    <span class="s2">&quot;sphinx.ext.intersphinx&quot;</span><span class="p">,</span>  <span class="c1"># allows linking to other projects&#39; documentation in API</span>
+    <span class="s2">&quot;sphinx_new_tab_link&quot;</span><span class="p">,</span>  <span class="c1"># each link opens in a new tab</span>
+    <span class="s2">&quot;myst_nb&quot;</span><span class="p">,</span>  <span class="c1"># Markdown and Jupyter Notebook support</span>
+    <span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span>  <span class="c1"># add copy button to code blocks</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>These are added as dependencies through the
+<code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> section:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="c1"># Optional dependencies to locally build the documentation, also used for </span>
+<span class="c1"># readthedocs.</span>
+<span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;sphinx-book-theme&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;myst-nb&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;ipywidgets&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;sphinx-new-tab-link!=0.2.2&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;jupytext&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="required-changes-in-conf-py">
+<h3>Required changes in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code><a class="headerlink" href="#required-changes-in-conf-py" title="Link to this heading">#</a></h3>
+<p>The required changes in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/conf.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a> are at the following places:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in docs/conf.py</span>
+
+<span class="n">project</span> <span class="o">=</span> <span class="s2">&quot;python_package&quot;</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="s2">&quot;2025, First Last&quot;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="s2">&quot;First Last&quot;</span>
+<span class="n">PACKAGE_VERSION</span> <span class="o">=</span> <span class="n">metadata</span><span class="o">.</span><span class="n">version</span><span class="p">(</span><span class="s2">&quot;python_package&quot;</span><span class="p">)</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># and again links to your project repository</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;github_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/RasmussenLab/python_package&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;repository_url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://github.com/RasmussenLab/python_package&quot;</span><span class="p">,</span>
+    <span class="c1"># more...</span>
+<span class="p">}</span>
+
+<span class="c1"># ...</span>
+
+<span class="c1"># and one last line (the last below)</span>
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;READTHEDOCS&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;True&quot;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+    <span class="n">PROJECT_ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
+    <span class="n">PACKAGE_ROOT</span> <span class="o">=</span> <span class="n">PROJECT_ROOT</span> <span class="o">/</span> <span class="s2">&quot;src&quot;</span> <span class="o">/</span> <span class="s2">&quot;python_package&quot;</span>
+</pre></div>
+</div>
+<p>The last block is for Read The Docs to be able to generate the API documentation of your
+package on the fly. See the Read The Docs section below for more details.</p>
+</section>
+<section id="theme-autodoc-and-intersphinx">
+<h3>Theme, autodoc and intersphinx<a class="headerlink" href="#theme-autodoc-and-intersphinx" title="Link to this heading">#</a></h3>
+<p>We build the documentation based on the template
+<a class="reference external" href="https://sphinx-book-theme.readthedocs.io" rel="noreferrer" target="_blank">sphinx_book_theme</a>, which is set in the
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/conf.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a> file and parts of our docs requirements in
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s2">&quot;sphinx_book_theme&quot;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>If you use a different theme, some of the settings in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> might not be applicable
+and need to be changed. Explore other themes here:
+<a class="reference external" href="https://sphinx-themes.org/" rel="noreferrer" target="_blank">sphinx-themes.org</a></p>
+</div></blockquote>
+<p>The API of the Python package in the <code class="docutils literal notranslate"><span class="pre">src</span></code> directory is automatically included
+in the documentation using the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">autodoc</span></code> extension</a>.
+We use per default the <code class="docutils literal notranslate"><span class="pre">numpydoc</span></code> style for docstrings, see the format
+<a class="reference external" href="https://numpydoc.readthedocs.io/en/stable/format.html" rel="noreferrer" target="_blank">here</a>.
+The API documentation can be augmented with highlights from other types from projects
+using <code class="docutils literal notranslate"><span class="pre">intersphinx</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Intersphinx options</span>
+<span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;python&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;https://docs.python.org/3&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+    <span class="c1"># &quot;pandas&quot;: (&quot;https://pandas.pydata.org/pandas-docs/stable/&quot;, None),</span>
+    <span class="c1"># &quot;scikit-learn&quot;: (&quot;https://scikit-learn.org/stable/&quot;, None),</span>
+    <span class="c1"># &quot;matplotlib&quot;: (&quot;https://matplotlib.org/stable/&quot;, None),</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here we only add the core Python documentation, but you can add more projects
+like <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, or <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to the mapping.</p>
+</section>
+<section id="building-the-documentation-locally-with-integration-tests">
+<h3>Building the documentation locally (with integration tests)<a class="headerlink" href="#building-the-documentation-locally-with-integration-tests" title="Link to this heading">#</a></h3>
+<p>To build the documentation locally, you can follow the instructions in the
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/README.md" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs/README.md</span></code></a>, which you should also update with your name changes.
+In short, you can run the following commands in the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs</span></code></a> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># in root of the project</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[docs]&quot;</span>
+<span class="nb">cd</span><span class="w"> </span>docs<span class="w"> </span><span class="c1"># change to docs directory</span>
+sphinx-apidoc<span class="w"> </span>--force<span class="w"> </span>--implicit-namespaces<span class="w"> </span>--module-first<span class="w"> </span>-o<span class="w"> </span>reference<span class="w"> </span>../src/python_package
+sphinx-build<span class="w"> </span>-n<span class="w"> </span>-W<span class="w"> </span>--keep-going<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>./<span class="w"> </span>./_build/
+</pre></div>
+</div>
+<p>this will create a <code class="docutils literal notranslate"><span class="pre">reference</span></code> directory with the API documentation of the Python package
+<code class="docutils literal notranslate"><span class="pre">python_package</span></code>, a <code class="docutils literal notranslate"><span class="pre">jupyter_execute</span></code> for the tutorial in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/tutorial" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs/tutorial</span></code></a>
+and a <code class="docutils literal notranslate"><span class="pre">_build</span></code> directory with an HTML version of the documentation. You can open the
+<code class="docutils literal notranslate"><span class="pre">_build/index.html</span></code> file in your browser to view the documentation built locally.</p>
+<p>The tutorial related configuration in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> is the following, specifying that
+errors stop the build process ensuring that examples are tested:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#  https://myst-nb.readthedocs.io/en/latest/computation/execute.html</span>
+<span class="n">nb_execution_mode</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span>
+
+<span class="n">myst_enable_extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dollarmath&quot;</span><span class="p">,</span> <span class="s2">&quot;amsmath&quot;</span><span class="p">]</span>
+
+<span class="c1"># Plotly support through require javascript library</span>
+<span class="c1"># https://myst-nb.readthedocs.io/en/latest/render/interactive.html#plotly</span>
+<span class="n">html_js_files</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js&quot;</span>
+<span class="p">]</span>
+
+<span class="c1"># https://myst-nb.readthedocs.io/en/latest/configuration.html</span>
+<span class="c1"># Execution</span>
+<span class="n">nb_execution_raise_on_error</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="c1"># Rendering</span>
+<span class="n">nb_merge_streams</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The tutorials are meant as a sort of integration test, where you make sure that the core
+functionality your project wants to support is working as expected. For easier github
+diffs, we use <a class="reference external" href="https://jupytext.readthedocs.io" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">jupytext</span></code></a>, which allows to
+have the tutorial in both a Jupyter Notebook format and a Python script format.
+You have to keep the files in sync using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupytext<span class="w"> </span>--sync<span class="w"> </span>docs/tutorial/*.ipynb
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/tutorial/.jupytext" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs/tutorial/.jupytext</span></code></a> configuration sets the default
+format to <code class="docutils literal notranslate"><span class="pre">py:percent</span></code> and automatically allows syncing of new notebooks.</p>
+</section>
+<section id="read-the-docs">
+<h3>Read The Docs<a class="headerlink" href="#read-the-docs" title="Link to this heading">#</a></h3>
+<p>To build the documentation on Read The Docs, you need to create a file called
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/.readthedocs.yaml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">.readthedocs.yaml</span></code></a>, which is located in the root of the project and
+specifies which dependencies are needed. The core is the following specifying where the
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/conf.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a> file is and from where to install the required dependencies:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build documentation in the &quot;docs/&quot; directory with Sphinx</span>
+<span class="nt">sphinx</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">configuration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs/conf.py</span>
+
+<span class="nt">python</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">install</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">method</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip</span>
+<span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span>
+<span class="w">      </span><span class="nt">extra_requirements</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docs</span>
+</pre></div>
+</div>
+<p>You will need to manually register your project repository on
+<a class="reference external" href="https://readthedocs.org/" rel="noreferrer" target="_blank">Read The Docs</a> in order that it can build the documentation
+by the service. I recommend to activate builds for Pull Requests, so that
+the documentation is built for each PR and you can see if the documentation is gradually
+breaking, i.e. your integration test using the notebooks in
+<a class="reference external" href="https://github.com/biosustain/python_package/blob/main/docs/tutorial" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">docs/tutorial</span></code></a> fail. See their documentation
+<a class="reference external" href="https://docs.readthedocs.com/platform/stable/intro/add-project.html" rel="noreferrer" target="_blank">on adding a project</a>
+for instructions.</p>
+</section>
+</section>
+<section id="running-tests">
+<h2>Running tests<a class="headerlink" href="#running-tests" title="Link to this heading">#</a></h2>
+<p>The tests are located in the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory and can be run using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>.
+Pytest is specified as a dependency in the <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the
+<code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> section along with the formatter <code class="docutils literal notranslate"><span class="pre">black</span></code> and the
+linter <code class="docutils literal notranslate"><span class="pre">ruff</span></code>:</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
+<span class="c1"># local development options</span>
+<span class="n">dev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;black[jupyter]&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ruff&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;pytest&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Instead of running these tools manually, typing</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>black<span class="w"> </span>.
+ruff<span class="w"> </span>check<span class="w"> </span>.
+pytest<span class="w"> </span>tests
+</pre></div>
+</div>
+<p>read the next section to see how this is automated using <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Actions</span></code>.</p>
+</section>
+<section id="github-actions">
+<h2>GitHub Actions<a class="headerlink" href="#github-actions" title="Link to this heading">#</a></h2>
+<p>We run these checks also on GitHub using GitHub Actions. The configuration
+for the actions is located in the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/.github/workflows" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code></a> directory
+and is specified in the <code class="docutils literal notranslate"><span class="pre">cdci.yml</span></code> file. See the biosustain dsp tutorial on GitHub Actions
+for more details (or any other resource you find):
+<a class="reference external" href="https://github.com/biosustain/dsp_actions_tutorial" rel="noreferrer" target="_blank">biosustain/dsp_actions_tutorial</a></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># This workflow will install Python dependencies, run tests and lint with a single version of Python</span>
+<span class="c1"># For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python</span>
+
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Python application</span>
+
+<span class="nt">on</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;main&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">3&quot;</span>
+
+<span class="nt">permissions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">format</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">psf/black@stable</span>
+<span class="w">  </span><span class="nt">lint</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lint with ruff</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install ruff</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install ruff</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lint with ruff</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no"># stop the build if there are Python syntax errors or undefined names</span>
+<span class="w">          </span><span class="no">ruff check .</span>
+<span class="w">  </span><span class="nt">test</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.11&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ matrix.python-version }}</span>
+<span class="w">          </span><span class="nt">cache</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;pip&quot;</span><span class="w"> </span><span class="c1"># caching pip dependencies</span>
+<span class="w">          </span><span class="nt">cache-dependency-path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;**/pyproject.toml&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">python -m pip install --upgrade pip</span>
+<span class="w">          </span><span class="no">pip install pytest</span>
+<span class="w">          </span><span class="no">pip install -e .</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run tests</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">python -m pytest tests</span>
+</pre></div>
+</div>
+<p>This workflow also allows to create <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> releases automatically if you register your
+project on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> (or <code class="docutils literal notranslate"><span class="pre">TestPyPI</span></code> for testing first) and create a GitHub release:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">publish</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish package</span>
+<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">startsWith(github.ref, &#39;refs/tags&#39;)</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
+<span class="w">      </span><span class="c1"># - build_wheels</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
+
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@release/v1</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="c1"># remove repository key to set the default to pypi (not test.pypi.org)</span>
+<span class="w">          </span><span class="nt">repository-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://test.pypi.org/legacy/</span>
+</pre></div>
+</div>
+<p>To setup the <a class="reference external" href="https://github.com/pypa/gh-action-pypi-publish" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">gh-action-pypi-publish</span></code></a>
+action, you need to register the repository
+on <a class="reference external" href="https://pypi.org/" rel="noreferrer" target="_blank">PyPI</a> or <a class="reference external" href="https://test.pypi.org/" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">TestPyPI</span></code></a>, which allows PyPI
+and GitHub to communicate securely. See the instructions on
+<a class="reference external" href="https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/" rel="noreferrer" target="_blank">packaging.python.org</a>.</p>
+<p>You then trigger new releases to PyPI by creating a new GitHub release, which will
+automatically trigger the <code class="docutils literal notranslate"><span class="pre">publish</span></code> job in the workflow as it needs you to set a tag.
+Have a look at [VueGen Releases](https://github.com/biosustain/python_package/blob/main/ https://github.com/Multiomics-Analytics-Group/vuegen/releases)
+for an example. The release notes are automatically generated using the PR titles,
+see GitHub’s
+<a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes" rel="noreferrer" target="_blank">docs</a>.</p>
+<details>
+<summary>Wheels and testing builds</summary>
+The wheels are not built by default, but you can be necessary for packages which need
+to be partly compiled, e.g. if you use `Cython`, `numpy` C extensions or Rust extensions.
+<p>Also additionally you could use the artifact from the <code class="docutils literal notranslate"><span class="pre">build_source_dist</span></code> job
+to test the build of the source distribution. This is useful to ensure that a package
+with non-Python files (e.g. data files) is built correctly and that the package
+can be installed correctly. You should probably best test this in as much isolation as
+you can, e.g. by not pulling the repository using <code class="docutils literal notranslate"><span class="pre">actions/checkout&#64;v4</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">test_sdist</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built source distribution</span>
+<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="c1"># - uses: actions/checkout@v4 </span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
+<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built sdist</span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">pip install ./dist/*.tar.gz</span>
+<span class="w">      </span><span class="c1"># ... some checks</span>
+</pre></div>
+</div>
+</details>
+</section>
+<section id="full-project-structure">
+<h2>Full project structure<a class="headerlink" href="#full-project-structure" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python_package
+├──<span class="w"> </span>docs
+│<span class="w">   </span>├──<span class="w"> </span>tutorial
+│<span class="w">   </span>│<span class="w">   </span>├──<span class="w"> </span>tutorial.ipynb<span class="w"> </span><span class="c1"># tutorial in Jupyter Notebook format</span>
+│<span class="w">   </span>│<span class="w">   </span>└──<span class="w"> </span>tutorial.py<span class="w"> </span><span class="c1"># tutorial in Python script format (created by jupytext)</span>
+│<span class="w">   </span>├──<span class="w"> </span>conf.py<span class="w"> </span><span class="c1"># configuration for Sphinx documentation</span>
+│<span class="w">   </span>├──<span class="w"> </span>index.md<span class="w"> </span><span class="c1"># defining the website structure</span>
+│<span class="w">   </span>├──<span class="w"> </span>Makefile<span class="w"> </span><span class="c1"># can be ignored</span>
+│<span class="w">   </span>└──<span class="w"> </span>README.md<span class="w"> </span><span class="c1"># specifies how to build the documentation</span>
+├──<span class="w"> </span>src
+│<span class="w">   </span>└──<span class="w"> </span>python_package
+│<span class="w">       </span>├──<span class="w"> </span>__init__.py<span class="w"> </span><span class="c1"># imported when the package is imported (import python_package)</span>
+│<span class="w">       </span>└──<span class="w"> </span>mockup.py<span class="w"> </span><span class="c1"># a submodule of the package (import python_package.mockup)</span>
+├──<span class="w"> </span>tests
+│<span class="w">   </span>├──<span class="w"> </span>__init__.py
+│<span class="w">   </span>└──<span class="w"> </span>test_mockup.py<span class="w"> </span><span class="c1"># files and test_function need to start with test_ to be recognized by pytest</span>
+├──<span class="w"> </span>LICENSE<span class="w"> </span><span class="c1"># License file specifying usage terms</span>
+├──<span class="w"> </span>MANIFEST.in<span class="w"> </span><span class="c1"># non-python files to include into the build package</span>
+├──<span class="w"> </span>pyproject.toml<span class="w"> </span><span class="c1"># python package metadata, dependencies and configurations (incl. build tools)</span>
+├──<span class="w"> </span>pytest.ini<span class="w"> </span><span class="c1"># pytest configuration</span>
+├──<span class="w"> </span>README.md<span class="w"> </span><span class="c1"># README which is rendered on GitHub (or other hosting services)</span>
+└──<span class="w"> </span>setup.cfg<span class="w"> </span><span class="c1"># old python configuration file, empty</span>
+└──<span class="w"> </span>setup.py<span class="w"> </span><span class="c1"># artefact for backward compatibility, do not change</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="best_practices.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Coding (best) practices for Data Science</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../graphical_user_interfaces/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Graphical User Interfaces</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">Project structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-packaging-files">Core packaging files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changes-required-in-pyproject-toml">Changes required in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#source-directory-layout-of-the-package">Source directory layout of the package</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentation">Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-changes-in-conf-py">Required changes in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theme-autodoc-and-intersphinx">Theme, autodoc and intersphinx</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-documentation-locally-with-integration-tests">Building the documentation locally (with integration tests)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-the-docs">Read The Docs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#github-actions">GitHub Actions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-project-structure">Full project structure</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Henry Webel, Juliana Assis, Jakob Berg Jespersen, Pasquale Colaianni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, DTU Biosustain, Informatics Platform, DSP.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
