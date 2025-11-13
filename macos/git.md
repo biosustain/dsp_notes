@@ -1,5 +1,9 @@
 # Git on MacOS
 
+## ohmy-zsh
+
+Has a git plugin, see [ohmyz.sh](https://ohmyz.sh/).
+
 ## Set up autocompletion
 
 Add the following to your `~/.zshrc` file:
