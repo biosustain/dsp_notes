@@ -1,6 +1,4 @@
-# notes for ontologies
-
-# !!! WORK IN PROGRESS !!!
+<B> !!! WORK IN PROGRESS !!! </B>
 
 # Ontology Development Kit (ODK) Crash Course
 
@@ -13,6 +11,10 @@ Goals:
 
 ## Prerequisites
 
+1. Download and install [GitHub Desktop](https://desktop.github.com/) if you are unfamiliar with git commands.
+1. Download and install [Protege](https://protege.stanford.edu/software.php#desktop-protege). See instructions on how to set up Protege [here](../howto/set-up-protege.md)
+1. Install [ELK reasoner in protege](../howto/installing-elk-in-protege.md) if your version does not already come with it
+1. [Setting up ODK](../howto/odk-setup.md)
 
 ## Day 1 Agenda
 
