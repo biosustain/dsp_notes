@@ -78,4 +78,3 @@ Once the transfer is complete and verified in Azure:
 -   **Delete the files** from the File Share to avoid unnecessary
     storage costs.
 
-------------------------------------------------------------------------
