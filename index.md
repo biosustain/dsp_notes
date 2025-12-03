@@ -22,6 +22,7 @@ about
 
 azure/creating_ressources
 azure/running_nextflow_on_azure
+azure/transferring_odrive-to-azure
 ```
 
 ```{toctree}
