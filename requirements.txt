@@ -4,3 +4,5 @@ myst-nb
 ipywidgets
 sphinx-new-tab-link!=0.2.2
 jupytext
+sphinx_copybutton
+sphinx-design
