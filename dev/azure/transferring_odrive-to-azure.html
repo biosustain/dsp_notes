@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Git on MacOS &#8212; Data Science Platform notes  documentation</title>
+    <title>How to Transfer Data from the O Drive to Azure Storage &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -47,12 +47,13 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'macos/git';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'azure/transferring_odrive-to-azure';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="DTU HPC" href="../hpc_dtu/setup_user_env.html" />
+    <link rel="next" title="Platform" href="../seqera/index.html" />
+    <link rel="prev" title="Recordings" href="../recordings/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,9 +181,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../recordings/index.html">Recordings</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Azure</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../azure/creating_ressources.html">Create Azure resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../azure/running_nextflow_on_azure.html">How to run a nextflow pipleline on Azure</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to Transfer Data from the <strong>O Drive</strong> to <strong>Azure Storage</strong></a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
 <ul class="nav bd-sidenav">
@@ -211,10 +211,6 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">MacOS related</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Git on MacOS</a></li>
 </ul>
 
     </div>
@@ -284,7 +280,7 @@
       
       
       
-      <li><a href="../_sources/macos/git.md" target="_blank"
+      <li><a href="../_sources/azure/transferring_odrive-to-azure.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -368,7 +364,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Git on MacOS</h1>
+    <h1>How to Transfer Data from the O Drive to Azure Storage</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -378,7 +374,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-autocompletion">Set up autocompletion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-the-o-drive">🚀 1. Mount the O Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-dtu-computers"><strong>On DTU computers</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-macos"><strong>On macOS</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-azure-file-share">☁️ 2. Set Up Your Azure File Share</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-file-share"><strong>Create a new File Share</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-the-file-share-to-your-machine">🔗 3. Connect the File Share to Your Machine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-your-data">📁 4. Transfer Your Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-good-practice">🧹 5. Cleanup (Good Practice)</a></li>
 </ul>
             </nav>
         </div>
@@ -390,16 +397,83 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="git-on-macos">
-<h1>Git on MacOS<a class="headerlink" href="#git-on-macos" title="Link to this heading">#</a></h1>
-<section id="set-up-autocompletion">
-<h2>Set up autocompletion<a class="headerlink" href="#set-up-autocompletion" title="Link to this heading">#</a></h2>
-<p>Add the following to your <code class="docutils literal notranslate"><span class="pre">~/.zshrc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Git autocompletion</span>
-<span class="c1"># https://git-scm.com/book/en/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Zsh</span>
-autoload<span class="w"> </span>-Uz<span class="w"> </span>compinit<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>compinit
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-transfer-data-from-the-o-drive-to-azure-storage">
+<h1>How to Transfer Data from the <strong>O Drive</strong> to <strong>Azure Storage</strong><a class="headerlink" href="#how-to-transfer-data-from-the-o-drive-to-azure-storage" title="Link to this heading">#</a></h1>
+<p>This guide walks you through mounting the O drive, setting up an Azure
+File Share, and transferring your data safely.</p>
+<hr class="docutils" />
+<section id="mount-the-o-drive">
+<h2>🚀 1. Mount the O Drive<a class="headerlink" href="#mount-the-o-drive" title="Link to this heading">#</a></h2>
+<section id="on-dtu-computers">
+<h3><strong>On DTU computers</strong><a class="headerlink" href="#on-dtu-computers" title="Link to this heading">#</a></h3>
+<p>The O drive is usually available automatically.<br />
+Just log in with your DTU username and password.</p>
+</section>
+<section id="on-macos">
+<h3><strong>On macOS</strong><a class="headerlink" href="#on-macos" title="Link to this heading">#</a></h3>
+<p>The O drive can be accessed at:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>/Volumes/nnfcb
 </pre></div>
 </div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="set-up-your-azure-file-share">
+<h2>☁️ 2. Set Up Your Azure File Share<a class="headerlink" href="#set-up-your-azure-file-share" title="Link to this heading">#</a></h2>
+<p>Go to your <strong>Azure Storage Account</strong><br />
+(You can also use a storage account provided via the Seqera group).</p>
+<section id="create-a-new-file-share">
+<h3><strong>Create a new File Share</strong><a class="headerlink" href="#create-a-new-file-share" title="Link to this heading">#</a></h3>
+<p>Navigate in the Azure portal:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Storage</strong> → <strong>File Shares</strong></p></li>
+<li><p>Click <strong>New File Share</strong></p></li>
+<li><p>Fill out <strong>Basics</strong></p></li>
+<li><p>Select <strong>No Backup</strong></p></li>
+<li><p>Click <strong>Review + create</strong></p></li>
+<li><p>Deploy the resource</p></li>
+</ol>
+<p>Once it’s created (e.g., named <strong>Data1</strong>), you can proceed to connect
+it.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="connect-the-file-share-to-your-machine">
+<h2>🔗 3. Connect the File Share to Your Machine<a class="headerlink" href="#connect-the-file-share-to-your-machine" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In the File Share overview, click the <strong>⋯ (three dots)</strong> next to its
+name.</p></li>
+<li><p>Select <strong>Connect</strong>.</p></li>
+<li><p>Choose your <strong>Operating System</strong>.</p></li>
+<li><p>Azure will show you a script.</p></li>
+<li><p><strong>Copy the script</strong> and run it on your computer or your Virtual
+Machine.</p></li>
+</ol>
+<blockquote>
+<div><p>💡 <em>Tip:</em><br />
+Use your local computer for smaller transfers.<br />
+For large datasets, a VM is faster and prevents local bandwidth
+issues.</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="transfer-your-data">
+<h2>📁 4. Transfer Your Data<a class="headerlink" href="#transfer-your-data" title="Link to this heading">#</a></h2>
+<p>With both drives mounted, simply use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command (macOS/Linux):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>-r<span class="w"> </span>/Volumes/nnfcb/file1<span class="w"> </span>/Volumes/Data1
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">file1</span></code> and <code class="docutils literal notranslate"><span class="pre">Data1</span></code> with your actual paths.</p>
+</section>
+<hr class="docutils" />
+<section id="cleanup-good-practice">
+<h2>🧹 5. Cleanup (Good Practice)<a class="headerlink" href="#cleanup-good-practice" title="Link to this heading">#</a></h2>
+<p>Once the transfer is complete and verified in Azure:</p>
+<ul class="simple">
+<li><p>Move the files into their final location inside Azure Storage.</p></li>
+<li><p><strong>Delete the files</strong> from the File Share to avoid unnecessary
+storage costs.</p></li>
+</ul>
 </section>
 </section>
 
@@ -415,13 +489,22 @@ autoload<span class="w"> </span>-Uz<span class="w"> </span>compinit<span class="
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../hpc_dtu/setup_user_env.html"
+       href="../recordings/index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">DTU HPC</p>
+        <p class="prev-next-title">Recordings</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../seqera/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Platform</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -439,7 +522,18 @@ autoload<span class="w"> </span>-Uz<span class="w"> </span>compinit<span class="
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-autocompletion">Set up autocompletion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mount-the-o-drive">🚀 1. Mount the O Drive</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-dtu-computers"><strong>On DTU computers</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-macos"><strong>On macOS</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-azure-file-share">☁️ 2. Set Up Your Azure File Share</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-new-file-share"><strong>Create a new File Share</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#connect-the-file-share-to-your-machine">🔗 3. Connect the File Share to Your Machine</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-your-data">📁 4. Transfer Your Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleanup-good-practice">🧹 5. Cleanup (Good Practice)</a></li>
 </ul>
   </nav></div>
 
