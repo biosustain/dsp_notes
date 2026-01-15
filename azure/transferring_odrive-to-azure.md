@@ -16,13 +16,13 @@ Just log in with your DTU username and password.
  
 The O drive can be accessed at:
  
-    /Volumes/nnfcb
+   `/Volumes/nnfcb`
  
 ------------------------------------------------------------------------
  
 ## ☁️ 2. Set Up Your Azure File Share
  
-Go to your **Azure Storage Account**\
+Go to your **Azure Storage Account**
 (You can also use a storage account provided via the Seqera group).
  
 ### **Create a new File Share**
@@ -51,8 +51,8 @@ it.
 5.  **Copy the script** and run it on your computer or your Virtual
     Machine.
  
-> 💡 *Tip:*\
-> Use your local computer for smaller transfers.\
+> 💡 *Tip:*
+> Use your local computer for smaller transfers.
 > For large datasets, a VM is faster and prevents local bandwidth
 > issues.
  
