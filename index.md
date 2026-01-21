@@ -29,8 +29,8 @@ recordings/index
 :hidden:
 :caption: Azure
 
-azure/creating_ressources
-azure/running_nextflow_on_azure
+
+azure/transferring_odrive-to-azure
 ```
 
 ```{toctree}
@@ -52,6 +52,7 @@ seqera/quantms
 
 nextflow/pipeline_diagrams
 nextflow/javadocs_process
+nextflow/nf_core_templates
 ```
 
 ```{toctree}
