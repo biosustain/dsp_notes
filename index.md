@@ -14,6 +14,7 @@ is part of the Informatics Platform, see our aims and goals
 
 about
 trainings/index
+collaborations/index
 ```
 
 ```{toctree}
