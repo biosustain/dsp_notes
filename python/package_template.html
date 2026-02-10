@@ -41,8 +41,8 @@
   <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
@@ -211,6 +211,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ontologies</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ontologies/ontologies_notes.html">Ontology Development Kit (ODK) Crash Course</a></li>
 </ul>
 
     </div>
@@ -448,11 +452,11 @@ is the purpose of each folder or file:</p>
 <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a> file is the main configuration file for the Python package
 and is used to specify the package metadata, dependencies, build tools and configurations.
 The <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> folder stores the actual source code of the package, where the package itself is
-the subdirectories of the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> directory. The  (e.g. <code class="docutils literal notranslate"><span class="pre">src/python_package</span></code>).</p>
+the subdirectories of the <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/src" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">src</span></code></a> directory. The (e.g. <code class="docutils literal notranslate"><span class="pre">src/python_package</span></code>).</p>
 <details>
 <summary>About <code>setup.py</code> and <code>setup.cfg</code> configuration files</summary>
 <p>The <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a> file is an artefact for backward compatibility and should not
-be changed.  Everything that used to be in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a> or
+be changed. Everything that used to be in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.py" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code></a> or
 <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/setup.cfg" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code></a> is now largely in <a class="reference external" href="https://github.com/biosustain/python_package/blob/main/pyproject.toml" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code></a>.
 The notable exception would be the desired maximum line length in <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code> for
 the tool <a class="reference external" href="https://flake8.pycqa.org/" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">flake8</span></code></a>, which does not yet supported
@@ -488,7 +492,7 @@ specified in via a <code class="docutils literal notranslate"><span class="pre">
 <span class="c1">#&quot;dependencies&quot;, # add if using requirements.txt</span>
 <span class="p">]</span>
 <span class="n">readme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;README.md&quot;</span>
-<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.9&quot;</span>
+<span class="n">requires-python</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=3.10&quot;</span>
 <span class="c1"># These are keywords</span>
 <span class="n">classifiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">  </span><span class="s2">&quot;Programming Language :: Python :: 3&quot;</span><span class="p">,</span>
@@ -521,7 +525,7 @@ errors to specific non-released versions. The dynamic version is picked up in th
 <span class="n">requires</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;setuptools&gt;=64&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;setuptools_scm&gt;=8&quot;</span><span class="p">]</span>
 
 <span class="k">[tool.setuptools_scm]</span>
-<span class="c1"># https://setuptools-scm.readthedocs.io/ </span>
+<span class="c1"># https://setuptools-scm.readthedocs.io/</span>
 <span class="c1"># used to pick up the version from the git tags or the latest commit.</span>
 </pre></div>
 </div>
@@ -601,7 +605,7 @@ the <a class="reference external" href="https://github.com/biosustain/python_pac
 <p>These are added as dependencies through the
 <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code> file under the <code class="docutils literal notranslate"><span class="pre">[project.optional-dependencies]</span></code> section:</p>
 <div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="k">[project.optional-dependencies]</span>
-<span class="c1"># Optional dependencies to locally build the documentation, also used for </span>
+<span class="c1"># Optional dependencies to locally build the documentation, also used for</span>
 <span class="c1"># readthedocs.</span>
 <span class="n">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">  </span><span class="s2">&quot;sphinx&quot;</span><span class="p">,</span>
@@ -786,10 +790,13 @@ for more details (or any other resource you find):
 
 <span class="nt">on</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">push</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;main&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">pull_request</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;main&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">  </span><span class="nt">schedule</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cron</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">3&quot;</span>
+<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
 
 <span class="nt">permissions</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
@@ -821,7 +828,7 @@ for more details (or any other resource you find):
 <span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 <span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.11&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;3.9&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.12&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;3.13&quot;</span><span class="p p-Indicator">]</span>
 <span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python ${{ matrix.python-version }}</span>
@@ -841,27 +848,27 @@ for more details (or any other resource you find):
 </div>
 <p>This workflow also allows to create <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> releases automatically if you register your
 project on <code class="docutils literal notranslate"><span class="pre">PyPI</span></code> (or <code class="docutils literal notranslate"><span class="pre">TestPyPI</span></code> for testing first) and create a GitHub release:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">publish</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish package</span>
-<span class="w">    </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">startsWith(github.ref, &#39;refs/tags&#39;)</span>
-<span class="w">    </span><span class="nt">needs</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
-<span class="w">      </span><span class="c1"># - build_wheels</span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">publish</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Publish package</span>
+<span class="w">  </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">startsWith(github.ref, &#39;refs/tags&#39;)</span>
+<span class="w">  </span><span class="nt">needs</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">format</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lint</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
+<span class="w">    </span><span class="c1"># - build_wheels</span>
+<span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
 
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
 
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@release/v1</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="c1"># remove repository key to set the default to pypi (not test.pypi.org)</span>
-<span class="w">          </span><span class="nt">repository-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://test.pypi.org/legacy/</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pypa/gh-action-pypi-publish@release/v1</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># remove repository key to set the default to pypi (not test.pypi.org)</span>
+<span class="w">        </span><span class="nt">repository-url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://test.pypi.org/legacy/</span>
 </pre></div>
 </div>
 <p>To setup the <a class="reference external" href="https://github.com/pypa/gh-action-pypi-publish" rel="noreferrer" target="_blank"><code class="docutils literal notranslate"><span class="pre">gh-action-pypi-publish</span></code></a>
@@ -871,7 +878,7 @@ and GitHub to communicate securely. See the instructions on
 <a class="reference external" href="https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/" rel="noreferrer" target="_blank">packaging.python.org</a>.</p>
 <p>You then trigger new releases to PyPI by creating a new GitHub release, which will
 automatically trigger the <code class="docutils literal notranslate"><span class="pre">publish</span></code> job in the workflow as it needs you to set a tag.
-Have a look at [VueGen Releases](https://github.com/biosustain/python_package/blob/main/ https://github.com/Multiomics-Analytics-Group/vuegen/releases)
+Have a look at <a class="reference external" href="https://github.com/Multiomics-Analytics-Group/vuegen/releases" rel="noreferrer" target="_blank">VueGen Releases</a>
 for an example. The release notes are automatically generated using the PR titles,
 see GitHub’s
 <a class="reference external" href="https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes" rel="noreferrer" target="_blank">docs</a>.</p>
@@ -884,23 +891,23 @@ to test the build of the source distribution. This is useful to ensure that a pa
 with non-Python files (e.g. data files) is built correctly and that the package
 can be installed correctly. You should probably best test this in as much isolation as
 you can, e.g. by not pulling the repository using <code class="docutils literal notranslate"><span class="pre">actions/checkout&#64;v4</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="nt">test_sdist</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built source distribution</span>
-<span class="w">    </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
-<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># - uses: actions/checkout@v4 </span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
-<span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
-<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built sdist</span>
-<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">          </span><span class="no">pip install ./dist/*.tar.gz</span>
-<span class="w">      </span><span class="c1"># ... some checks</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">test_sdist</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built source distribution</span>
+<span class="w">  </span><span class="nt">needs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build_source_dist</span>
+<span class="w">  </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">  </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># - uses: actions/checkout@v4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/download-artifact@v4</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">artifact</span>
+<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./dist</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;3.11&quot;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install built sdist</span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">        </span><span class="no">pip install ./dist/*.tar.gz</span>
+<span class="w">    </span><span class="c1"># ... some checks</span>
 </pre></div>
 </div>
 </details>
