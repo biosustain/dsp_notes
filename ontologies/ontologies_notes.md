@@ -51,7 +51,7 @@ All ODK repos have standard file layout. The key files you should know are
 2. `src/ontology/ont-edit.owl` - the file that you should edit on 
 3. `src/ontology/ont.makefile` - custom code that the repo uses that defers from vanilla ODK 
 4. `src/ontology/imports/ont.txt` - files to add ontology terms to be imported 
-5. src/ontology/profile.txt - configuration of QC reports/checks 
+5. `src/ontology/profile.txt` - configuration of QC reports/checks 
 
 Other files will be covered as needed
 
