@@ -102,7 +102,7 @@ From there you can use the imported terms in your edit file.
     - What does the reasoner classify as Chardonay?
 3. View the relationships (subClassOf axioms) of Chianti (wine). How might these frustrate attempts to classify wines using the pattern you just used to define Chardonnay wine?
 4. Add a term for [Rosé wine](https://en.wikipedia.org/wiki/Ros%C3%A9) or [orange wine](https://en.wikipedia.org/wiki/Orange_wine) and some terms for specific wines that will be auto-classified under it. 
-5. Add an import for [the food ontology](https://github.com/FoodOntology/foodon) to the ODK repo, and import FOODON:00002364 and replace wine with the FOODON term for wine 
+5. Add an import for [the food ontology](https://github.com/FoodOntology/foodon) to the ODK repo, and import `FOODON:00002364` and replace wine with the FOODON term for wine 
 
 ### Release Management
 
