@@ -70,7 +70,7 @@ Tutorial can be found [here](https://oboacademy.github.io/obook/tutorial/setting
 
 ### Managing Imports with ODK 
 
-A key function of the ODK is the handle dynamic imports. To avoid clashes in imports, I would reccomend using merged imports in the ODK. Here is an example of what you should add to your yaml config file: 
+A key function of the ODK is to handle dynamic imports. To avoid clashes in imports, I would recommend using merged imports in the ODK. Here is an example of what you should add to your yaml config file: 
 
 ```yaml
 import_group:
