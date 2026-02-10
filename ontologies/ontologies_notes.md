@@ -80,7 +80,7 @@ import_group:
       use_base: TRUE
 ```
 
-The ODK mantains a set of ontology shorthands where you can just use the id and add use_base, and it will automatically work. However, in certain cases, you need to define where the mirror is from (where to download the ontology file), ask the ODK to make a base file where a base file is not available, and/or define what the base IRI are. An example would look like: 
+The ODK maintains a set of ontology shorthands where you can just use the id and add use_base, and it will automatically work. However, in certain cases, you need to define where the mirror is from (where to download the ontology file), ask the ODK to make a base file where a base file is not available, and/or define what the base IRI are. An example would look like: 
 
 ```yaml
     - id: bao
