@@ -1,4 +1,3 @@
-<B> !!! WORK IN PROGRESS !!! </B>
 
 # Ontology Development Kit (ODK) Crash Course
 
