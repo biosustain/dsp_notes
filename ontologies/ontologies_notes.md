@@ -53,7 +53,7 @@ All ODK repos have standard file layout. The key files you should know are
 4. `src/ontology/imports/ont.txt` - files to add ontology terms to be imported 
 5. `src/ontology/profile.txt` - configuration of QC reports/checks 
 
-Other files will be covered as needed
+Other files will be covered as needed.
 
 #### Creating your ODK ontology 
 
