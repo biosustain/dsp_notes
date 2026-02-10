@@ -89,7 +89,7 @@ The ODK maintains a set of ontology shorthands where you can just use the id and
       base_irirs:
         - http://www.bioassayontology.org/
 ```
-There are some ontologies (eg chebi and NCBITaxon) which are huge, please look at [this document](https://oboacademy.github.io/obook/howto/deal-with-large-ontologies/) for managing such ontologies. 
+There are some ontologies (e.g. chebi and NCBITaxon) which are huge, please look at [this document](https://oboacademy.github.io/obook/howto/deal-with-large-ontologies/) for managing such ontologies. 
 
 Once you have configured your imports and update your repo using `sh run.sh make update_repo`, you should see .txt files in your src/ontology/imports folder. To import terms to your ontology, add them into the .txt file, and run `sh run.sh make imports/merged_import.owl`. This will download the mirrors, extract out terms relavent to what you have added, and merge all subgraphs into merged_import.owl. 
 
