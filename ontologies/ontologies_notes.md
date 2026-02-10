@@ -10,9 +10,9 @@ Goals:
 ## Prerequisites
 
 1. Download and install [GitHub Desktop](https://desktop.github.com/) if you are unfamiliar with git commands.
-1. Download and install [Protege](https://protege.stanford.edu/software.php#desktop-protege). See instructions on how to set up Protege [here](../howto/set-up-protege.md)
-1. Install [ELK reasoner in protege](../howto/installing-elk-in-protege.md) if your version does not already come with it
-1. [Setting up ODK](../howto/odk-setup.md)
+1. Download and install [Protege](https://protege.stanford.edu/software.php#desktop-protege). See instructions on how to set up Protege [Setup Protege](https://oboacademy.github.io/obook/howto/set-up-protege/)
+1. Install [ELK reasoner in protege](https://oboacademy.github.io/obook/howto/installing-elk-in-protege/) if your version does not already come with it
+1. [Setting up ODK](https://oboacademy.github.io/obook/howto/odk-setup/)
 
 ## Day 1 Agenda
 
@@ -80,7 +80,9 @@ import_group:
       use_base: TRUE
 ```
 
-The ODK maintains a set of ontology shorthands where you can just use the id and add use_base, and it will automatically work. However, in certain cases, you need to define where the mirror is from (where to download the ontology file), ask the ODK to make a base file where a base file is not available, and/or define what the base IRI are. An example would look like: 
+The ODK maintains a set of ontology shorthands where you can just use the id and add use_base, and it will automatically work. However, in certain cases, you need to define where the mirror is from (where to download the ontology file), ask the ODK to make a base file where a base file is not available, and/or define what the base Internationalized Resource Identifier (IRI) are. 
+Note: IRIs extend traditional URIs by allowing Unicode characters and base IRIs are foundational URL or URI for an ontology, serving as a prefix for all entities (classes, properties, individuals). 
+An example would look like: 
 
 ```yaml
     - id: bao
