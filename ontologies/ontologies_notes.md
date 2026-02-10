@@ -100,7 +100,7 @@ From there you can use the imported terms in your edit file.
 1. Clone [EBISPOT/ontology_editor_training](https://github.com/EBISPOT/ontology_editor_training/)
 2. Given that 'Chardonnay wine' is a generic names for wines made from Chardonnay (varietal) grapes, add a term for Chardonnay (wine) with an appropriate logical definition. 
     - What does the reasoner classify as Chardonay?
-3.View the relationships (subClassOf axioms) of Chianti (wine). How might these frustrate attempts to classify wines using the pattern you just used to define Chardonay wine?
+3. View the relationships (subClassOf axioms) of Chianti (wine). How might these frustrate attempts to classify wines using the pattern you just used to define Chardonnay wine?
 4. Add a term for [Rosé wine](https://en.wikipedia.org/wiki/Ros%C3%A9) or [orange wine](https://en.wikipedia.org/wiki/Orange_wine) and some terms for specific wines that will be auto-classified under it. 
 5. Add an import for [the food ontology](https://github.com/FoodOntology/foodon) to the ODK repo, and import FOODON:00002364 and replace wine with the FOODON term for wine 
 
