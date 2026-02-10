@@ -1,4 +1,3 @@
-
 # Ontology Development Kit (ODK) Crash Course
 
 Aim: To kickstart your journey into using the ODK, providing the foundations on which further development can be done
