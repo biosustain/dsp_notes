@@ -106,6 +106,6 @@ From there you can use the imported terms in your edit file.
 
 ### Release Management
 
-The newer version of ODK utilises github releases rather that uploading everything directly to github. This change was made to deal with ever larger ontologies and the limitations of how much can be hosted on a github repo. 
+The newer version of ODK utilises GitHub releases rather that uploading everything directly to GitHub. This change was made to deal with ever larger ontologies and the limitations of how much can be hosted on a GitHub repo. 
 
 For release management workflow, please utilise [the workflow shown in CL documentation](https://github.com/obophenotype/cell-ontology/blob/master/docs/cl-release.md) and update it for your ontology. 
