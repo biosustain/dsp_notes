@@ -57,7 +57,7 @@ Other files will be covered as needed.
 
 #### Creating your ODK ontology 
 
-Tutorial can be found [here](https://oboacademy.github.io/obook/tutorial/setting-up-project-odk/) - if you already have an ontology and want to migrate it, you can move the terms ot the edit file after initialising your ODK ontology. 
+Tutorial can be found [here](https://oboacademy.github.io/obook/tutorial/setting-up-project-odk/) - if you already have an ontology and want to migrate it, you can move the terms to the edit file after initialising your ODK ontology. 
 
 ### How to edit in protégé
 
