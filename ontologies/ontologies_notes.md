@@ -97,7 +97,7 @@ From there you can use the imported terms in your edit file.
 
 ### Hands on Tutorial
 
-1. Clone https://github.com/EBISPOT/ontology_editor_training/
+1. Clone [EBISPOT/ontology_editor_training](https://github.com/EBISPOT/ontology_editor_training/)
 2. Given that 'Chardonnay wine' is a generic names for wines made from Chardonnay (varietal) grapes, add a term for Chardonnay (wine) with an appropriate logical definition. 
     - What does the reasoner classify as Chardonay?
 3.View the relationships (subClassOf axioms) of Chianti (wine). How might these frustrate attempts to classify wines using the pattern you just used to define Chardonay wine?
