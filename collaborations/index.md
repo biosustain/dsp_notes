@@ -1,6 +1,6 @@
 # Collaboration
 
-Here we are trying to define what theoretically would be a collaboration with the Data Science Platform, so that our collaborators know how we work and as a reminder for us.
+> Here we are defining a collaboration with the Data Science Platform, so that our collaborators know how we work and as a reminder for us.
 
 We understand our Data Science platform as a collaborative and supportive platform that disseminate pipelines and tools, help on statistics and machine learning, match skills between groups to foster collaborations, shares best practices in RDM, metadata, and coding practices, serves as domain specific knowledge mediation, and fosters collaboration with other bioinformaticians of other research groups.
 
