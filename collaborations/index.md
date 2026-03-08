@@ -5,7 +5,7 @@
 We understand our Data Science platform as a collaborative and supportive platform that disseminates pipelines and tools, helps on statistics and machine learning, matches skills between groups to foster collaborations, shares best practices in RDM, metadata, and coding practices, serves as domain specific knowledge mediation, and fosters collaboration with other bioinformaticians of other research groups.
 
 ## Project Life cycle
-The way we see a project has different phases:
+We structure a project into different phases:
 
 1. Initiating
 2. Planning
