@@ -17,4 +17,4 @@ We are allocating enough time for the two first steps (Inititating and Planning)
 
 Very often the last step is made in a rush, we are trying to also allocate enough time for a proper project closure and project evaluation of it.
 
-Our communication while doing a project is aiming to be open, professional, timely, proactive, transparent, constructive and inclusive. PLease contact us to give your feedback if you identify any aspect that we could improve
+Our communication while doing a project is aiming to be open, professional, timely, proactive, transparent, constructive and inclusive. Please contact us to give your feedback if you identify any aspect that we could improve
