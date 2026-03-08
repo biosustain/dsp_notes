@@ -13,7 +13,7 @@ We structure a project into different phases:
 4. Monitoring and controlling
 5. Closing and Retrospective
 
-We are allocating enough time for the two first steps (Inititating and Planning) contacting and organizing the necessary meeting to understand the project, its metadata and the context.
+We are allocating enough time for the two first steps (Inititating and Planning) contacting and organizing the necessary meeting to gain a deep understanding the project, its metadata and the context.
 
 Very often the last step is made in a rush, we are trying to also allocate enough time for a proper project closure and project evaluation of it.
 
