@@ -39,6 +39,11 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 - use `wave` profile from nf-core template config (will deactivate any pre-built docker 
   or singularity containers)
 
+- allows also to specify a custom container registry, e.g. `ghcr.io/biosustain` 
+  for privatly hosted containers in Seqera Platform (which executes it then on
+  Azure), see 
+  [here](https://docs.seqera.io/platform-cloud/credentials/container_registry_credentials).
+
 ## Define the report path
 
 > The file has to be linked in a process output explicitly, not just the folder, 
@@ -64,3 +69,11 @@ reports:
   [dsp_demo_nf_acore_vuegen](https://github.com/biosustain/dsp_demo_nf_acore_vuegen)
   in order to make it executable on Seqera Cloud. The initial history can be found 
   [here](https://github.com/biosustain/dsp_course_proteomics_intro/pull/18).
+
+### Commit
+
+- use the precommit hooks for formatting on all files: 
+
+  ```bash
+  pre-commit run --all-files
+  ```
