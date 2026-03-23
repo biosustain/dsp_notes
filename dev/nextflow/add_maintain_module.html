@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>JavaDocs and Code Documentation &#8212; Data Science Platform notes  documentation</title>
+    <title>Add or update a module to nf-core/modules &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -50,13 +50,13 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/javadocs_process';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/add_maintain_module';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Add or update a module to nf-core/modules" href="add_maintain_module.html" />
-    <link rel="prev" title="Nextflow diagrams" href="pipeline_diagrams.html" />
+    <link rel="next" title="Building a custom nf-core analysis pipeline" href="nf_core_templates.html" />
+    <link rel="prev" title="JavaDocs and Code Documentation" href="javadocs_process.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -185,8 +185,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pipeline_diagrams.html">Nextflow diagrams</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">JavaDocs and Code Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="add_maintain_module.html">Add or update a module to nf-core/modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add or update a module to nf-core/modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
@@ -280,7 +280,7 @@
       
       
       
-      <li><a href="../_sources/nextflow/javadocs_process.md" target="_blank"
+      <li><a href="../_sources/nextflow/add_maintain_module.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -343,7 +343,9 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -354,11 +356,20 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>JavaDocs and Code Documentation</h1>
+    <h1>Add or update a module to nf-core/modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint-and-test">Lint and test</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -368,56 +379,38 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="javadocs-and-code-documentation">
-<h1>JavaDocs and Code Documentation<a class="headerlink" href="#javadocs-and-code-documentation" title="Link to this heading">#</a></h1>
-<p>For users working with Nextflow, the <strong>Nextflow extension for Visual
-Studio Code</strong> provides the best support for documentation and code
-hints. Developers can include docstrings in their scripts, which will
-enable hover-based code suggestions within the editor. Below is an
-example of how to format a simple process using a docstring.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="o">*</span>
-<span class="n">A</span> <span class="n">simple</span> <span class="n">process</span> <span class="n">that</span> <span class="n">outputs</span> <span class="n">a</span> <span class="s2">&quot;Hello, world!&quot;</span> <span class="n">message</span><span class="o">.</span>
-<span class="o">*/</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-or-update-a-module-to-nf-core-modules">
+<h1>Add or update a module to nf-core/modules<a class="headerlink" href="#add-or-update-a-module-to-nf-core-modules" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>either to <code class="docutils literal notranslate"><span class="pre">nf-core/modules</span></code> for the nf-core community</p></li>
+<li><p>or to custom remotes as <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code> for internal use in <code class="docutils literal notranslate"><span class="pre">bigbio/quantms</span></code>
+(docs for custom remotes with nf-core tools
+<a class="reference external" href="https://nf-co.re/docs/nf-core-tools/custom_remotes" rel="noreferrer" target="_blank">here</a>)</p></li>
+</ul>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://training.nextflow.io/latest/hello_nf-core/04_make_module/" rel="noreferrer" target="_blank">training of hello_nf-core</a></p></li>
+<li><p><a class="reference external" href="https://nf-co.re/docs/tutorials/nf-core_components/components" rel="noreferrer" target="_blank">tutorial in nf-core docs</a></p></li>
+<li><p><a class="reference external" href="https://nf-co.re/docs/guidelines/components/modules" rel="noreferrer" target="_blank">module specifications</a></p></li>
+</ul>
+</section>
+<section id="lint-and-test">
+<h2>Lint and test<a class="headerlink" href="#lint-and-test" title="Link to this heading">#</a></h2>
+<p>Here for example for a local module called <code class="docutils literal notranslate"><span class="pre">onsite</span></code> in <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code> repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nf-core<span class="w"> </span>modules<span class="w"> </span>lint<span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>onsite<span class="w">   </span>
+nf-core<span class="w"> </span>modules<span class="w"> </span>lint<span class="w"> </span>--fix<span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>onsite<span class="w">    </span>
 
-<span class="n">process</span> <span class="n">SAY_HELLO</span> <span class="p">{</span>
-
-    <span class="n">tag</span> <span class="s2">&quot;Saying hello&quot;</span>
-
-    <span class="n">output</span><span class="p">:</span>
-
-        <span class="n">path</span> <span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span> <span class="n">emit</span><span class="p">:</span> <span class="n">hello_file</span>
-
-        <span class="n">path</span> <span class="s2">&quot;versions.yml&quot;</span><span class="p">,</span> <span class="n">emit</span><span class="p">:</span> <span class="n">versions</span>
-
-    <span class="n">script</span><span class="p">:</span>
-
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-
-<span class="sd">    echo &#39;Hello, world!&#39; &gt; hello.txt</span>
-
-<span class="sd">    cat &lt;&lt;-END_VERSIONS &gt; versions.yml</span>
-
-<span class="sd">    &quot;say_hello&quot;: 1.0</span>
-
-<span class="sd">    END_VERSIONS</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-
-<span class="p">}</span>
-
-<span class="n">workflow</span> <span class="p">{</span>
-
-    <span class="n">SAY_HELLO</span><span class="p">()</span>
-
-<span class="p">}</span>
+nf-test<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>modules/bigbio/onsite/tests/main.nf.test
+nf-test<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>modules/bigbio/onsite/tests/main.nf.test<span class="w"> </span>--update-snapshot
+<span class="c1"># nf-test is also available via nf-core tools cli:</span>
+nf-core<span class="w"> </span>modules<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>--update<span class="w"> </span>onsite
 </pre></div>
 </div>
-<p>This approach helps ensure that developers can quickly reference process
-definitions and outputs while working within Nextflow.</p>
-<blockquote>
-<div><p>Make sure you have Java 17 or above installed to make the VSCode extension work:
-<a class="reference external" href="https://www.oracle.com/java/technologies/downloads" rel="noreferrer" target="_blank">link</a></p>
-</div></blockquote>
+<ul class="simple">
+<li><p>on snapshots: <a class="reference external" href="https://www.nf-test.com/docs/assertions/snapshots/" rel="noreferrer" target="_blank">link</a></p></li>
+</ul>
+</section>
 </section>
 
 
@@ -432,20 +425,20 @@ definitions and outputs while working within Nextflow.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pipeline_diagrams.html"
+       href="javadocs_process.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Nextflow diagrams</p>
+        <p class="prev-next-title">JavaDocs and Code Documentation</p>
       </div>
     </a>
     <a class="right-next"
-       href="add_maintain_module.html"
+       href="nf_core_templates.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Add or update a module to nf-core/modules</p>
+        <p class="prev-next-title">Building a custom nf-core analysis pipeline</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -455,6 +448,24 @@ definitions and outputs while working within Nextflow.</p>
             </div>
             
             
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint-and-test">Lint and test</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
