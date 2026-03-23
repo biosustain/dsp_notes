@@ -52,6 +52,7 @@ seqera/quantms
 
 nextflow/pipeline_diagrams
 nextflow/javadocs_process
+nextflow/add_maintain_module
 nextflow/nf_core_templates
 ```
 

@@ -15,6 +15,9 @@ referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen>
 </iframe>
 
+## nf-docs
+
+Autocreate documenation using [`ewals/nf-docs`](https://github.com/ewels/nf-docs)
 
 ## pipeline info
 
