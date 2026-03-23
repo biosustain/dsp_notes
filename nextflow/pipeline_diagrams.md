@@ -17,7 +17,7 @@ allowfullscreen>
 
 ## nf-docs
 
-Autocreate documenation using [`ewals/nf-docs`](https://github.com/ewels/nf-docs)
+Autocreate documentation using [`ewels/nf-docs`](https://github.com/ewels/nf-docs)
 
 ## pipeline info
 
