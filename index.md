@@ -14,6 +14,7 @@ is part of the Informatics Platform, see our aims and goals
 
 about
 trainings/index
+collaborations/index
 ```
 
 ```{toctree}
@@ -29,8 +30,8 @@ recordings/index
 :hidden:
 :caption: Azure
 
-azure/creating_ressources
-azure/running_nextflow_on_azure
+
+azure/transferring_odrive-to-azure
 ```
 
 ```{toctree}
@@ -81,3 +82,12 @@ python/package_template
 
 hpc_dtu/setup_user_env
 ```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
+:caption: Ontologies
+
+ontologies/ontologies_notes
+```
+

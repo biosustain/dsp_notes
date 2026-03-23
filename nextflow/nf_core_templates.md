@@ -82,7 +82,6 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 - from conda environment to containerized version
 - use `wave` profile from nf-core template config (will deactivate any pre-built docker
   or singularity containers)
-
 - allows also to specify a custom container registry, e.g. `ghcr.io/biosustain`
   for privatly hosted containers in Seqera Platform (which executes it then on
   Azure), see
