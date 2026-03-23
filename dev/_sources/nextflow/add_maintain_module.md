@@ -16,8 +16,8 @@
 Here for example for a local module called `onsite` in `bigbio/nf-modules` repo:
 
 ```bash
-nf-core modules lint -d . onsite   
-nf-core modules lint --fix -d . onsite    
+nf-core modules lint -d . onsite
+nf-core modules lint --fix -d . onsite
 
 nf-test test --profile docker modules/bigbio/onsite/tests/main.nf.test
 nf-test test --profile docker modules/bigbio/onsite/tests/main.nf.test --update-snapshot

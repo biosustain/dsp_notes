@@ -23,7 +23,7 @@ a fastqc analysis pipeline.
   [schema-tutorial](https://nextflow-io.github.io/nf-schema/latest/nextflow_schema/create_schema/).
   The default pipeline has as single input a csv sample sheet, and an output directory.
 
-## Make adaptions to the pipeline created from the template
+## Make adaptations to the pipeline created from the template
 
 - edit the schema and remove the parameters which are not needed:
   `nf-core pipelines schema build`
@@ -83,7 +83,7 @@ Can be used to auto-generate containers for workflow runs (if conda is not avail
 - use `wave` profile from nf-core template config (will deactivate any pre-built docker
   or singularity containers)
 - allows also to specify a custom container registry, e.g. `ghcr.io/biosustain`
-  for privatly hosted containers in Seqera Platform (which executes it then on
+  for privately hosted containers in Seqera Platform (which executes it then on
   Azure), see
   [here](https://docs.seqera.io/platform-cloud/credentials/container_registry_credentials).
 
@@ -103,7 +103,7 @@ reports:
   multiqc_report.html:
     display: "MultiQC HTML report"
   quarto_report.html:
-    display: "VUEGen HTML report"
+    display: "VueGen HTML report"
 ```
 
 ## Hints
