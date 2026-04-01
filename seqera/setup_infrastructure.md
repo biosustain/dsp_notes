@@ -24,7 +24,6 @@ a Managed Identity and Batch Pool.
 
 - Admin permissions to add credentials, compute environment(s) and pipelines to a workspace 
 
-
 ## On VMs as nodes in a pool
 Nodes in a pool are described based on the VM naming convention:
 
@@ -36,6 +35,12 @@ See also [Azure Batch documentation](https://learn.microsoft.com/en-us/azure/bat
 > for a machine in a series to find out more. See for example the
 > [Ddsv4 sizes series](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal).
 
+## Spreading vs Packing nodes in a pool
+
+Defines how jobs are packed on nodes. Packing puts as many tasks as possible on a single
+node. Spreading startes new nodes for each task per default. See the documentation for
+ more details:
+[azure/batch/batch-parallel-node-tasks](https://learn.microsoft.com/en-us/azure/batch/batch-parallel-node-tasks)
 
 ## Troubleshooting
 
@@ -77,3 +82,4 @@ on process requirements. This can be achieved by using the `autopool` feature.
 
 - See [nextflow documentation](https://www.nextflow.io/docs/latest/azure.html#auto-pools)
 - See [Seqera documentation](https://docs.seqera.io/platform-cloud/enterprise/advanced-topics/manual-azure-batch-setup#option-4-use-the-nextflow-autopool-feature)
+
