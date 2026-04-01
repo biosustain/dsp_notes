@@ -1,12 +1,44 @@
 # Trainings
 
 On November 2024, the Data Science platform from DTU Biosustain launched a series of
-hands-on workshops about different subjects related to Data Science for DTU Biosustain 
-and DTU Bioengineering research fellows. In this first edition we covered the subjects 
-below. If interested, stay tuned for future Data Science workshops!
+hands-on workshops about different Data Science subjects and about different data types for our DTU research fellows. All course materials are freely available below. If interested, stay tuned for future Data Science workshops!
 
+## SIGN UP for our full-day data-type courses for Spring 2026!!!
 
-## Half-day technical workshops
+Sign up to the courses by clicking on them:
+
+- 06-05-2026 [Metagenomics course](https://forms.office.com/e/PT8qVSZiFd)
+- 20-05-2026 [Transcriptomics course](https://forms.office.com/e/TBFJRtUDWN)
+- 03-06-2026 [Proteomics course](https://forms.office.com/e/EiXQwV1jjy)
+- 17-06-2026 [Metabolomics course](https://forms.office.com/e/NPmaUg5Sn5)
+
+## Full-day data type workshops (courses that last between 6-7 h)
+
+:::: {grid} 3
+
+::: {grid-item-card} Massspectrometry-based proteomics
+:link: https://biosustain.github.io/dsp_course_proteomics_intro/
+:link-alt: biosustain.github.io/dsp_proteomics_workshop
+
+Find the repo [here](https://github.com/biosustain/dsp_course_proteomics_intro/)
+:::
+
+::: {grid-item-card} Transcriptomics
+:link: https://biosustain.github.io/dsp_transcriptomics_training/
+:link-alt: biosustain.github.io/dsp_transcriptomics_training
+
+Find the repo [here](https://github.com/biosustain/dsp_transcriptomics_training/).
+:::
+
+::: {grid-item-card} Metagenomics
+:link: https://biosustain.github.io/dsp_metagenomics_training/
+:link-alt: biosustain.github.io/dsp_metagenomics_training
+
+Find the repo [here](https://github.com/biosustain/dsp_metagenomics_training/).
+:::
+::::
+
+## Half-day technical workshops (courses that last between 2-3 h)
 
 <!--
  see grid, card and grit-item-options:
@@ -100,31 +132,3 @@ using GitHub Actions.
 
 ::::
 
-## Full-day data type workshops
-
-In May 2025, we started to offer full-day workshops on specific data types:
-
-
-:::: {grid} 3
-
-::: {grid-item-card} Massspectrometry-based proteomics
-:link: https://biosustain.github.io/dsp_course_proteomics_intro/
-:link-alt: biosustain.github.io/dsp_proteomics_workshop
-
-Find the repo [here](https://github.com/biosustain/dsp_course_proteomics_intro/)
-:::
-
-::: {grid-item-card} Transcriptomics
-:link: https://biosustain.github.io/dsp_transcriptomics_training/
-:link-alt: biosustain.github.io/dsp_transcriptomics_training
-
-Find the repo [here](https://github.com/biosustain/dsp_transcriptomics_training/).
-:::
-
-::: {grid-item-card} Metagenomics
-:link: https://biosustain.github.io/dsp_metagenomics_training/
-:link-alt: biosustain.github.io/dsp_metagenomics_training
-
-Find the repo [here](https://github.com/biosustain/dsp_metagenomics_training/).
-:::
-::::
