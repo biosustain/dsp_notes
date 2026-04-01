@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ontology Development Kit (ODK) Crash Course &#8212; Data Science Platform notes  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=5090fefc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ontologies/ontologies_notes';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DTU HPC" href="../hpc_dtu/setup_user_env.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data Science Platform notes  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/biosustain/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about.html">Data Science Platform at BRIGHT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trainings/index.html">Trainings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../collaborations/index.html">Collaboration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Recording tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../recordings/index.html">Recordings</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Azure</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../azure/transferring_odrive-to-azure.html">How to Transfer Data from the <strong>O Drive</strong> to <strong>Azure Storage</strong></a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Seqera</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../seqera/index.html">Platform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/debugging.html">Debugging jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/performance.html">Utilizing Flexible Compute Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/setup_infrastructure.html">Setup Azure batch compute environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../sphinx/0_overview.html">Documentation using Sphinx, MyST-NB</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../python/percent_notebooks.html">Percent Notebooks in VSCode (and other editior)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/best_practices.html">Coding (best) practices for Data Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/package_template.html">Design descriptions and details for the Python package template</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../hpc_dtu/setup_user_env.html">DTU HPC</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Ontologies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ontology Development Kit (ODK) Crash Course</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/biosustain/dsp_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/ontologies/ontologies_notes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ontology Development Kit (ODK) Crash Course</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-agenda">Day 1 Agenda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obo-community">OBO Community</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ontologies">Introduction to Ontologies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontology-development-kit-basics">Ontology Development Kit Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-an-odk-ontology">Anatomy of an ODK ontology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-odk-ontology">Creating your ODK ontology</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-edit-in-protege">How to edit in protégé</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-agenda">Day 2 Agenda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-imports-with-odk">Managing Imports with ODK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-tutorial">Hands on Tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-management">Release Management</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ontology-development-kit-odk-crash-course">
+<h1>Ontology Development Kit (ODK) Crash Course<a class="headerlink" href="#ontology-development-kit-odk-crash-course" title="Link to this heading">#</a></h1>
+<p>Aim: To kickstart your journey into using the ODK, providing the foundations on which further development can be done</p>
+<p>Goals:
+- You understand the what the ODK is and how to use it in ontology development
+- You are able to handle basic editing of the PREFER ontology using the ODK
+- You know how to find documentation and help if you need it in the future</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Download and install <a class="reference external" href="https://desktop.github.com/" rel="noreferrer" target="_blank">GitHub Desktop</a> if you are unfamiliar with git commands.</p></li>
+<li><p>Download and install <a class="reference external" href="https://protege.stanford.edu/software.php#desktop-protege" rel="noreferrer" target="_blank">Protege</a>. See instructions on how to set up Protege <a class="reference external" href="https://oboacademy.github.io/obook/howto/set-up-protege/" rel="noreferrer" target="_blank">Setup Protege</a></p></li>
+<li><p>Install <a class="reference external" href="https://oboacademy.github.io/obook/howto/installing-elk-in-protege/" rel="noreferrer" target="_blank">ELK reasoner in protege</a> if your version does not already come with it</p></li>
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/howto/odk-setup/" rel="noreferrer" target="_blank">Setting up ODK</a></p></li>
+</ol>
+</section>
+<section id="day-1-agenda">
+<h2>Day 1 Agenda<a class="headerlink" href="#day-1-agenda" title="Link to this heading">#</a></h2>
+<section id="obo-community">
+<h3>OBO Community<a class="headerlink" href="#obo-community" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Documentation developed by the OBO community can be found in the <a class="reference external" href="https://oboacademy.github.io/obook/" rel="noreferrer" target="_blank">OBOOK</a></p></li>
+<li><p>OBO community communicates through <a class="reference external" href="https://obo-communitygroup.slack.com/" rel="noreferrer" target="_blank">slack</a> (if you need an invite to join, please send an email to shawntanzk&#64;outlook.com)</p></li>
+</ul>
+</section>
+<section id="introduction-to-ontologies">
+<h3>Introduction to Ontologies<a class="headerlink" href="#introduction-to-ontologies" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/explanation/intro-to-ontologies/" rel="noreferrer" target="_blank">Basic intro to ontologies</a></p></li>
+<li><p>Modelling: <a class="reference external" href="https://oboacademy.github.io/obook/explanation/logical-axiomatization/" rel="noreferrer" target="_blank">Logical Axioms</a> &amp; <a class="reference external" href="https://oboacademy.github.io/obook/lesson/modelling-with-object-properties/" rel="noreferrer" target="_blank">Object Properties</a></p></li>
+</ol>
+<p>Further reading for modelling:</p>
+<ol class="arabic simple">
+<li><p>Understanding existential restrictions through <a class="reference external" href="https://oboacademy.github.io/obook/explanation/subClassOf-vs-equivalentTo/" rel="noreferrer" target="_blank">this explainer</a> and this explainer(https://oboacademy.github.io/obook/explanation/existential-restrictions/)</p></li>
+<li><p>if you want some really indepth modelling tutorial, see FHKB tutorial <a class="reference external" href="https://oboacademy.github.io/obook/tutorial/fhkb/" rel="noreferrer" target="_blank">here</a>)</p></li>
+</ol>
+</section>
+<section id="ontology-development-kit-basics">
+<h3>Ontology Development Kit Basics<a class="headerlink" href="#ontology-development-kit-basics" title="Link to this heading">#</a></h3>
+<p>The Ontology Development Kit (ODK) provides a set of standardized, customizable and automatically executable workflows, and packages all required tooling in a single Docker image.</p>
+<p>Key Features:</p>
+<ol class="arabic simple">
+<li><p>Standardised layout for repos to minimise time finding files.</p></li>
+<li><p>Standardised workflows which allow users to work with other ontologies without relearning processes.</p></li>
+<li><p>Dynamic import to allow users to easily mantain terms imported from other ontologies.</p></li>
+</ol>
+<section id="anatomy-of-an-odk-ontology">
+<h4>Anatomy of an ODK ontology<a class="headerlink" href="#anatomy-of-an-odk-ontology" title="Link to this heading">#</a></h4>
+<p>All ODK repos have standard file layout. The key files you should know are</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">src/ontology/ont.yaml</span></code> - the config file which ODK reads to build your repo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/ontology/ont-edit.owl</span></code> - the file that you should edit on</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/ontology/ont.makefile</span></code> - custom code that the repo uses that defers from vanilla ODK</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/ontology/imports/ont.txt</span></code> - files to add ontology terms to be imported</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/ontology/profile.txt</span></code> - configuration of QC reports/checks</p></li>
+</ol>
+<p>Other files will be covered as needed.</p>
+</section>
+<section id="creating-your-odk-ontology">
+<h4>Creating your ODK ontology<a class="headerlink" href="#creating-your-odk-ontology" title="Link to this heading">#</a></h4>
+<p>Tutorial can be found <a class="reference external" href="https://oboacademy.github.io/obook/tutorial/setting-up-project-odk/" rel="noreferrer" target="_blank">here</a> - if you already have an ontology and want to migrate it, you can move the terms to the edit file after initialising your ODK ontology.</p>
+</section>
+</section>
+<section id="how-to-edit-in-protege">
+<h3>How to edit in protégé<a class="headerlink" href="#how-to-edit-in-protege" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/howto/edit-in-protege/" rel="noreferrer" target="_blank">Editing a term in protege</a> - remember, let the reasoner do the work!</p></li>
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/howto/create-new-term/" rel="noreferrer" target="_blank">Creating a new term in protege</a></p></li>
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/howto/obsolete-term/" rel="noreferrer" target="_blank">Obsoleting a term in protege</a></p></li>
+<li><p><a class="reference external" href="https://oboacademy.github.io/obook/howto/merge-terms/" rel="noreferrer" target="_blank">Merging a term in protege</a></p></li>
+</ol>
+</section>
+</section>
+<section id="day-2-agenda">
+<h2>Day 2 Agenda<a class="headerlink" href="#day-2-agenda" title="Link to this heading">#</a></h2>
+<section id="managing-imports-with-odk">
+<h3>Managing Imports with ODK<a class="headerlink" href="#managing-imports-with-odk" title="Link to this heading">#</a></h3>
+<p>A key function of the ODK is to handle dynamic imports. To avoid clashes in imports, I would recommend using merged imports in the ODK. Here is an example of what you should add to your yaml config file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">import_group</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">use_base_merging</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRUE</span>
+<span class="w">  </span><span class="nt">products</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ro</span>
+<span class="w">      </span><span class="nt">use_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRUE</span>
+</pre></div>
+</div>
+<p>The ODK maintains a set of ontology shorthands where you can just use the id and add use_base, and it will automatically work. However, in certain cases, you need to define where the mirror is from (where to download the ontology file), ask the ODK to make a base file where a base file is not available, and/or define what the base Internationalized Resource Identifier (IRI) are.
+Note: IRIs extend traditional URIs by allowing Unicode characters and base IRIs are foundational URL or URI for an ontology, serving as a prefix for all entities (classes, properties, individuals).
+An example would look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bao</span>
+<span class="w">      </span><span class="nt">mirror_from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://www.bioassayontology.org/bao/bao_complete.owl</span>
+<span class="w">      </span><span class="nt">make_base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TRUE</span>
+<span class="w">      </span><span class="nt">base_irirs</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://www.bioassayontology.org/</span>
+</pre></div>
+</div>
+<p>There are some ontologies (e.g. chebi and NCBITaxon) which are huge, please look at <a class="reference external" href="https://oboacademy.github.io/obook/howto/deal-with-large-ontologies/" rel="noreferrer" target="_blank">this document</a> for managing such ontologies.</p>
+<p>Once you have configured your imports and update your repo using <code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">run.sh</span> <span class="pre">make</span> <span class="pre">update_repo</span></code>, you should see .txt files in your src/ontology/imports folder. To import terms to your ontology, add them into the <code class="docutils literal notranslate"><span class="pre">.txt</span></code> file, and run <code class="docutils literal notranslate"><span class="pre">sh</span> <span class="pre">run.sh</span> <span class="pre">make</span> <span class="pre">imports/merged_import.owl</span></code>. This will download the mirrors, extract out terms relavent to what you have added, and merge all subgraphs into merged_import.owl.</p>
+<p>From there you can use the imported terms in your edit file.</p>
+</section>
+<section id="hands-on-tutorial">
+<h3>Hands on Tutorial<a class="headerlink" href="#hands-on-tutorial" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Clone <a class="reference external" href="https://github.com/EBISPOT/ontology_editor_training/" rel="noreferrer" target="_blank">EBISPOT/ontology_editor_training</a></p></li>
+<li><p>Given that ‘Chardonnay wine’ is a generic names for wines made from Chardonnay (varietal) grapes, add a term for Chardonnay (wine) with an appropriate logical definition.</p>
+<ul class="simple">
+<li><p>What does the reasoner classify as Chardonay?</p></li>
+</ul>
+</li>
+<li><p>View the relationships (subClassOf axioms) of Chianti (wine). How might these frustrate attempts to classify wines using the pattern you just used to define Chardonnay wine?</p></li>
+<li><p>Add a term for <a class="reference external" href="https://en.wikipedia.org/wiki/Ros%C3%A9" rel="noreferrer" target="_blank">Rosé wine</a> or <a class="reference external" href="https://en.wikipedia.org/wiki/Orange_wine" rel="noreferrer" target="_blank">orange wine</a> and some terms for specific wines that will be auto-classified under it.</p></li>
+<li><p>Add an import for <a class="reference external" href="https://github.com/FoodOntology/foodon" rel="noreferrer" target="_blank">the food ontology</a> to the ODK repo, and import <code class="docutils literal notranslate"><span class="pre">FOODON:00002364</span></code> and replace wine with the FOODON term for wine</p></li>
+</ol>
+</section>
+<section id="release-management">
+<h3>Release Management<a class="headerlink" href="#release-management" title="Link to this heading">#</a></h3>
+<p>The newer version of ODK utilises GitHub releases rather that uploading everything directly to GitHub. This change was made to deal with ever larger ontologies and the limitations of how much can be hosted on a GitHub repo.</p>
+<p>For release management workflow, please utilise <a class="reference external" href="https://github.com/obophenotype/cell-ontology/blob/master/docs/cl-release.md" rel="noreferrer" target="_blank">the workflow shown in CL documentation</a> and update it for your ontology.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../hpc_dtu/setup_user_env.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">DTU HPC</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-1-agenda">Day 1 Agenda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#obo-community">OBO Community</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ontologies">Introduction to Ontologies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ontology-development-kit-basics">Ontology Development Kit Basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomy-of-an-odk-ontology">Anatomy of an ODK ontology</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-odk-ontology">Creating your ODK ontology</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-edit-in-protege">How to edit in protégé</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#day-2-agenda">Day 2 Agenda</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-imports-with-odk">Managing Imports with ODK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hands-on-tutorial">Hands on Tutorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#release-management">Release Management</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Henry Webel, Juliana Assis, Jakob Berg Jespersen, Pasquale Colaianni
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, DTU Biosustain, Informatics Platform, DSP.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
