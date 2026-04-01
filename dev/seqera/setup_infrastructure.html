@@ -430,7 +430,7 @@ for a machine in a series to find out more. See for example the
 <section id="spreading-vs-packing-nodes-in-a-pool">
 <h2>Spreading vs Packing nodes in a pool<a class="headerlink" href="#spreading-vs-packing-nodes-in-a-pool" title="Link to this heading">#</a></h2>
 <p>Defines how jobs are packed on nodes. Packing puts as many tasks as possible on a single
-node. Spreading startes new nodes for each task per default. See the documentation for
+node. Spreading starts new nodes for each task by default. See the documentation for
 more details:
 <a class="reference external" href="https://learn.microsoft.com/en-us/azure/batch/batch-parallel-node-tasks" rel="noreferrer" target="_blank">azure/batch/batch-parallel-node-tasks</a></p>
 </section>
@@ -456,9 +456,9 @@ configuration on Seqera Platform to</p>
 <summary>Example error message:</summary>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>workflow<span class="w"> </span>execution<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>start.<span class="w"> </span>Exit<span class="w"> </span>status:<span class="w"> </span><span class="m">1</span>
 
-ERROR<span class="w"> </span>~<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA&#39;</span><span class="w"> </span>--<span class="w"> </span>Cause:<span class="w"> </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA
+ERROR<span class="w"> </span>~<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;&#39;</span><span class="w"> </span>--<span class="w"> </span>Cause:<span class="w"> </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;
 
-<span class="w">  </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA
+<span class="w">  </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;
 
 
 <span class="w"> </span>--<span class="w"> </span>Check<span class="w"> </span><span class="s1">&#39;nf-2OSwVxmg7B2QQt.log&#39;</span><span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span>details

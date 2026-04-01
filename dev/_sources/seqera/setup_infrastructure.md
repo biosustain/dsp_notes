@@ -38,8 +38,8 @@ See also [Azure Batch documentation](https://learn.microsoft.com/en-us/azure/bat
 ## Spreading vs Packing nodes in a pool
 
 Defines how jobs are packed on nodes. Packing puts as many tasks as possible on a single
-node. Spreading startes new nodes for each task per default. See the documentation for
- more details:
+node. Spreading starts new nodes for each task by default. See the documentation for
+more details:
 [azure/batch/batch-parallel-node-tasks](https://learn.microsoft.com/en-us/azure/batch/batch-parallel-node-tasks)
 
 ## Troubleshooting
@@ -72,9 +72,9 @@ configuration on Seqera Platform to
 ```bash
 The workflow execution failed to start. Exit status: 1
 
-ERROR ~ Unable to access config file 'https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA' -- Cause: Server returned HTTP response code: 403 for URL: https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA
+ERROR ~ Unable to access config file 'https://api.cloud.seqera.io/ephemeral/<ephemeral-id>' -- Cause: Server returned HTTP response code: 403 for URL: https://api.cloud.seqera.io/ephemeral/<ephemeral-id>
 
-  Server returned HTTP response code: 403 for URL: https://api.cloud.seqera.io/ephemeral/UZw1-XJW1qKNEQagE6yUuA
+  Server returned HTTP response code: 403 for URL: https://api.cloud.seqera.io/ephemeral/<ephemeral-id>
 
 
  -- Check 'nf-2OSwVxmg7B2QQt.log' file for details
