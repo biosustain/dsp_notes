@@ -48,14 +48,26 @@ node. Spreading startes new nodes for each task per default. See the documentati
 
 If you encounter connection issues when launching pipelines from Seqera using 
 Azure Batch compute environment, try to increase the timeout settings in the
-Compute Environment configuration on Seqera Platform.
+Compute Environment configuration on Seqera Platform to around 8-16 hours.
 
 ```
 NXF_OPTS="-Dsun.net.client.defaultConnectTimeout=30000 -Dsun.net.client.defaultReadTimeout=60000"
 ```
 
-### Details
-Example error message:
+Here are some example screenshots for setting it as global Environment variables
+
+![Timeout settings in Compute Environment](assets/seqera_compute_env_0.png)
+![Timeout settings in Compute Environment](assets/seqera_compute_env_1.png)
+
+So you will need to set the `NXF_OPTS` environment variable in the Compute Environment 
+configuration on Seqera Platform to
+
+```
+-Dsun.net.client.defaultConnectTimeout=30000 -Dsun.net.client.defaultReadTimeout=60000
+```
+
+<details>
+<summary>Example error message:</summary>
 
 ```bash
 The workflow execution failed to start. Exit status: 1
@@ -67,11 +79,7 @@ ERROR ~ Unable to access config file 'https://api.cloud.seqera.io/ephemeral/UZw1
 
  -- Check 'nf-2OSwVxmg7B2QQt.log' file for details
 ```
-
-Here are some example screenshots for setting it as global Environment variables
-
-![Timeout settings in Compute Environment](assets/seqera_compute_env_0.png)
-![Timeout settings in Compute Environment](assets/seqera_compute_env_1.png)
+ </details>
 
 
 ### VM sizes
