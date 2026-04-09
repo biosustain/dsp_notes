@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Trainings &#8212; Data Science Platform notes  documentation</title>
+    <title>Add or update a module to nf-core/modules &#8212; Data Science Platform notes  documentation</title>
   
   
   
@@ -50,13 +50,13 @@
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'trainings/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nextflow/add_maintain_module';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="author" title="About these documents" href="../about.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Collaboration" href="../collaborations/index.html" />
-    <link rel="prev" title="Data Science Platform at BRIGHT" href="../about.html" />
+    <link rel="next" title="Building a custom nf-core analysis pipeline" href="nf_core_templates.html" />
+    <link rel="prev" title="JavaDocs and Code Documentation" href="javadocs_process.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -161,9 +161,9 @@
 </button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../about.html">Data Science Platform at BRIGHT</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Trainings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../trainings/index.html">Trainings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../collaborations/index.html">Collaboration</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Recording tutorials</span></p>
@@ -183,11 +183,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../seqera/quantms.html">QuantMS on Seqera</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">nextflow</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/add_maintain_module.html">Add or update a module to nf-core/modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../nextflow/nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pipeline_diagrams.html">Nextflow diagrams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Add or update a module to nf-core/modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
 <ul class="nav bd-sidenav">
@@ -280,7 +280,7 @@
       
       
       
-      <li><a href="../_sources/trainings/index.md" target="_blank"
+      <li><a href="../_sources/nextflow/add_maintain_module.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -356,7 +356,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Trainings</h1>
+    <h1>Add or update a module to nf-core/modules</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,9 +366,8 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-up-for-our-full-day-data-type-courses-for-spring-2026">SIGN UP for our full-day data-type courses for Spring 2026!!!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops-courses-that-last-between-6-7-h">Full-day data type workshops (courses that last between 6-7 h)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-day-technical-workshops-courses-that-last-between-2-3-h">Half-day technical workshops (courses that last between 2-3 h)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint-and-test">Lint and test</a></li>
 </ul>
             </nav>
         </div>
@@ -380,161 +379,50 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="trainings">
-<h1>Trainings<a class="headerlink" href="#trainings" title="Link to this heading">#</a></h1>
-<p>On November 2024, the Data Science platform from DTU Biosustain launched a series of
-hands-on workshops about different Data Science subjects and about different data types for our DTU research fellows. All course materials are freely available below. If interested, stay tuned for future Data Science workshops!</p>
-<section id="sign-up-for-our-full-day-data-type-courses-for-spring-2026">
-<h2>SIGN UP for our full-day data-type courses for Spring 2026!!!<a class="headerlink" href="#sign-up-for-our-full-day-data-type-courses-for-spring-2026" title="Link to this heading">#</a></h2>
-<p>Sign up to the courses by clicking on them:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="add-or-update-a-module-to-nf-core-modules">
+<h1>Add or update a module to nf-core/modules<a class="headerlink" href="#add-or-update-a-module-to-nf-core-modules" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>06-05-2026 <a class="reference external" href="https://forms.office.com/e/PT8qVSZiFd" rel="noreferrer" target="_blank">Metagenomics course</a></p></li>
-<li><p>20-05-2026 <a class="reference external" href="https://forms.office.com/e/TBFJRtUDWN" rel="noreferrer" target="_blank">Transcriptomics course</a></p></li>
-<li><p>03-06-2026 <a class="reference external" href="https://forms.office.com/e/EiXQwV1jjy" rel="noreferrer" target="_blank">Proteomics course</a></p></li>
-<li><p>17-06-2026 <a class="reference external" href="https://forms.office.com/e/NPmaUg5Sn5" rel="noreferrer" target="_blank">Metabolomics course</a></p></li>
+<li><p>either to <code class="docutils literal notranslate"><span class="pre">nf-core/modules</span></code> for the nf-core community</p></li>
+<li><p>or to custom remotes as <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code> for internal use in <code class="docutils literal notranslate"><span class="pre">bigbio/quantms</span></code>
+(docs for custom remotes with nf-core tools
+<a class="reference external" href="https://nf-co.re/docs/nf-core-tools/custom_remotes" rel="noreferrer" target="_blank">here</a>)</p></li>
+</ul>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://training.nextflow.io/latest/hello_nf-core/04_make_module/" rel="noreferrer" target="_blank">training of hello_nf-core</a></p></li>
+<li><p><a class="reference external" href="https://nf-co.re/docs/tutorials/nf-core_components/components" rel="noreferrer" target="_blank">tutorial in nf-core docs</a></p></li>
+<li><p><a class="reference external" href="https://nf-co.re/docs/guidelines/components/modules" rel="noreferrer" target="_blank">module specifications</a></p></li>
 </ul>
 </section>
-<section id="full-day-data-type-workshops-courses-that-last-between-6-7-h">
-<h2>Full-day data type workshops (courses that last between 6-7 h)<a class="headerlink" href="#full-day-data-type-workshops-courses-that-last-between-6-7-h" title="Link to this heading">#</a></h2>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Massspectrometry-based proteomics</div>
-<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro/" rel="noreferrer" target="_blank">here</a></p>
+<section id="lint-and-test">
+<h2>Lint and test<a class="headerlink" href="#lint-and-test" title="Link to this heading">#</a></h2>
+<p>Here for example for a local module called <code class="docutils literal notranslate"><span class="pre">onsite</span></code> in <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code> repo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run linting checks on the local directory (-d .) for the &quot;onsite&quot; module</span>
+<span class="c1"># This validates structure, metadata, schema, and best practices compliance (nf-core gudelines)</span>
+nf-core<span class="w"> </span>modules<span class="w"> </span>lint<span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>onsite
+
+<span class="c1"># More linting automatically fixing issues where possible (--fix)</span>
+<span class="c1"># Useful for quick formatting corrections and minor standard violations</span>
+nf-core<span class="w"> </span>modules<span class="w"> </span>lint<span class="w"> </span>--fix<span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>onsite
+
+<span class="c1"># Run nf-test unit tests for the onsite module using Docker profile</span>
+<span class="c1"># Ensures the module behaves as expected in a containerized environment</span>
+nf-test<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>modules/bigbio/onsite/tests/main.nf.test
+
+<span class="c1"># Run tests and update the expected output snapshots</span>
+<span class="c1"># Use this when intended changes would modify outputs (e.g., after code refactoring)</span>
+nf-test<span class="w"> </span><span class="nb">test</span><span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>modules/bigbio/onsite/tests/main.nf.test<span class="w"> </span>--update-snapshot
+
+<span class="c1"># A note on --update-snapshot, do not use it if you have not verified the outputs</span>
+
+<span class="c1"># nf-test is also available via nf-core tools cli:</span>
+nf-core<span class="w"> </span>modules<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-d<span class="w"> </span>.<span class="w"> </span>--profile<span class="w"> </span>docker<span class="w"> </span>--update<span class="w"> </span>onsite
+</pre></div>
 </div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_course_proteomics_intro/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_proteomics_workshop</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Transcriptomics</div>
-<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_transcriptomics_training/" rel="noreferrer" target="_blank">here</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_transcriptomics_training/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_transcriptomics_training</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Metagenomics</div>
-<p class="sd-card-text">Find the repo <a class="reference external" href="https://github.com/biosustain/dsp_metagenomics_training/" rel="noreferrer" target="_blank">here</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_metagenomics_training/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_metagenomics_training</span></a></div>
-</div>
-</div>
-</div>
-</section>
-<section id="half-day-technical-workshops-courses-that-last-between-2-3-h">
-<h2>Half-day technical workshops (courses that last between 2-3 h)<a class="headerlink" href="#half-day-technical-workshops-courses-that-last-between-2-3-h" title="Link to this heading">#</a></h2>
-<!--
- see grid, card and grit-item-options:
- https://sphinx-design.readthedocs.io/en/sbt-theme/
--->
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Command line basics</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Introduction the command line with bash</div>
-<p class="sd-card-text">You can find the slides <a class="reference download internal" download="" href="../_downloads/dbc9f48b43f7be2ec205fa043a7b03c5/practical_unix_workshop_slides.pdf"><span class="xref download myst">here</span></a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_workshop_bash" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_workshop_bash</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Github and Git</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Introduction to Github and Git</div>
-<p class="sd-card-text">Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).</p>
-<p class="sd-card-text">Find the instructions for the training <a class="reference external" href="https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md" rel="noreferrer" target="_blank">here</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/git-tutorial" rel="noreferrer" target="_blank"><span>github.com/biosustain/git-tutorial</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Nextflow</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Nextflow training</div>
-<p class="sd-card-text">Learn how to create and manage reproducible workflows using Nextflow.</p>
-<p class="sd-card-text">Find the material as a website <a class="reference external" href="https://biosustain.github.io/dsp_nextflow_training" rel="noreferrer" target="_blank">here</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_nextflow_training" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_nextflow_training</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Docker basics</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Writing your DockerFile to containerize your app/software</div>
-<p class="sd-card-text">Learn the basics of containerization and how to use Docker for reproducible research.</p>
-<p class="sd-card-text">Find the
-<a class="reference external" href="https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf" rel="noreferrer" target="_blank">slides</a>
-and
-<a class="reference external" href="https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html" rel="noreferrer" target="_blank">hands-on material (running in GitHub Codespaces)</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_docker_training" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_docker_training</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Data Visualization with R</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Data Visualization with R</div>
-<p class="sd-card-text">Learn how to create informative and visually appealing graphics using R. Same plots
-as in the Python course.</p>
-<p class="sd-card-text">The material is available as a html document for direct viewing
-<a class="reference external" href="https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html" rel="noreferrer" target="_blank">here</a>
-or <a class="reference external" href="https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html" rel="noreferrer" target="_blank">downloaded from GitHub’s website</a>.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_workshop_datavizR" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_workshop_datavizR</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Data Visualization with Python</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-Data Visualization with Python</div>
-<p class="sd-card-text">Learn how to create informative and visually appealing graphics using Python. Same plots
-as in the R course.</p>
-<p class="sd-card-text">Course is in development.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://biosustain.github.io/dsp_workshop_dataviz_python/" rel="noreferrer" target="_blank"><span>biosustain.github.io/dsp_workshop_dataviz_python/</span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">Automation</p>
-</div>
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold docutils">
-GitHub Actions Tutorial</div>
-<p class="sd-card-text">First introduction to continuous integration and continuous deployment (CI/CD)
-using GitHub Actions.</p>
-</div>
-<a class="sd-stretched-link sd-hide-link-text reference external" href="https://github.com/biosustain/dsp_actions_tutorial" rel="noreferrer" target="_blank"><span>github.com/biosustain/dsp_actions_tutorial</span></a></div>
-</div>
-</div>
-</div>
+<ul class="simple">
+<li><p>more on snapshots: <a class="reference external" href="https://www.nf-test.com/docs/assertions/snapshots/" rel="noreferrer" target="_blank">link</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -550,20 +438,20 @@ using GitHub Actions.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../about.html"
+       href="javadocs_process.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Science Platform at BRIGHT</p>
+        <p class="prev-next-title">JavaDocs and Code Documentation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../collaborations/index.html"
+       href="nf_core_templates.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Collaboration</p>
+        <p class="prev-next-title">Building a custom nf-core analysis pipeline</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,9 +473,8 @@ using GitHub Actions.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sign-up-for-our-full-day-data-type-courses-for-spring-2026">SIGN UP for our full-day data-type courses for Spring 2026!!!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-day-data-type-workshops-courses-that-last-between-6-7-h">Full-day data type workshops (courses that last between 6-7 h)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#half-day-technical-workshops-courses-that-last-between-2-3-h">Half-day technical workshops (courses that last between 2-3 h)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint-and-test">Lint and test</a></li>
 </ul>
   </nav></div>
 

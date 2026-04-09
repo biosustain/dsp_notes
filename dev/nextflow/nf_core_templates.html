@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Documentation using Sphinx, MyST-NB" href="../sphinx/0_overview.html" />
-    <link rel="prev" title="JavaDocs and Code Documentation" href="javadocs_process.html" />
+    <link rel="prev" title="Add or update a module to nf-core/modules" href="add_maintain_module.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -186,6 +186,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="pipeline_diagrams.html">Nextflow diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="add_maintain_module.html">Add or update a module to nf-core/modules</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
@@ -366,10 +367,19 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptions-to-the-pipeline-created-from-the-template">Make adaptions to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptations-to-the-pipeline-created-from-the-template">Make adaptations to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-modules-and-subworkflows">Add modules and subworkflows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deviate-from-existing-modules-patch">Deviate from existing modules (patch)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint">Lint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-without-formatting-errors">Commit without formatting errors</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -405,13 +415,57 @@ of <code class="docutils literal notranslate"><span class="pre">nf-core</span> <
 The default pipeline has as single input a csv sample sheet, and an output directory.</p></li>
 </ul>
 </section>
-<section id="make-adaptions-to-the-pipeline-created-from-the-template">
-<h2>Make adaptions to the pipeline created from the template<a class="headerlink" href="#make-adaptions-to-the-pipeline-created-from-the-template" title="Link to this heading">#</a></h2>
+<section id="make-adaptations-to-the-pipeline-created-from-the-template">
+<h2>Make adaptations to the pipeline created from the template<a class="headerlink" href="#make-adaptations-to-the-pipeline-created-from-the-template" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>edit the schema and remove the parameters which are not needed:
 <code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">pipelines</span> <span class="pre">schema</span> <span class="pre">build</span></code></p></li>
 <li><p>then try to get it to run</p></li>
 </ul>
+</section>
+<section id="add-modules-and-subworkflows">
+<h2>Add modules and subworkflows<a class="headerlink" href="#add-modules-and-subworkflows" title="Link to this heading">#</a></h2>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">modules</span></code> or <code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">subworkflows</span></code> command, you can add modules
+or entire subworkflows to your pipeline, enabling you to augment pre-existing pipelines
+with new functionality before or after the existing workflow.</p>
+<section id="deviate-from-existing-modules-patch">
+<h3>Deviate from existing modules (patch)<a class="headerlink" href="#deviate-from-existing-modules-patch" title="Link to this heading">#</a></h3>
+<p>Patching allows you to create a modified version of an existing module, which can be
+useful if you want to make small changes to an existing module without having to create
+a new one from scratch. You can use the <code class="docutils literal notranslate"><span class="pre">nf-core</span> <span class="pre">modules</span> <span class="pre">patch</span></code> command to create a
+patch for an existing module, which will allow you to modify the module’s code while
+still keeping track of the original version and allowing you to still update with new
+changes.</p>
+<ul class="simple">
+<li><p>make custom adjustments</p></li>
+<li><p>still have the option to incorporate updates from the original module (or subworkflow)</p></li>
+</ul>
+<p>For example for <code class="docutils literal notranslate"><span class="pre">thermorawfileparser</span></code> module in <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code>, you can
+pull install and patch and then update it with the latest changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>install<span class="w"> </span>thermorawfileparser
+nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>patch<span class="w"> </span>thermorawfileparser
+<span class="c1"># a while later after updates were made to bigbio/nf-modules/thermorawfileparser, </span>
+<span class="c1"># you can pull the latest changes and update your patched version:</span>
+nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>update<span class="w"> </span>thermorawfileparser
+</pre></div>
+</div>
+<p>On patching</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=7pu6Ikhi1eU" rel="noreferrer" target="_blank">video</a></p></li>
+<li><p><a class="reference external" href="https://nf-co.re/docs/nf-core-tools/modules/patch" rel="noreferrer" target="_blank">docs</a></p></li>
+</ul>
+</section>
+</section>
+<section id="lint">
+<h2>Lint<a class="headerlink" href="#lint" title="Link to this heading">#</a></h2>
+<p>Check for errors and warnings:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nf-core<span class="w"> </span>pipelines<span class="w"> </span>lint<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="test">
+<h2>Test<a class="headerlink" href="#test" title="Link to this heading">#</a></h2>
+<p>You will need to add basic test of the pipeline.</p>
 </section>
 <section id="wave">
 <h2>Wave<a class="headerlink" href="#wave" title="Link to this heading">#</a></h2>
@@ -420,6 +474,10 @@ The default pipeline has as single input a csv sample sheet, and an output direc
 <li><p>from conda environment to containerized version</p></li>
 <li><p>use <code class="docutils literal notranslate"><span class="pre">wave</span></code> profile from nf-core template config (will deactivate any pre-built docker
 or singularity containers)</p></li>
+<li><p>allows also to specify a custom container registry, e.g. <code class="docutils literal notranslate"><span class="pre">ghcr.io/biosustain</span></code>
+for privately hosted containers in Seqera Platform (which executes it then on
+Azure), see
+<a class="reference external" href="https://docs.seqera.io/platform-cloud/credentials/container_registry_credentials" rel="noreferrer" target="_blank">here</a>.</p></li>
 </ul>
 </section>
 <section id="define-the-report-path">
@@ -437,7 +495,7 @@ in Seqera Cloud using the <code class="docutils literal notranslate"><span class
 <span class="w">  </span><span class="nt">multiqc_report.html</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;MultiQC</span><span class="nv"> </span><span class="s">HTML</span><span class="nv"> </span><span class="s">report&quot;</span>
 <span class="w">  </span><span class="nt">quarto_report.html</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;VUEGen</span><span class="nv"> </span><span class="s">HTML</span><span class="nv"> </span><span class="s">report&quot;</span>
+<span class="w">    </span><span class="nt">display</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;VueGen</span><span class="nv"> </span><span class="s">HTML</span><span class="nv"> </span><span class="s">report&quot;</span>
 </pre></div>
 </div>
 </section>
@@ -449,6 +507,19 @@ in Seqera Cloud using the <code class="docutils literal notranslate"><span class
 in order to make it executable on Seqera Cloud. The initial history can be found
 <a class="reference external" href="https://github.com/biosustain/dsp_course_proteomics_intro/pull/18" rel="noreferrer" target="_blank">here</a>.</p></li>
 </ul>
+<section id="commit-without-formatting-errors">
+<h3>Commit without formatting errors<a class="headerlink" href="#commit-without-formatting-errors" title="Link to this heading">#</a></h3>
+<ul>
+<li><p>use the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks for formatting on all files:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+pre-commit<span class="w"> </span>install
+<span class="c1"># then only this is needed after installing the hooks:</span>
+pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -464,12 +535,12 @@ in order to make it executable on Seqera Cloud. The initial history can be found
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="javadocs_process.html"
+       href="add_maintain_module.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">JavaDocs and Code Documentation</p>
+        <p class="prev-next-title">Add or update a module to nf-core/modules</p>
       </div>
     </a>
     <a class="right-next"
@@ -500,10 +571,19 @@ in order to make it executable on Seqera Cloud. The initial history can be found
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptions-to-the-pipeline-created-from-the-template">Make adaptions to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptations-to-the-pipeline-created-from-the-template">Make adaptations to the pipeline created from the template</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-modules-and-subworkflows">Add modules and subworkflows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deviate-from-existing-modules-patch">Deviate from existing modules (patch)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint">Lint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hints">Hints</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-without-formatting-errors">Commit without formatting errors</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

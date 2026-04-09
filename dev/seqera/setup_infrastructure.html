@@ -186,6 +186,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/pipeline_diagrams.html">Nextflow diagrams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/javadocs_process.html">JavaDocs and Code Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nextflow/add_maintain_module.html">Add or update a module to nf-core/modules</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../nextflow/nf_core_templates.html">Building a custom nf-core analysis pipeline</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
@@ -371,12 +372,6 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-vms-as-nodes-in-a-pool">On VMs as nodes in a pool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spreading-vs-packing-nodes-in-a-pool">Spreading vs Packing nodes in a pool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-issues">Connection issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vm-sizes">VM sizes</a></li>
-</ul>
-</li>
 </ul>
             </nav>
         </div>
@@ -426,56 +421,6 @@ a Managed Identity and Batch Pool.</p>
 for a machine in a series to find out more. See for example the
 <a class="reference external" href="https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv4-series?tabs=sizestoragelocal" rel="noreferrer" target="_blank">Ddsv4 sizes series</a>.</p>
 </div></blockquote>
-</section>
-<section id="spreading-vs-packing-nodes-in-a-pool">
-<h2>Spreading vs Packing nodes in a pool<a class="headerlink" href="#spreading-vs-packing-nodes-in-a-pool" title="Link to this heading">#</a></h2>
-<p>Defines how jobs are packed on nodes. Packing puts as many tasks as possible on a single
-node. Spreading starts new nodes for each task by default. See the documentation for
-more details:
-<a class="reference external" href="https://learn.microsoft.com/en-us/azure/batch/batch-parallel-node-tasks" rel="noreferrer" target="_blank">azure/batch/batch-parallel-node-tasks</a></p>
-</section>
-<section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">#</a></h2>
-<section id="connection-issues">
-<h3>Connection issues<a class="headerlink" href="#connection-issues" title="Link to this heading">#</a></h3>
-<p>If you encounter connection issues when launching pipelines from Seqera using
-Azure Batch compute environment, try to increase the timeout settings in the
-Compute Environment configuration on Seqera Platform to around 8-16 hours.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NXF_OPTS</span><span class="o">=</span><span class="s2">&quot;-Dsun.net.client.defaultConnectTimeout=30000 -Dsun.net.client.defaultReadTimeout=60000&quot;</span>
-</pre></div>
-</div>
-<p>Here are some example screenshots for setting it as global Environment variables</p>
-<p><img alt="Timeout settings in Compute Environment" src="../_images/seqera_compute_env_0.png" />
-<img alt="Timeout settings in Compute Environment" src="../_images/seqera_compute_env_1.png" /></p>
-<p>So you will need to set the <code class="docutils literal notranslate"><span class="pre">NXF_OPTS</span></code> environment variable in the Compute Environment
-configuration on Seqera Platform to</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">Dsun</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">defaultConnectTimeout</span><span class="o">=</span><span class="mi">30000</span> <span class="o">-</span><span class="n">Dsun</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">defaultReadTimeout</span><span class="o">=</span><span class="mi">60000</span>
-</pre></div>
-</div>
-<details>
-<summary>Example error message:</summary>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The<span class="w"> </span>workflow<span class="w"> </span>execution<span class="w"> </span>failed<span class="w"> </span>to<span class="w"> </span>start.<span class="w"> </span>Exit<span class="w"> </span>status:<span class="w"> </span><span class="m">1</span>
-
-ERROR<span class="w"> </span>~<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>access<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span><span class="s1">&#39;https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;&#39;</span><span class="w"> </span>--<span class="w"> </span>Cause:<span class="w"> </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;
-
-<span class="w">  </span>Server<span class="w"> </span>returned<span class="w"> </span>HTTP<span class="w"> </span>response<span class="w"> </span>code:<span class="w"> </span><span class="m">403</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>URL:<span class="w"> </span>https://api.cloud.seqera.io/ephemeral/&lt;ephemeral-id&gt;
-
-
-<span class="w"> </span>--<span class="w"> </span>Check<span class="w"> </span><span class="s1">&#39;nf-2OSwVxmg7B2QQt.log&#39;</span><span class="w"> </span>file<span class="w"> </span><span class="k">for</span><span class="w"> </span>details
-</pre></div>
-</div>
- </details>
-</section>
-<section id="vm-sizes">
-<h3>VM sizes<a class="headerlink" href="#vm-sizes" title="Link to this heading">#</a></h3>
-<p>To handle workflows with a mix of low and high memory requirements, consider
-to let Seqera create multiple Azure Batch pools with different VM sizes based
-on process requirements. This can be achieved by using the <code class="docutils literal notranslate"><span class="pre">autopool</span></code> feature.</p>
-<ul class="simple">
-<li><p>See <a class="reference external" href="https://www.nextflow.io/docs/latest/azure.html#auto-pools" rel="noreferrer" target="_blank">nextflow documentation</a></p></li>
-<li><p>See <a class="reference external" href="https://docs.seqera.io/platform-cloud/enterprise/advanced-topics/manual-azure-batch-setup#option-4-use-the-nextflow-autopool-feature" rel="noreferrer" target="_blank">Seqera documentation</a></p></li>
-</ul>
-</section>
 </section>
 </section>
 
@@ -532,12 +477,6 @@ on process requirements. This can be achieved by using the <code class="docutils
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#on-vms-as-nodes-in-a-pool">On VMs as nodes in a pool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spreading-vs-packing-nodes-in-a-pool">Spreading vs Packing nodes in a pool</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-issues">Connection issues</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vm-sizes">VM sizes</a></li>
-</ul>
-</li>
 </ul>
   </nav></div>
 
