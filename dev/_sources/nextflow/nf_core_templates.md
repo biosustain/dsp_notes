@@ -51,11 +51,15 @@ changes.
 For example for `thermorawfileparser` module in `bigbio/nf-modules`, you can 
 pull install and patch and then update it with the latest changes:
 
-```bash
+# Apply a "patch" to the installed module
+# This creates a local editable version while keeping a reference to the upstream source
+# Any changes you make will be tracked as a patch (diff) on top of the original module
 nf-core modules --git-remote https://github.com/bigbio/nf-modules.git install thermorawfileparser
 nf-core modules --git-remote https://github.com/bigbio/nf-modules.git patch thermorawfileparser
 # a while later after updates were made to bigbio/nf-modules/thermorawfileparser, 
 # you can pull the latest changes and update your patched version:
+# Your local modifications (patch) will be re-applied on top of the updated module
+# This helps to keep your custom changes while staying in sync with upstream improvements
 nf-core modules --git-remote https://github.com/bigbio/nf-modules.git update thermorawfileparser
 ```
 
@@ -117,9 +121,13 @@ reports:
 
 - use the `pre-commit` hooks for formatting on all files:
 
-  ```bash
+  
   pip install pre-commit
+  # Installs the Git hooks defined in .pre-commit-config.yaml
+  # This sets up automatic checks that run on every commit
   pre-commit install
   # then only this is needed after installing the hooks:
+  # Useful for initial cleanup or when introducing pre-commit to an existing repo
+ # Also helpful to manually re-run checks without making a commit
   pre-commit run --all-files
   ```

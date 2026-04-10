@@ -188,6 +188,14 @@
 <li class="toctree-l1"><a class="reference internal" href="javadocs_process.html">JavaDocs and Code Documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="add_maintain_module.html">Add or update a module to nf-core/modules</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Building a custom nf-core analysis pipeline</a></li>
+
+
+
+
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Sphinx and MyST-NB</span></p>
 <ul class="nav bd-sidenav">
@@ -366,13 +374,22 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Building a custom nf-core analysis pipeline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptations-to-the-pipeline-created-from-the-template">Make adaptations to the pipeline created from the template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-modules-and-subworkflows">Add modules and subworkflows</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deviate-from-existing-modules-patch">Deviate from existing modules (patch)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint">Lint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-a-patch-to-the-installed-module">Apply a “patch” to the installed module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-creates-a-local-editable-version-while-keeping-a-reference-to-the-upstream-source">This creates a local editable version while keeping a reference to the upstream source</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#any-changes-you-make-will-be-tracked-as-a-patch-diff-on-top-of-the-original-module">Any changes you make will be tracked as a patch (diff) on top of the original module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-while-later-after-updates-were-made-to-bigbio-nf-modules-thermorawfileparser">a while later after updates were made to bigbio/nf-modules/thermorawfileparser,</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-pull-the-latest-changes-and-update-your-patched-version">you can pull the latest changes and update your patched version:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-local-modifications-patch-will-be-re-applied-on-top-of-the-updated-module">Your local modifications (patch) will be re-applied on top of the updated module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-helps-to-keep-your-custom-changes-while-staying-in-sync-with-upstream-improvements">This helps to keep your custom changes while staying in sync with upstream improvements</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
@@ -381,6 +398,10 @@
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#also-helpful-to-manually-re-run-checks-without-making-a-commit">Also helpful to manually re-run checks without making a commit</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -442,27 +463,45 @@ changes.</p>
 </ul>
 <p>For example for <code class="docutils literal notranslate"><span class="pre">thermorawfileparser</span></code> module in <code class="docutils literal notranslate"><span class="pre">bigbio/nf-modules</span></code>, you can
 pull install and patch and then update it with the latest changes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>install<span class="w"> </span>thermorawfileparser
-nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>patch<span class="w"> </span>thermorawfileparser
-<span class="c1"># a while later after updates were made to bigbio/nf-modules/thermorawfileparser, </span>
-<span class="c1"># you can pull the latest changes and update your patched version:</span>
-nf-core<span class="w"> </span>modules<span class="w"> </span>--git-remote<span class="w"> </span>https://github.com/bigbio/nf-modules.git<span class="w"> </span>update<span class="w"> </span>thermorawfileparser
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="apply-a-patch-to-the-installed-module">
+<h1>Apply a “patch” to the installed module<a class="headerlink" href="#apply-a-patch-to-the-installed-module" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="this-creates-a-local-editable-version-while-keeping-a-reference-to-the-upstream-source">
+<h1>This creates a local editable version while keeping a reference to the upstream source<a class="headerlink" href="#this-creates-a-local-editable-version-while-keeping-a-reference-to-the-upstream-source" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="any-changes-you-make-will-be-tracked-as-a-patch-diff-on-top-of-the-original-module">
+<h1>Any changes you make will be tracked as a patch (diff) on top of the original module<a class="headerlink" href="#any-changes-you-make-will-be-tracked-as-a-patch-diff-on-top-of-the-original-module" title="Link to this heading">#</a></h1>
+<p>nf-core modules –git-remote https://github.com/bigbio/nf-modules.git install thermorawfileparser
+nf-core modules –git-remote https://github.com/bigbio/nf-modules.git patch thermorawfileparser</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="a-while-later-after-updates-were-made-to-bigbio-nf-modules-thermorawfileparser">
+<h1>a while later after updates were made to bigbio/nf-modules/thermorawfileparser,<a class="headerlink" href="#a-while-later-after-updates-were-made-to-bigbio-nf-modules-thermorawfileparser" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="you-can-pull-the-latest-changes-and-update-your-patched-version">
+<h1>you can pull the latest changes and update your patched version:<a class="headerlink" href="#you-can-pull-the-latest-changes-and-update-your-patched-version" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="your-local-modifications-patch-will-be-re-applied-on-top-of-the-updated-module">
+<h1>Your local modifications (patch) will be re-applied on top of the updated module<a class="headerlink" href="#your-local-modifications-patch-will-be-re-applied-on-top-of-the-updated-module" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="this-helps-to-keep-your-custom-changes-while-staying-in-sync-with-upstream-improvements">
+<h1>This helps to keep your custom changes while staying in sync with upstream improvements<a class="headerlink" href="#this-helps-to-keep-your-custom-changes-while-staying-in-sync-with-upstream-improvements" title="Link to this heading">#</a></h1>
+<p>nf-core modules –git-remote https://github.com/bigbio/nf-modules.git update thermorawfileparser</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+On patching
+ - [video](https://www.youtube.com/watch?v=7pu6Ikhi1eU)
+ - [docs](https://nf-co.re/docs/nf-core-tools/modules/patch)
+
+## Lint
+
+Check for errors and warnings:
+
+```bash
+nf-core pipelines lint .
 </pre></div>
 </div>
-<p>On patching</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=7pu6Ikhi1eU" rel="noreferrer" target="_blank">video</a></p></li>
-<li><p><a class="reference external" href="https://nf-co.re/docs/nf-core-tools/modules/patch" rel="noreferrer" target="_blank">docs</a></p></li>
-</ul>
-</section>
-</section>
-<section id="lint">
-<h2>Lint<a class="headerlink" href="#lint" title="Link to this heading">#</a></h2>
-<p>Check for errors and warnings:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nf-core<span class="w"> </span>pipelines<span class="w"> </span>lint<span class="w"> </span>.
-</pre></div>
-</div>
-</section>
 <section id="test">
 <h2>Test<a class="headerlink" href="#test" title="Link to this heading">#</a></h2>
 <p>You will need to add basic test of the pipeline.</p>
@@ -511,16 +550,23 @@ in order to make it executable on Seqera Cloud. The initial history can be found
 <h3>Commit without formatting errors<a class="headerlink" href="#commit-without-formatting-errors" title="Link to this heading">#</a></h3>
 <ul>
 <li><p>use the <code class="docutils literal notranslate"><span class="pre">pre-commit</span></code> hooks for formatting on all files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
-pre-commit<span class="w"> </span>install
-<span class="c1"># then only this is needed after installing the hooks:</span>
-pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
-</pre></div>
-</div>
+<p>pip install pre-commit</p>
+<p class="rubric" id="installs-the-git-hooks-defined-in-pre-commit-config-yaml">Installs the Git hooks defined in .pre-commit-config.yaml</p>
+<p class="rubric" id="this-sets-up-automatic-checks-that-run-on-every-commit">This sets up automatic checks that run on every commit</p>
+<p>pre-commit install</p>
+<p class="rubric" id="then-only-this-is-needed-after-installing-the-hooks">then only this is needed after installing the hooks:</p>
+<p class="rubric" id="useful-for-initial-cleanup-or-when-introducing-pre-commit-to-an-existing-repo">Useful for initial cleanup or when introducing pre-commit to an existing repo</p>
 </li>
 </ul>
 </section>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="also-helpful-to-manually-re-run-checks-without-making-a-commit">
+<h1>Also helpful to manually re-run checks without making a commit<a class="headerlink" href="#also-helpful-to-manually-re-run-checks-without-making-a-commit" title="Link to this heading">#</a></h1>
+<p>pre-commit run –all-files</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </section>
 
 
@@ -570,13 +616,22 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Building a custom nf-core analysis pipeline</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-template">Using the template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-adaptations-to-the-pipeline-created-from-the-template">Make adaptations to the pipeline created from the template</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-modules-and-subworkflows">Add modules and subworkflows</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deviate-from-existing-modules-patch">Deviate from existing modules (patch)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lint">Lint</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-a-patch-to-the-installed-module">Apply a “patch” to the installed module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-creates-a-local-editable-version-while-keeping-a-reference-to-the-upstream-source">This creates a local editable version while keeping a reference to the upstream source</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#any-changes-you-make-will-be-tracked-as-a-patch-diff-on-top-of-the-original-module">Any changes you make will be tracked as a patch (diff) on top of the original module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-while-later-after-updates-were-made-to-bigbio-nf-modules-thermorawfileparser">a while later after updates were made to bigbio/nf-modules/thermorawfileparser,</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#you-can-pull-the-latest-changes-and-update-your-patched-version">you can pull the latest changes and update your patched version:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-local-modifications-patch-will-be-re-applied-on-top-of-the-updated-module">Your local modifications (patch) will be re-applied on top of the updated module</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#this-helps-to-keep-your-custom-changes-while-staying-in-sync-with-upstream-improvements">This helps to keep your custom changes while staying in sync with upstream improvements</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test">Test</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave">Wave</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#define-the-report-path">Define the report path</a></li>
@@ -585,6 +640,10 @@ pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
 </ul>
 </li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#also-helpful-to-manually-re-run-checks-without-making-a-commit">Also helpful to manually re-run checks without making a commit</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>
