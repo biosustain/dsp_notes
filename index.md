@@ -2,11 +2,11 @@
 
 Welcome to the documentation of the Data Science Platform at DTU Biosustain. This is a
 place to keep general notes on how to do things,
-DTU infrastructure specific trics and institute wide educational material.
+DTU infrastructure specific tricks and institute wide educational material.
 
 The Data Sciene Platform at Novo Nordisk Foundation Center for Biosustainability 
 is part of the Informatics Platform, see our aims and goals
-[here](https://www.biosustain.dtu.dk/technologies/informatics/data-science-platform). 
+[here](https://bright.dtu.dk/technologies/biofoundry/informatics). 
 
 ```{toctree}
 :maxdepth: 2
