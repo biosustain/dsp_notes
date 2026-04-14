@@ -2,7 +2,7 @@
 
 Can we draw possible jobs through a nextflow pipeline?
 
-You can use [IncScape](https://inkscape.org/) with the templates provided by nextflow
+You can use [InkScape](https://inkscape.org/) with the templates provided by nextflow
 for the [components and templates](https://nf-co.re/docs/guidelines/graphic_design/workflow_diagrams)
 which are explained in this bytesizes talk:
 
@@ -15,6 +15,9 @@ referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen>
 </iframe>
 
+## nf-docs
+
+Autocreate documentation using [`ewels/nf-docs`](https://github.com/ewels/nf-docs)
 
 ## pipeline info
 
