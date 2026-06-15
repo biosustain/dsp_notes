@@ -5,6 +5,11 @@ Based on our discussion and the
 and [FAQ](https://docs.seqera.io/platform/24.2/troubleshooting_and_faqs/azure_troubleshooting#batch-compute-environments)
 
 
+![Azure Batch compute environment setup](assets/seqera_batch_overview.png)
+
+(Source: [nextflow and azure batch blog
+post](https://seqera.io/blog/nextflow-and-azure-batch-part-1-of-2/))
+
 ## Setup Permissions
 
 Here are the key points with setting up Azure Infrastructure using 
@@ -91,3 +96,12 @@ on process requirements. This can be achieved by using the `autopool` feature.
 - See [nextflow documentation](https://www.nextflow.io/docs/latest/azure.html#auto-pools)
 - See [Seqera documentation](https://docs.seqera.io/platform-cloud/enterprise/advanced-topics/manual-azure-batch-setup#option-4-use-the-nextflow-autopool-feature)
 
+## Running on a self-managed VM
+
+If you want to run pipelines on a self-managed VM, you can use the `local` executor in
+Nextflow. This allows you to run pipelines on your local machine or a remote VM without
+the need for Azure Batch.
+
+Hints on configuring a VM on Azure can be found here:
+
+- https://seqera.io/blog/nextflow-and-azure-batch-part-1-of-2/

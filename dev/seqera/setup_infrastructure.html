@@ -378,6 +378,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vm-sizes">VM sizes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-a-self-managed-vm">Running on a self-managed VM</a></li>
 </ul>
             </nav>
         </div>
@@ -394,6 +395,9 @@
 <p>Based on our discussion and the
 <a class="reference external" href="https://docs.seqera.io/platform/24.2/enterprise/advanced-topics/manual-azure-batch-setup" rel="noreferrer" target="_blank">documentation</a>
 and <a class="reference external" href="https://docs.seqera.io/platform/24.2/troubleshooting_and_faqs/azure_troubleshooting#batch-compute-environments" rel="noreferrer" target="_blank">FAQ</a></p>
+<p><img alt="Azure Batch compute environment setup" src="../_images/seqera_batch_overview.png" /></p>
+<p>(Source: <a class="reference external" href="https://seqera.io/blog/nextflow-and-azure-batch-part-1-of-2/" rel="noreferrer" target="_blank">nextflow and azure batch blog
+post</a>)</p>
 <section id="setup-permissions">
 <h2>Setup Permissions<a class="headerlink" href="#setup-permissions" title="Link to this heading">#</a></h2>
 <p>Here are the key points with setting up Azure Infrastructure using
@@ -478,6 +482,16 @@ on process requirements. This can be achieved by using the <code class="docutils
 </ul>
 </section>
 </section>
+<section id="running-on-a-self-managed-vm">
+<h2>Running on a self-managed VM<a class="headerlink" href="#running-on-a-self-managed-vm" title="Link to this heading">#</a></h2>
+<p>If you want to run pipelines on a self-managed VM, you can use the <code class="docutils literal notranslate"><span class="pre">local</span></code> executor in
+Nextflow. This allows you to run pipelines on your local machine or a remote VM without
+the need for Azure Batch.</p>
+<p>Hints on configuring a VM on Azure can be found here:</p>
+<ul class="simple">
+<li><p>https://seqera.io/blog/nextflow-and-azure-batch-part-1-of-2/</p></li>
+</ul>
+</section>
 </section>
 
 
@@ -539,6 +553,7 @@ on process requirements. This can be achieved by using the <code class="docutils
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vm-sizes">VM sizes</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-a-self-managed-vm">Running on a self-managed VM</a></li>
 </ul>
   </nav></div>
 
