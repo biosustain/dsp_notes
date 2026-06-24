@@ -3,7 +3,7 @@
 On November 2024, the Data Science platform from DTU Biosustain launched a series of
 hands-on workshops about different Data Science subjects and about different data types for our DTU research fellows. All course materials are freely available below. If interested, stay tuned for future Data Science workshops!
 
-## Full-day data type workshops (courses that last around 7h)
+## Full-day data type workshops (7h)
 
 :::: {grid} 2
 :gutter: 3
@@ -38,7 +38,7 @@ Find the repo [here](https://github.com/biosustain/dsp_course_metabolomics_intro
 
 ::::
 
-## Half-day technical workshops (courses that last between 2-3 h)
+## Half-day technical workshops (3 h)
 
 <!--
  see grid, card and grit-item-options:
