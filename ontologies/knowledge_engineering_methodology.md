@@ -1,19 +1,5 @@
 # Knowledge Engineering Methodology
 
-## Table of Contents
-
-1. [Engineering Workflow](#engineering-workflow)
-  1. [Step 1 - Determine Domain and Scope](#step-1-determine-the-domain-and-scope-of-the-ontology)
-  2. [Step 2 - Ontology Development](#step-2-ontology-development)
-    - [2.1 Reusing Existing Ontologies](#21---reusing-existing-ontologies)
-    - [2.2 Enumerate Important Terms](#22---enumerate-important-terms-in-the-ontology)
-    - [2.3 Define Classes, Hierarchy and Properties](#23---define-classes-class-hierarchy-and-properties)
-  3. [Step 3 - Publication](#step-3-publication)
-  4. [Step 4 - Maintenance](#step-4-maintenance)
-2. [References](#references)
-
----
-
 ## Engineering Workflow
 
 
