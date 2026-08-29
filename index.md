@@ -81,6 +81,14 @@ python/package_template
 ```{toctree}
 :maxdepth: 2
 :hidden:
+:caption: GUIs (using Python)
+
+graphical_user_interfaces/README
+```
+
+```{toctree}
+:maxdepth: 2
+:hidden:
 :caption: HPC
 
 hpc_dtu/setup_user_env
