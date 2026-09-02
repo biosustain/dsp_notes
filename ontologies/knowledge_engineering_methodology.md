@@ -70,7 +70,7 @@ Create a list of all terms, weather they are clasified as concepts, relationship
   - Bottom-up
   - Combination
  
--Properties of classes (slots)
+- Properties of classes (slots)
 
 <br>
 
