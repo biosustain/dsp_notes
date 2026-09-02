@@ -78,8 +78,6 @@ Create a list of all terms, weather they are clasified as concepts, relationship
 
 
 
----
-
 ## References
 
 1. [Ontology Development 101: A Guide to Creating Your First Ontology](http://researchgate.net/publication/243772462_Ontology_Development_101_A_Guide_to_Creating_Your_First_Ontology)
