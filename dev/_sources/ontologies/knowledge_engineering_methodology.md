@@ -5,11 +5,9 @@
 
 (step-1-determine-the-domain-and-scope-of-the-ontology)=
 ### Step 1. Determine the Domain and Scope of the Ontology
-<br>
 
 > Main idea: We define our **domain - Conceptualization** and then we determine our **scope - Competency Questions**. 
 
-<br>
 
 #### Conceptualization
 
@@ -20,7 +18,7 @@ In orther to determine the **domain** that the ontology will cover, we answer so
   - What is your Use Case?
   The best solution to model a domain depends on the application that you have in mind and the extensions anticipated.
 - Who will use and maintain the ontology?
-<br>
+
 
 #### Competency Questions (CQ)
 
@@ -29,20 +27,20 @@ In order to determine the **scope** we can sketch a list of questions that a kno
 1. For what types of questions should the information in the ontology provide answers?
 2. Do the answers require a particular level of detail or representation of a particular area?
 3. Does this area/domain contain enough information to answer these types of questions or we need to link more than one area?
-<br>
+
 <br>
 
 (step-2-ontology-development)=
 ### Step 2. Ontology Development
 
-<br>
 > Main idea: **Iterative design** — Ontology development is an iterative process.
-<br>
+
 
 (2.1---reusing-existing-ontologies)=
 #### 2.1 - Reusing Existing Ontologies
 
 If we can, we always consider first refine and extend existing sources for our domain and tasks.
+
 <br>
 
 (2.2---enumerate-important-terms-in-the-ontology)=
