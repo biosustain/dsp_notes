@@ -1,9 +1,7 @@
 # Knowledge Engineering Methodology
 
-(engineering-workflow)=
 ## Engineering Workflow
 
-(step-1-determine-the-domain-and-scope-of-the-ontology)=
 ### Step 1. Determine the Domain and Scope of the Ontology
 
 
@@ -31,20 +29,17 @@ In order to determine the **scope** we can sketch a list of questions that a kno
 
 
 
-(step-2-ontology-development)=
 ### Step 2. Ontology Development
 
 
 > Main idea: **Iterative design** — Ontology development is an iterative process.
 
 
-(2.1---reusing-existing-ontologies)=
 #### 2.1 - Reusing Existing Ontologies
 
 If we can, we always consider first refine and extend existing sources for our domain and tasks.
 
 
-(2.2---enumerate-important-terms-in-the-ontology)=
 #### 2.2 - Enumerate Important Terms in the Ontology
 
 Create a list of all terms, weather they are clasified as concepts, relationships/properties; we do not classify them yet. Some questions can help us lisitng the key terms:
@@ -53,7 +48,6 @@ Create a list of all terms, weather they are clasified as concepts, relationship
   - What characterisitcs do those terms have?
 
 
-(2.3---define-classes-class-hierarchy-and-properties)=
 #### 2.3 - Define Classes, Class Hierarchy and Properties
 
 
@@ -76,19 +70,16 @@ Create a list of all terms, weather they are clasified as concepts, relationship
 
 
 
-(step-3-publication)=
 ### Step 3. Publication
 
 
 
-(step-4-maintenance)=
 ### Step 4. Maintenance
 
 
 
 ---
 
-(references)=
 ## References
 
 1. [Ontology Development 101: A Guide to Creating Your First Ontology](http://researchgate.net/publication/243772462_Ontology_Development_101_A_Guide_to_Creating_Your_First_Ontology)
