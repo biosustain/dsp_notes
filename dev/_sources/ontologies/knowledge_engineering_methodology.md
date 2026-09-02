@@ -1,10 +1,9 @@
 # Knowledge Engineering Methodology
 
-(engineering-workflow)=
 ## Engineering Workflow
 
-(step-1-determine-the-domain-and-scope-of-the-ontology)=
 ### Step 1. Determine the Domain and Scope of the Ontology
+
 
 > Main idea: We define our **domain - Conceptualization** and then we determine our **scope - Competency Questions**. 
 
@@ -28,34 +27,32 @@ In order to determine the **scope** we can sketch a list of questions that a kno
 2. Do the answers require a particular level of detail or representation of a particular area?
 3. Does this area/domain contain enough information to answer these types of questions or we need to link more than one area?
 
-<br>
 
-(step-2-ontology-development)=
+
 ### Step 2. Ontology Development
+
 
 > Main idea: **Iterative design** — Ontology development is an iterative process.
 
 
-(2.1---reusing-existing-ontologies)=
 #### 2.1 - Reusing Existing Ontologies
 
 If we can, we always consider first refine and extend existing sources for our domain and tasks.
 
-<br>
 
-(2.2---enumerate-important-terms-in-the-ontology)=
 #### 2.2 - Enumerate Important Terms in the Ontology
 
 Create a list of all terms, weather they are clasified as concepts, relationships/properties; we do not classify them yet. Some questions can help us lisitng the key terms:
   - What are the concepts/terms/information we want to talk about?
   - What would we like to say about those terms/concepts?
   - What characterisitcs do those terms have?
-<br>
 
-(2.3---define-classes-class-hierarchy-and-properties)=
+
 #### 2.3 - Define Classes, Class Hierarchy and Properties
 
+
 > Main idea: First, we create few definitions of the concepts/terms/information from the previous list. From that we can start building a hierarchy with classes classifying them into parents and child terms. And then, once we have built a hierarchy we describe properties of these classes.
+
 
   ----***(WIP)***-----
   #ToDo: 
@@ -70,20 +67,17 @@ Create a list of all terms, weather they are clasified as concepts, relationship
  
 - Properties of classes (slots)
 
-<br>
 
 
-(step-3-publication)=
+
 ### Step 3. Publication
-<br>
 
-(step-4-maintenance)=
+
+
 ### Step 4. Maintenance
-<br>
 
----
 
-(references)=
+
 ## References
 
 1. [Ontology Development 101: A Guide to Creating Your First Ontology](http://researchgate.net/publication/243772462_Ontology_Development_101_A_Guide_to_Creating_Your_First_Ontology)
