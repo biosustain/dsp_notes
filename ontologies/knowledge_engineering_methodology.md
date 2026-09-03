@@ -71,7 +71,18 @@ Create a list of all terms, weather they are clasified as concepts, relationship
 
 
 ### Step 3. Publication
+#
+### OBOFoundry - Request for new ontology
+Instructions proivided by OBO Foundry: https://obofoundry.org/docs/NewOntologyRegistrationInstructions.html
 
+ - Check if passes OBO NOR Dashboard (https://obofoundry.org/obo-nor.github.io/dashboard/index.html)
+
+Issue example (PREFER): https://github.com/OBOFoundry/OBOFoundry.github.io/issues/2821
+
+#### OBOFoundry - Request for new PURL
+Guide: https://obofoundry.org/docs/Policy_for_OBO_namespace_and_associated_PURL_requests.html
+
+Issue example (PREFER): https://github.com/OBOFoundry/purl.obolibrary.org/pull/1108
 
 
 ### Step 4. Maintenance
