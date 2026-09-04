@@ -27,6 +27,15 @@ In order to determine the **scope** we can sketch a list of questions that a kno
 2. Do the answers require a particular level of detail or representation of a particular area?
 3. Does this area/domain contain enough information to answer these types of questions or we need to link more than one area?
 
+How answers to a CQ could be obtained?
+- browsing through a taxonomy and viewing the relationships across the ontology entities 
+  - Example:   Which wine characteristics should I consider when choosing a wine?
+- through the ability to determine inheritance
+- through ontology querying (explain that in depth)
+
+What is not a CQ?
+- It is not compulsory.
+- It is not a list of requirements. 
 
 
 ### Step 2. Ontology Development
