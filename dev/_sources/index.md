@@ -92,6 +92,5 @@ hpc_dtu/setup_user_env
 :caption: Ontologies
 
 ontologies/ontologies_notes
-ontologies/knowledge_engineering_methodology
 ```
 
