@@ -3,6 +3,19 @@
 On November 2024, the Data Science platform from DTU Biosustain launched a series of
 hands-on workshops about different Data Science subjects and about different data types for our DTU research fellows. All course materials are freely available below. If interested, stay tuned for future Data Science workshops!
 
+## Data Science courses sign up links!!!
+Here you have the sign up links for the upcoming courses on November 2026. Find more course information when clicking the sign up link.
+
+All courses will be from **9:00 to 12:30 in building 324 (DTU Compute) Room 040 (LY324.040)**.
+
+- Introduction to Github and Git - 4th November 2026 - [Sign up!](https://forms.cloud.microsoft/e/AqxjTqKGgU)
+- Nextflow training - 11th November 2026 - [Sign up!](https://forms.cloud.microsoft/e/GYsAAW6JJC)
+- Introduction to Docker - 18th November 2026 - [Sign up!](https://forms.cloud.microsoft/e/E2kPdSzAUm)
+- Data Visualization with Python - 25th November 2026 - [Sign up!](https://forms.cloud.microsoft/e/4x7tFzhuE8)
+- Data Visualization with R - 2nd December 2026 - [Sign up!](https://forms.cloud.microsoft/e/1tAPZV8jvg)
+
+Join us to learn some Data Science!
+
 ## Full-day data type workshops (7h)
 
 :::: {grid} 2
