@@ -80,8 +80,8 @@ Create a list of all terms, weather they are clasified as concepts, relationship
 
 
 ### Step 3. Publication
-#
-### OBOFoundry - Request for new ontology
+
+#### OBOFoundry - Request for new ontology
 Instructions proivided by OBO Foundry: https://obofoundry.org/docs/NewOntologyRegistrationInstructions.html
 
  - Check if passes OBO NOR Dashboard (https://obofoundry.org/obo-nor.github.io/dashboard/index.html)
