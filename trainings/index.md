@@ -129,7 +129,10 @@ Data Visualization with Python
 Learn how to create informative and visually appealing graphics using Python. Same plots
 as in the R course.
 
-Course is in development.
+The material is available at  
+[biosustain.github.io/dsp_workshop_dataviz_python](https://biosustain.github.io/dsp_workshop_dataviz_python/)
+including slides and tutorials.
+
 :::
 
 ::: {grid-item-card} GitHub Actions Tutorial
