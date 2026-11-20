@@ -58,93 +58,111 @@ Find the repo [here](https://github.com/biosustain/dsp_course_metabolomics_intro
  https://sphinx-design.readthedocs.io/en/sbt-theme/
 -->
 
-::::{grid} 2
+::::: {grid} 2
 :gutter: 3
 
-:::{grid-item-card}  Introduction the command line with bash
+::::{grid-item-card} Introduction the command line with bash
 :link: https://github.com/biosustain/dsp_workshop_bash
 :link-alt: github.com/biosustain/dsp_workshop_bash
 
+:::{card-header}
 Command line basics
-^^^
+:::
+
 You can find the slides [here](practical_unix_workshop_slides.pdf).
-:::
-
-:::{grid-item-card}  Introduction to Github and Git
-:link: https://github.com/biosustain/git-tutorial
-:link-alt: github.com/biosustain/git-tutorial
-
-Github and Git
-^^^
-Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).
-
-Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md).
-:::
-
-:::{grid-item-card} Nextflow training
-:link: https://github.com/biosustain/dsp_nextflow_training
-:link-alt: github.com/biosustain/dsp_nextflow_training
-
-Nextflow
-^^^
-Learn how to create and manage reproducible workflows using Nextflow.
-
-Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
-:::
-
-:::{grid-item-card} Writing your DockerFile to containerize your app/software
-:link: https://github.com/biosustain/dsp_docker_training
-:link-alt: github.com/biosustain/dsp_docker_training
-
-Docker basics
-^^^
-Learn the basics of containerization and how to use Docker for reproducible research.
-
-
-Find the 
-[slides](https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf)
-and 
-[hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html).
-:::
-
-::: {grid-item-card} Data Visualization with R
-:link: https://github.com/biosustain/dsp_workshop_datavizR
-:link-alt: github.com/biosustain/dsp_workshop_datavizR
-
-Data Visualization with R
-^^^
-Learn how to create informative and visually appealing graphics using R. Same plots
-as in the Python course.
-
-The material is available as a html document for direct viewing 
-[here](https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html)
-or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html).
-:::
-
-::: {grid-item-card} Data Visualization with Python
-:link: https://biosustain.github.io/dsp_workshop_dataviz_python/
-:link-alt: biosustain.github.io/dsp_workshop_dataviz_python/
-Data Visualization with Python
-^^^
-Learn how to create informative and visually appealing graphics using Python. Same plots
-as in the R course.
-
-The material is available at  
-[biosustain.github.io/dsp_workshop_dataviz_python](https://biosustain.github.io/dsp_workshop_dataviz_python/)
-including slides and tutorials.
-
-:::
-
-::: {grid-item-card} GitHub Actions Tutorial
-:link: https://github.com/biosustain/dsp_actions_tutorial
-:link-alt: github.com/biosustain/dsp_actions_tutorial
-
-Automation
-^^^
-
-First introduction to continuous integration and continuous deployment (CI/CD) 
-using GitHub Actions: [github.com/biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial)
-:::
 
 ::::
 
+::::{grid-item-card} Introduction to Github and Git
+:link: https://github.com/biosustain/git-tutorial
+:link-alt: github.com/biosustain/git-tutorial
+
+:::{card-header}
+Github and Git
+:::
+
+Learn how to use, collaborate and eventually contribute to projects on GitHub (or GitLab or Bitbucket).
+
+Find the instructions for the training [here](https://github.com/biosustain/git-tutorial/blob/HEAD/instructions_241113.md).
+
+::::
+
+::::{grid-item-card} Nextflow training
+:link: https://github.com/biosustain/dsp_nextflow_training
+:link-alt: github.com/biosustain/dsp_nextflow_training
+
+:::{card-header}
+Nextflow
+:::
+
+Learn how to create and manage reproducible workflows using Nextflow.
+
+Find the material as a website [here](https://biosustain.github.io/dsp_nextflow_training).
+
+::::
+
+::::{grid-item-card} Writing your DockerFile to containerize your app/software
+:link: https://github.com/biosustain/dsp_docker_training
+:link-alt: github.com/biosustain/dsp_docker_training
+
+:::{card-header}
+Docker basics
+:::
+
+Learn the basics of containerization and how to use Docker for reproducible research.
+
+Find the
+[slides](https://biosustain.github.io/dsp_docker_training/_downloads/ea9c06ee5cfa983313af9ff311541729/Docker-training.pdf)
+and
+[hands-on material (running in GitHub Codespaces)](https://biosustain.github.io/dsp_docker_training/course_contents/HandsOn.html).
+
+::::
+
+::::{grid-item-card} Data Visualization with R
+:link: https://github.com/biosustain/dsp_workshop_datavizR
+:link-alt: github.com/biosustain/dsp_workshop_datavizR
+
+:::{card-header}
+Data Visualization with R
+:::
+
+Learn how to create informative and visually appealing graphics using R. Same plots
+as in the Python course.
+
+The material is available as a html document for direct viewing
+[here](https://htmlpreview.github.io/?https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html)
+or [downloaded from GitHub's website](https://github.com/biosustain/dsp_workshop_datavizR/blob/main/01_Code/workshop_R.html).
+
+::::
+
+::::{grid-item-card} Data Visualization with Python
+:link: https://biosustain.github.io/dsp_workshop_dataviz_python/
+:link-alt: biosustain.github.io/dsp_workshop_dataviz_python/
+
+:::{card-header}
+Data Visualization with Python
+:::
+
+Learn how to create informative and visually appealing graphics using Python. Same plots
+as in the R course.
+
+The material is available at
+[biosustain.github.io/dsp_workshop_dataviz_python](https://biosustain.github.io/dsp_workshop_dataviz_python/)
+including slides and tutorials.
+
+::::
+
+::::{grid-item-card} GitHub Actions Tutorial
+:link: https://github.com/biosustain/dsp_actions_tutorial
+:link-alt: github.com/biosustain/dsp_actions_tutorial
+
+:::{card-header}
+Automation
+:::
+
+First introduction to continuous integration and continuous deployment (CI/CD)
+using GitHub Actions: [github.com/biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial)
+
+::::
+
+:::::
