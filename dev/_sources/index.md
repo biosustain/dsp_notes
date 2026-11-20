@@ -73,7 +73,6 @@ sphinx/0_overview
 :hidden:
 :caption: Python
 
-python/virutal_environment
 python/percent_notebooks
 python/best_practices
 python/package_template
