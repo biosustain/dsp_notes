@@ -143,7 +143,7 @@ Automation
 ^^^
 
 First introduction to continuous integration and continuous deployment (CI/CD) 
-using GitHub Actions.
+using GitHub Actions: [github.com/biosustain/dsp_actions_tutorial](https://github.com/biosustain/dsp_actions_tutorial)
 :::
 
 ::::
