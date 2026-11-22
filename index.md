@@ -66,6 +66,8 @@ nextflow/nf_core_templates
 :caption: Sphinx and MyST-NB
 
 sphinx/0_overview
+sphinx/readthedocs
+sphinx/troubleshooting
 ```
 
 ```{toctree}
