@@ -23,7 +23,7 @@ Create and use an environment:
 
 ```bash
 uv venv --python 3.12          # creates .venv (downloads Python if needed)
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
+uv venv # activate 
 uv pip install pandas matplotlib jupyterlab
 ```
 
